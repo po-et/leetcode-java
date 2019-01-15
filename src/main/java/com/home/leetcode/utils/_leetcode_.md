@@ -1,0 +1,29 @@
+[toc]
+## 常考
+ThreeSum_15     
+ValidParentheses_20
+MergeTwoSortedLists_21
+DivideTwoIntegers_29 (重点：空间复杂度为O(logn))
+
+
+## 可能会考
+NextPermutation_31
+
+## 难
+10 (正则)
+
+
+
+
+## 不是很懂（need to read）
+GenerateParentheses_22 (卡特兰数)
+MergeKSortedLists_23
+SwapNodesinPairs_24
+
+
+
+## 多看几遍
+SubstringWithConcatenationOfAllWords_30
+
+
+> 注意：多写几遍翻转链表
