@@ -9,8 +9,9 @@ DivideTwoIntegers_29 (重点：空间复杂度为O(logn))
 ## 可能会考
 NextPermutation_31
 
-## 难
-10 (正则)
+## 多看几遍
+SubstringWithConcatenationOfAllWords_30
+SearchForARange_34
 
 
 
@@ -21,9 +22,8 @@ MergeKSortedLists_23
 SwapNodesinPairs_24
 
 
-
-## 多看几遍
-SubstringWithConcatenationOfAllWords_30
+## 难
+10 (正则)
 
 
 > 注意：多写几遍翻转链表
