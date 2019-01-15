@@ -38,11 +38,5 @@
             <version>3.8.1</version>
         </dependency>
 
-        <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-            <version>RELEASE</version>
-        </dependency>
-
     </dependencies>
 </project>
