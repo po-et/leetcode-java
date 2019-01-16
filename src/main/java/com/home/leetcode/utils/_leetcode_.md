@@ -4,10 +4,12 @@ ThreeSum_15
 ValidParentheses_20
 MergeTwoSortedLists_21
 DivideTwoIntegers_29 (重点：空间复杂度为O(logn))
-
+ValidSudoku_36  (判断是否是 数独)
 
 ## 可能会考
 NextPermutation_31
+
+
 
 ## 多看几遍
 SubstringWithConcatenationOfAllWords_30
@@ -24,6 +26,6 @@ SwapNodesinPairs_24
 
 ## 难
 10 (正则)
-
+SudokuSolver_37 (数独填数)
 
 > 注意：多写几遍翻转链表
