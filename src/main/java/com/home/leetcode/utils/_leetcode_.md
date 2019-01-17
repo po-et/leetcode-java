@@ -6,16 +6,16 @@ MergeTwoSortedLists_21
 DivideTwoIntegers_29 (重点：空间复杂度为O(logn))
 ValidSudoku_36  (判断是否是 数独)
 
+
 ## 可能会考
 NextPermutation_31
 
 
-
-## 多看几遍
+## 多看几遍（重点是思路）
 SubstringWithConcatenationOfAllWords_30
 SearchForARange_34
-
-
+CombinationSum_39 (backtracking 回溯法)
+FirstMissingPositive_41 (桶排序的思想)
 
 
 ## 不是很懂（need to read）
@@ -27,5 +27,6 @@ SwapNodesinPairs_24
 ## 难
 10 (正则)
 SudokuSolver_37 (数独填数)
+
 
 > 注意：多写几遍翻转链表
