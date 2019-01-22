@@ -28,6 +28,9 @@ GenerateParentheses_22 (卡特兰数)
 MergeKSortedLists_23
 SwapNodesinPairs_24
 JumpGameII_45
+Permutations_46 (backtracking)
+PermutationsII_47 (backtracking)
+
 
 ## 难
 10 (正则)

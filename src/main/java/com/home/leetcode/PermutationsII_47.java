@@ -1,65 +1,65 @@
 package com.home.leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
- * 46. Permutations
+ * 47. Permutations II
 
- Given a collection of distinct integers, return all possible permutations.
+ Given a collection of numbers that might contain duplicates, return all possible unique permutations.
 
  Example:
-     Input: [1,2,3]
+     Input: [1,1,2]
      Output:
          [
-             [1,2,3],
-             [1,3,2],
-             [2,1,3],
-             [2,3,1],
-             [3,1,2],
-             [3,2,1]
+             [1,1,2],
+             [1,2,1],
+             [2,1,1]
          ]
 
- * @leetcode: https://leetcode.com/problems/permutations/
- * 时间复杂度参考： https://www.1point3acres.com/bbs/thread-117602-1-1.html
+ * @leetcode: https://leetcode.com/problems/permutations-ii/
  * Created by Poet on 2019-01-21.
  */
-public class Permutations_46 {
+public class PermutationsII_47 {
 
     /**
-     * backtracking方法 （更推荐）
-     * time: O(n! * n)
+     * backtracking方法（更推荐）
+     * time: O(n!)
      * space: O(n)
      */
-    public List<List<Integer>> permute(int[] nums) {
+    public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         if(nums == null || nums.length == 0) return res;
-        helper(res, new ArrayList<>(), nums);
+        Arrays.sort(nums);
+        helper(res, new ArrayList<>(), nums, new boolean[nums.length]);
         return res;
     }
 
-    private void helper(List<List<Integer>> res, List<Integer> list, int[] nums) {
+    private void helper(List<List<Integer>> res, List<Integer> list, int[] nums, boolean[] used) {
         if (list.size() == nums.length) {
             res.add(new ArrayList<>(list));
-            return;
         }
         for (int i = 0; i < nums.length; i++) {
-            if(list.contains(nums[i])) continue;    // O(n)
+            if (used[i] || i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) continue;
+            used[i] = true;
             list.add(nums[i]);
-            helper(res, list, nums);
+            helper(res, list, nums, used);
+            used[i] = false;
             list.remove(list.size() - 1);
         }
     }
 
 
     /**
-     * 第二种方法： swap的方法（规避掉list.contains(nums[i])而增加的O(n)的时间复杂度）
+     * 第二种方法：swap的方法
      * time: O(n!)
      * space: O(n)
      */
-    public List<List<Integer>> permute2(int[] nums) {
+    public List<List<Integer>> permuteUnique2(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         if(nums == null || nums.length == 0) return res;
+        Arrays.sort(nums);
         helper2(res, 0, nums);
         return res;
     }
@@ -74,8 +74,9 @@ public class Permutations_46 {
             return ;
         }
         for (int i = start; i < nums.length; i++) {
+            if (isUsed(nums, start, i)) continue;
             swap(nums, start, i);
-            helper2(res, start+1, nums);
+            helper2(res, start + 1, nums);
             swap(nums, start, i);
         }
     }
@@ -86,5 +87,11 @@ public class Permutations_46 {
         nums[r] = temp;
     }
 
+    private boolean isUsed(int[] nums, int i, int j) {
+        for (int x = i; x < j; x++) {
+            if(nums[x] == nums[j]) return true;
+        }
+        return false;
+    }
 
 }
