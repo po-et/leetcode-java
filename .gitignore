@@ -33,6 +33,7 @@ Thumbs.db
 .idea/
 .idea
 target/
+*.iml
 
 # Eclipse
 .settings/
