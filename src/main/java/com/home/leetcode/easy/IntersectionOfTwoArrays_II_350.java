@@ -26,6 +26,10 @@ public class IntersectionOfTwoArrays_II_350 {
         System.out.println(Arrays.toString(res));
     }
 
+    /**
+     * time: O(nlogn) / O(n) 哈希表
+     * space: O(n)
+     */
     public static int[] intersect(int[] nums1, int[] nums2) {
         Map<Integer, Integer> record = new HashMap<>();
         for (int i : nums1) {
