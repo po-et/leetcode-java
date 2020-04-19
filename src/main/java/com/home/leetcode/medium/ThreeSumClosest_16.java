@@ -59,7 +59,6 @@ public class ThreeSumClosest_16 {
                 }
             }
         }
-
         return ret;
     }
 
