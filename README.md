@@ -1,1 +1,1 @@
-> Accomplish leetcode via Java
+> Leetcode practice via Java
