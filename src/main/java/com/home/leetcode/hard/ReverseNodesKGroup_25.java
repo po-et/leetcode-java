@@ -1,6 +1,8 @@
-package com.home.leetcode;
+package com.home.leetcode.hard;
 
 import com.home.leetcode.utils.ListNode;
+
+import java.util.Stack;
 
 /**
  * [leetcode] 25. Reverse Nodes in k-Group
@@ -64,7 +66,6 @@ public class ReverseNodesKGroup_25 {
                 end = end.next;
             }
         }
-
         return dummy.next;
     }
 
@@ -98,4 +99,73 @@ public class ReverseNodesKGroup_25 {
         return first;
     }
 
+
+    /**
+     * @see <a href = "https://www.bilibili.com/video/BV17x411m7qE?from=search&seid=9636965338124954411" />
+     */
+    public ListNode reverseKGroup3(ListNode head, int k) {
+        if(head==null) return head;
+
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy;
+        while (prev != null) {
+            prev = reverse3(prev, k);
+        }
+        return dummy.next;
+    }
+
+    private ListNode reverse3(ListNode prev, int k) {
+        ListNode last = prev;
+        for (int i = 0; i < k+1; i++) {
+            last = last.next;
+            if(i!=k && last == null){
+                return null;
+            }
+        }
+
+        ListNode node1 = prev.next;
+        ListNode node2 = prev.next.next;
+        while (node2 != last) {
+            node1.next = node2.next;
+            node2.next = prev.next;
+            prev.next = node2;
+            node2 = node1.next;
+        }
+        return node1;
+    }
+
+
+    /**
+     * Stack
+     * added on 2020-04-25
+     */
+    public static ListNode reverseKGroup4(ListNode head, int k) {
+        if (head == null || k == 1) {
+            return head;
+        }
+
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode curr = dummy;
+        ListNode next = dummy.next;
+        Stack<ListNode> stack = new Stack<>();
+
+        while (next != null) {
+            for (int i = 0; i < k && next!=null; i++) {
+                stack.push(next);
+                next = next.next;
+            }
+            if (stack.size() != k) {
+                return dummy.next;
+            }
+            while (!stack.isEmpty()) {
+                curr.next = stack.pop();
+                curr = curr.next;
+            }
+            curr.next = next;
+        }
+
+        return dummy.next;
+    }
 }
