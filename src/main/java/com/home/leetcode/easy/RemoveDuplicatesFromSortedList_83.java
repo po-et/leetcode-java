@@ -10,7 +10,7 @@ package com.home.leetcode.easy;
  *
  * @author Poet
  * @date 2020/4/23
- * @see <a href = "hhttps://leetcode.com/problems/remove-duplicates-from-sorted-list/" />
+ * @see <a href = "https://leetcode.com/problems/remove-duplicates-from-sorted-list/" />
  */
 public class RemoveDuplicatesFromSortedList_83 {
 
@@ -27,7 +27,7 @@ public class RemoveDuplicatesFromSortedList_83 {
             while (cur.next != null && cur.next.val == cur.val) {
                 ListNode next = cur.next;
                 cur.next = cur.next.next;
-                next = null;
+                next.next = null;   // delete node
             }
             cur = cur.next;
         }
