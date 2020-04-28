@@ -1,4 +1,4 @@
-package com.home.leetcode;
+package com.home.leetcode.medium;
 
 /**
  * Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
@@ -12,7 +12,7 @@ package com.home.leetcode;
  *
  * @see <a href="https://leetcode.com/problems/partition-list/" />
  * @author Poet
- * @date 2020/4/27
+ * @date 2020/4/28
  */
 public class PartitionList_86 {
 
