@@ -58,16 +58,17 @@ public class MaximumDepthOfBinaryTree_104 {
 
 
     /**
-     * 第二种递归写法（本质一样）
+     * 第二种递归写法（本质一样, 更好！）
      */
     public int maxDepth2(TreeNode root) {
         if(root == null){
             return 0;
         }
 
-        int leftDepth = maxDepth2(root.left);
-        int rightDepth = maxDepth2(root.right);
+//        int leftDepth = maxDepth2(root.left);
+//        int rightDepth = maxDepth2(root.right);
+//        return Math.max(leftDepth, rightDepth) + 1;
 
-        return Math.max(leftDepth, rightDepth) + 1;
+        return Math.max(maxDepth2(root.left), maxDepth2(root.right)) + 1;
     }
 }
