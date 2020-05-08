@@ -1,16 +1,21 @@
-package com.home.leetcode;
+package com.home.leetcode.medium;
 
 import java.util.PriorityQueue;
 
 /**
  * Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
- * <p>
+ *
  * Example 1:
+ *
  * Input: [3,2,1,5,6,4] and k = 2
  * Output: 5
+ * Example 2:
  *
+ * Input: [3,2,3,1,2,4,5,5,6] and k = 4
+ * Output: 4
+ *
+ * @see <a href="https://leetcode.com/problems/kth-largest-element-in-an-array/" />
  * @author Poet
- * @url https://leetcode.com/problems/kth-largest-element-in-an-array/
  * @date 2020/4/11
  */
 public class KthLargestElementInAnArray_215 {
@@ -54,7 +59,7 @@ public class KthLargestElementInAnArray_215 {
             return nums[p];
         } else if (p > k) {
             return findKthLargest2(nums, l, p - 1, k);
-        } else { // p<k
+        } else { // p < k
             return findKthLargest2(nums, p + 1, r, k);
         }
     }
@@ -78,7 +83,7 @@ public class KthLargestElementInAnArray_215 {
         return lt;
     }
 
-    public static void swap(int[] arr, int l, int r) {
+    private static void swap(int[] arr, int l, int r) {
         int tmp = arr[l];
         arr[l] = arr[r];
         arr[r] = tmp;
