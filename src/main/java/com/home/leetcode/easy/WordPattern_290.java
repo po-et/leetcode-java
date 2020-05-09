@@ -15,7 +15,7 @@ import java.util.Set;
  * Input: pattern = "abba", str = "dog cat cat dog"
  * Output: true
  *
- * @see <a href = 'https://leetcode.com/problems/word-pattern/' />
+ * @see <a href="https://leetcode.com/problems/word-pattern/" />
  * @author Poet
  * @date 2020/4/18
  */

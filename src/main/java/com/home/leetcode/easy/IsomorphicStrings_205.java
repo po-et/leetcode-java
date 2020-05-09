@@ -15,7 +15,7 @@ import java.util.Map;
  * Input: s = "egg", t = "add"
  * Output: true
  *
- * @see <a href = "https://leetcode.com/problems/isomorphic-strings/" />
+ * @see <a href="https://leetcode.com/problems/isomorphic-strings/" />
  * @author Poet
  * @date 2020/4/18
  */
