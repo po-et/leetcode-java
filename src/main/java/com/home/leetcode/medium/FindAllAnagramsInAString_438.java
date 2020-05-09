@@ -6,16 +6,18 @@ import java.util.List;
 /**
  * Given a string s and a non-empty string p, find all the start indices of p's anagrams in s.
  *
- * @url https://leetcode.com/problems/find-all-anagrams-in-a-string/
+ * @see <a href="https://leetcode.com/problems/find-all-anagrams-in-a-string/" />
  * @author Poet
  * @date 2020/4/12
  */
 public class FindAllAnagramsInAString_438 {
 
-    /**
-     * Good Solution:
-     * @url https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/92015/ShortestConcise-JAVA-O(n)-Sliding-Window-Solution
-     */
+
+    public static void main(String[] args) {
+        FindAllAnagramsInAString_438 solution = new FindAllAnagramsInAString_438();
+        System.out.println(solution.findAnagrams("cbaebabacd", "abc"));
+        System.out.println(solution.findAnagrams("abab", "ab"));
+    }
 
 
     int [] freq = new int[128];
@@ -25,27 +27,27 @@ public class FindAllAnagramsInAString_438 {
      */
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> res = new ArrayList<>();
-        if(s==null || p==null || s.length() < p.length())
+        if (s == null || p == null || s.length() < p.length())
             return res;
 
         for (char c : p.toCharArray()) {
-            freq[c] ++;
+            freq[c]++;
         }
         int count = p.length();
 
-        int start = 0, end = 0 ;
-        while(end < s.length()){
+        int start = 0, end = 0;
+        while (end < s.length()) {
 
-            if(freq[s.charAt(end)] >= 1) {
+            if (freq[s.charAt(end)] >= 1) {
                 count--;
             }
             freq[s.charAt(end)]--;
             end++;
 
-            if(count == 0) res.add(start);
+            if (count == 0) res.add(start);
 
-            if (end-start == p.length()) {
-                if(freq[s.charAt(start)] >= 0) {
+            if (end - start == p.length()) {
+                if (freq[s.charAt(start)] >= 0) {
                     count++;
                 }
                 freq[s.charAt(start)]++;
@@ -56,6 +58,11 @@ public class FindAllAnagramsInAString_438 {
         return res;
     }
 
+
+    /**
+     * Good Solution:
+     * @url https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/92015/ShortestConcise-JAVA-O(n)-Sliding-Window-Solution
+     */
     public List<Integer> findAnagramsStandard(String s, String p) {
         List<Integer> list = new ArrayList<>();
         if (s == null || s.length() == 0 || p == null || p.length() == 0) return list;
@@ -82,12 +89,5 @@ public class FindAllAnagramsInAString_438 {
             if (right - left == p.length() && hash[s.charAt(left++)]++ >= 0) count++;
         }
         return list;
-    }
-
-
-    public static void main(String[] args) {
-        FindAllAnagramsInAString_438 solution = new FindAllAnagramsInAString_438();
-        System.out.println(solution.findAnagrams("cbaebabacd", "abc"));
-        System.out.println(solution.findAnagrams("abab", "ab"));
     }
 }
