@@ -20,4 +20,46 @@ package com.home.leetcode.easy;
  * @date 2020/5/9
  */
 public class ClimbingStairs_70 {
+
+    int[] memo ;
+
+    /**
+     * 记忆化搜索
+     */
+    public int climbStairs(int n) {
+        // memo[n] 表示爬n级台阶的方法数
+        memo = new int[n + 1];
+
+        return countStairs(n);
+//        return countStairs2(n);
+    }
+
+    /**
+     * 记忆化搜索
+     */
+    private int countStairs(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        if (memo[n] == 0) {
+            memo[n] = countStairs(n - 1) + countStairs(n - 2);
+        }
+        return memo[n];
+    }
+
+    /**
+     * 动态规划
+     */
+    public int countStairs2(int n) {
+        memo[0] = 1;
+        memo[1] = 1;
+
+        int index = 2;
+        while (index <= n) {
+            memo[index] = memo[index - 1] + memo[index - 2];
+            index++;
+        }
+        return memo[n];
+    }
+
 }
