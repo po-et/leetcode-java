@@ -29,29 +29,32 @@ public class ClimbingStairs_70 {
     public int climbStairs(int n) {
         // memo[n] 表示爬n级台阶的方法数
         memo = new int[n + 1];
+        return calcWays(n);
 
-        return countStairs(n);
-//        return countStairs2(n);
+//        return calcWays2(n);
     }
 
     /**
      * 记忆化搜索
      */
-    private int countStairs(int n) {
+    private int calcWays(int n) {
         if (n == 0 || n == 1) {
             return 1;
         }
 
         if (memo[n] == 0) {
-            memo[n] = countStairs(n - 1) + countStairs(n - 2);
+            memo[n] = calcWays(n - 1) + calcWays(n - 2);
         }
+
         return memo[n];
     }
 
     /**
      * 动态规划
      */
-    public int countStairs2(int n) {
+    public int calcWays2(int n) {
+        memo = new int[n + 1];
+
         memo[0] = 1;
         memo[1] = 1;
 
