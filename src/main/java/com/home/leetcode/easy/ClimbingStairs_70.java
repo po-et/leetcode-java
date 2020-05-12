@@ -41,6 +41,7 @@ public class ClimbingStairs_70 {
         if (n == 0 || n == 1) {
             return 1;
         }
+
         if (memo[n] == 0) {
             memo[n] = countStairs(n - 1) + countStairs(n - 2);
         }
@@ -54,10 +55,8 @@ public class ClimbingStairs_70 {
         memo[0] = 1;
         memo[1] = 1;
 
-        int index = 2;
-        while (index <= n) {
-            memo[index] = memo[index - 1] + memo[index - 2];
-            index++;
+        for (int i = 2; i <= n; i++) {
+            memo[i] = memo[i - 1] + memo[i - 2];
         }
         return memo[n];
     }
