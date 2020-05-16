@@ -28,6 +28,9 @@ package com.home.leetcode.medium;
  */
 public class NumberOfIslands_200 {
 
+    /**
+     * Solution: {@link https://blog.csdn.net/DERRANTCM/article/details/47970795}
+     */
     public int numIslands(char[][] grid) {
         // 参数校验
         if(grid==null || grid.length == 0 || grid[0].length == 0)
