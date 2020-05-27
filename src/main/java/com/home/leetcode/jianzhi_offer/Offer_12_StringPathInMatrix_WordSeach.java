@@ -1,7 +1,7 @@
 package com.home.leetcode.jianzhi_offer;
 
 /**
- * 矩阵中的路径
+ * 面试题12. 矩阵中的路径
  *
  * 请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中任意一格开始，每一步可以在矩阵中向左、右、上、下移动一格。
  * 如果一条路径经过了矩阵的某一格，那么该路径不能再次进入该格子。例如在下面的3×4的矩阵中包含一条字符串“bfce”的路径（路径中的字母用下划线标出）。
@@ -10,12 +10,15 @@ package com.home.leetcode.jianzhi_offer;
  *  C F C S
  *  J D E H
  *
- * @see <a href="https://www.cnblogs.com/yongh/p/9655745.html" />
+ * 链接：https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/
  * @author Poet
  * @date 2020/5/16
  */
-public class _Offer_11_StringPathInMatrix {
+public class Offer_12_StringPathInMatrix_WordSeach {
 
+    /**
+     * Solution: <a href="https://www.cnblogs.com/yongh/p/9655745.html" />
+     */
     public boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
         if (matrix == null || rows < 1 || cols < 1 || str == null) {
             return false;
