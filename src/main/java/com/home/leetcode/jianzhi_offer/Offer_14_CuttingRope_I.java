@@ -16,7 +16,7 @@ package com.home.leetcode.jianzhi_offer;
  * @author Poet
  * @date 2020/5/27
  */
-public class Offer_14_I_CuttingRope {
+public class Offer_14_CuttingRope_I {
 
     private int[] memo;
 
