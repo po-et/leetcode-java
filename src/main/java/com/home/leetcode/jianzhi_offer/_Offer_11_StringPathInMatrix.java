@@ -14,7 +14,7 @@ package com.home.leetcode.jianzhi_offer;
  * @author Poet
  * @date 2020/5/16
  */
-public class Offer_11_StringPathInMatrix {
+public class _Offer_11_StringPathInMatrix {
 
     public boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
         if (matrix == null || rows < 1 || cols < 1 || str == null) {
