@@ -81,11 +81,15 @@
 ### 总结
 - 思路精彩：
     - Offer_04_FindNumberIn2DArray
+    - Offer_31_ValidateStackSequences（栈的压入、弹出序列）{辅助栈}
 
 - 多看几遍：
     - Offer_07_BuildTree
     - Offer_26_JudgeIsSubTree （判断是不是树的子结构）
 
+- 没有特别理解：
+    - Offer_33_VerifyPostorderBST （检验是不是BST的后序遍历）
+    - Offer_34_BST_PathSum （二叉树中和为某一值的路径）{回溯法}
 
 ### 在线解题
 - [LeetCode中文](https://leetcode-cn.com/problemset/lcof/)
