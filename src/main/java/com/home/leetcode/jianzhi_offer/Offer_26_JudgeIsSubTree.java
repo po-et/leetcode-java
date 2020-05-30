@@ -27,7 +27,7 @@ package com.home.leetcode.jianzhi_offer;
  * @author Poet
  * @date 2020/5/29
  */
-public class Offer_26_judgeIsSubTree {
+public class Offer_26_JudgeIsSubTree {
 
     public class TreeNode {
         int val;
