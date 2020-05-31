@@ -82,6 +82,8 @@
 - 思路精彩：
     - Offer_04_FindNumberIn2DArray
     - Offer_31_ValidateStackSequences（栈的压入、弹出序列）{辅助栈}
+    - Offer_39_MajorityElement （摩尔投票法）
+    - Offer_41_FindMedianFromDataStream （小顶堆 + 大顶堆）
 
 - 多看几遍：
     - Offer_07_BuildTree
@@ -90,6 +92,9 @@
 - 没有特别理解：
     - Offer_33_VerifyPostorderBST （检验是不是BST的后序遍历）
     - Offer_34_BST_PathSum （二叉树中和为某一值的路径）{回溯法}
+
+- 动态规划：
+    - Offer_42_MaximumSubarray （明确状态定义，转移方程！）
 
 ### 在线解题
 - [LeetCode中文](https://leetcode-cn.com/problemset/lcof/)
