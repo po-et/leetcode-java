@@ -84,7 +84,7 @@
     - Offer_31_ValidateStackSequences（栈的压入、弹出序列）{辅助栈}
     - Offer_39_MajorityElement （摩尔投票法）
     - Offer_41_FindMedianFromDataStream （小顶堆 + 大顶堆）
-
+ 
 - 多看几遍：
     - Offer_07_BuildTree
     - Offer_26_JudgeIsSubTree （判断是不是树的子结构）
@@ -95,7 +95,7 @@
 
 - 动态规划：
     - Offer_42_MaximumSubarray （明确状态定义，转移方程！）
-
+    - Offer_49_UglyNumber_II （丑数）
 ### 在线解题
 - [LeetCode中文](https://leetcode-cn.com/problemset/lcof/)
 - [牛客网](https://www.nowcoder.com/ta/coding-interviews?page=1) 
