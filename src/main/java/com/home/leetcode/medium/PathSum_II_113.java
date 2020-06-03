@@ -78,4 +78,37 @@ public class PathSum_II_113 {
 
         return retList;
     }
+
+
+    // 方法二 （更好懂！更简洁！）
+    // https://leetcode.com/problems/path-sum-ii/discuss/665522/Java-99.9-faster-1ms
+    List<List<Integer>> res;
+    public List<List<Integer>> pathSum_Better(TreeNode root, int sum) {
+        res = new ArrayList<>();
+        if (root == null)
+            return res;
+
+        List<Integer> p = new ArrayList<>();
+        recursive(root, sum, p);
+        return res;
+    }
+
+    private void recursive(TreeNode root, int sum, List<Integer> p) {
+        if (root == null)
+            return;
+
+        p.add(root.val);
+        sum -= root.val;
+
+        if (root.left == null && root.right == null && sum == 0) {
+            res.add(new ArrayList<>(p));
+        }
+
+        recursive(root.left, sum, p);
+        recursive(root.right, sum, p);
+
+        p.remove(p.size() - 1);
+    }
+
+
 }
