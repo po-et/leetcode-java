@@ -137,7 +137,7 @@ public class ReverseNodesKGroup_25 {
 
 
     /**
-     * Stack
+     * Stack （最好理解！）
      * added on 2020-04-25
      */
     public static ListNode reverseKGroup4(ListNode head, int k) {

@@ -10,9 +10,9 @@ package com.home.leetcode.medium;
  * Input: 1->2->3->4->5->NULL, m = 2, n = 4
  * Output: 1->4->3->2->5->NULL
  *
+ * @see <a href="https://leetcode.com/problems/reverse-linked-list-ii/" />
  * @author Poet
  * @date 2020/4/23
- * @see <a href = "https://leetcode.com/problems/reverse-linked-list-ii/" />
  */
 public class ReverseLinkedList_II_92 {
 
@@ -32,7 +32,7 @@ public class ReverseLinkedList_II_92 {
         dummyHead.next = head;
 
         ListNode start = dummyHead;
-        for (int i = 0; i < m-1; i++) {
+        for (int i = 0; i < m - 1; i++) {
             start = start.next;
         }
 
