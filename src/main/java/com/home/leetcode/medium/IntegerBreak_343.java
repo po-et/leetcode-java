@@ -60,7 +60,7 @@ public class IntegerBreak_343 {
     /**
      * 动态规划
      */
-    public int integerBreakDP(int n) {
+    public int integerBreak_DP(int n) {
         assert n >= 2;
 
         // memo[i]表示将数字i分割（至少分割成两部分）后，得到的最大乘积

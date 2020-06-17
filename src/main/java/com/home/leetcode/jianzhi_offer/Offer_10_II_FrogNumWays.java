@@ -16,14 +16,15 @@ public class Offer_10_II_FrogNumWays {
         memo[1] = 1;
 
         for (int i = 2; i <= n; i++) {
-            memo[i] = (memo[i - 1] + memo[i - 2]) % 1000000007;
+            memo[i] = (memo[i - 1] + memo[i - 2]) % 1_000_000_007;
         }
         return memo[n];
     }
 
     public static void main(String[] args) {
         System.out.println(numWays(3));
-        System.out.println(numWays(4));
+        System.out.println(numWays(100));
+        System.out.println(numWays(10_000));
     }
 
 }

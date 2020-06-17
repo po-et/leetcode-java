@@ -84,6 +84,7 @@
     - Offer_31_ValidateStackSequences（栈的压入、弹出序列）{辅助栈}
     - Offer_39_MajorityElement （摩尔投票法）
     - Offer_41_FindMedianFromDataStream （小顶堆 + 大顶堆）
+    - Offer_53_II_MissingNumber （二分法）
  
 - 多看几遍：
     - Offer_07_BuildTree

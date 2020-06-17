@@ -14,7 +14,7 @@ package com.home.leetcode.jianzhi_offer;
  * @author Poet
  * @date 2020/5/16
  */
-public class Offer_12_StringPathInMatrix_WordSeach {
+public class Offer_12_StringPathInMatrix_WordSearch {
 
     /**
      * Solution: <a href="https://www.cnblogs.com/yongh/p/9655745.html" />
@@ -49,10 +49,9 @@ public class Offer_12_StringPathInMatrix_WordSeach {
         if (pathLength == str.length - 1)
             return true;
 
-        boolean hasPath = false;
         isVisited[row * cols + col] = true;
 
-        hasPath = hasPathCore(matrix, rows, cols, row - 1, col, str, pathLength + 1, isVisited)
+        boolean hasPath = hasPathCore(matrix, rows, cols, row - 1, col, str, pathLength + 1, isVisited)
                 || hasPathCore(matrix, rows, cols, row + 1, col, str, pathLength + 1, isVisited)
                 || hasPathCore(matrix, rows, cols, row, col - 1, str, pathLength + 1, isVisited)
                 || hasPathCore(matrix, rows, cols, row, col + 1, str, pathLength + 1, isVisited);
