@@ -29,6 +29,7 @@ package com.home.leetcode.medium;
 public class NumberOfIslands_200 {
 
     /**
+     * Floodfill算法
      * Solution: https://blog.csdn.net/DERRANTCM/article/details/47970795
      */
     public int numIslands(char[][] grid) {
@@ -49,7 +50,7 @@ public class NumberOfIslands_200 {
                 // 如果此位置没有被访问过，并且此位置是岛，就广度优先遍历
                 if (!visited[i][j] && grid[i][j] == '1') {
                     result++;
-                    bfsSearch(grid, m, n, i, j, visited);
+                    dfsSearch(grid, m, n, i, j, visited);
                 }
             }
         }
@@ -57,13 +58,13 @@ public class NumberOfIslands_200 {
     }
 
     /**
-     * 广度优先搜索
+     * 深度优先搜索
      * @param grid 网格
      * @param visited 访问标记矩阵
      * @param i 横坐标
      * @param j 纵坐标
      */
-    private void bfsSearch(char[][] grid, int m, int n, int i, int j, boolean[][] visited) {
+    private void dfsSearch(char[][] grid, int m, int n, int i, int j, boolean[][] visited) {
         // 递归结束条件
         if (i < 0 || i >= m || j < 0 || j >= n || visited[i][j] || grid[i][j] == '0') {
             return;
@@ -71,10 +72,10 @@ public class NumberOfIslands_200 {
 
         visited[i][j] = true;
 
-        bfsSearch(grid, m, n, i-1, j, visited);   // 上
-        bfsSearch(grid, m, n, i, j+1, visited);   // 右
-        bfsSearch(grid, m, n, i+1, j, visited);   // 下
-        bfsSearch(grid, m, n, i, j-1, visited);   // 左
+        dfsSearch(grid, m, n, i-1, j, visited);   // 上
+        dfsSearch(grid, m, n, i, j+1, visited);   // 右
+        dfsSearch(grid, m, n, i+1, j, visited);   // 下
+        dfsSearch(grid, m, n, i, j-1, visited);   // 左
     }
 
 
