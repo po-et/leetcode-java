@@ -34,7 +34,7 @@ public class BinaryTreePaths_257 {
         TreeNode left;
         TreeNode right;
         TreeNode() {}
-        TreeNode(int val) { this.val = val; }
+        TreeNode(int val) {this.val = val;}
         TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;
@@ -45,10 +45,11 @@ public class BinaryTreePaths_257 {
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> retList = new ArrayList<>();
 
-        if(root == null)
+        if (root == null)
             return retList;
+
         if (root.left == null && root.right == null) {
-            retList.add(root.val+"");
+            retList.add(root.val + "");
             return retList;
         }
 
