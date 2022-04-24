@@ -41,7 +41,6 @@ public class Offer_03_FindRepeatNumber {
         int[] arr = {2, 3, 1, 0, 2, 5, 3};
 
         System.out.println(findRepeatNumber(arr));
-
     }
 
 }
