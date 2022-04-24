@@ -40,9 +40,9 @@ public class Offer_04_FindNumberIn2DArray {
             if (matrix[row][col] == target) {
                 return true;
             } else if (matrix[row][col] > target) {
-                col -- ;
+                col--;
             } else {
-                row ++;
+                row++;
             }
         }
 
