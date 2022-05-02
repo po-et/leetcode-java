@@ -16,10 +16,9 @@ package com.home.leetcode.easy;
  * @author Poet
  * @date 2020/5/6
  */
-public class MoveZeroes_283 {
+public class LC_283_MoveZeroes {
 
     public void moveZeroes(int[] nums) {
-
         // 【循环不变量】 nums[0..k)表示所有非0的数
         int k = 0;
 
@@ -32,6 +31,34 @@ public class MoveZeroes_283 {
             }
         }
     }
+
+    /**
+     * 稳定算法，无swap
+     *
+     * time: O(n)
+     * space: O(1)
+     */
+    public void moveZeroes2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+
+        // 循环不变量：nums[0, j)不包含0元素
+        // j指向第一个0的位置
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[j] = nums[i];
+                j++;
+            }
+        }
+
+        for (int i = j; i < nums.length; i++) {
+            nums[i] = 0;
+        }
+    }
+
+
 
     private void swap(int[] nums, int k, int i) {
         int tmp = nums[k];
