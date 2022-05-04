@@ -10,10 +10,10 @@ package com.home.offer.jianzhi;
  * @author Poet
  * @date 2020/5/17
  */
-public class Offer_1_FindDuplication {
+public class Offer_03_FindDuplication {
 
-    public boolean duplicate(int numbers[], int length, int [] duplication) {
-        if(numbers == null || numbers.length == 0 )
+    public boolean duplicate(int numbers[], int length, int[] duplication) {
+        if (numbers == null || numbers.length == 0)
             return false;
 
         for (int i = 0; i < numbers.length; i++) {
@@ -29,7 +29,7 @@ public class Offer_1_FindDuplication {
                 duplication[0] = numbers[i];
                 return true;
             }
-            stat[numbers[i]] ++;
+            stat[numbers[i]]++;
         }
 
         return false;

@@ -1,29 +1,59 @@
-package com.home.leetcode;
+package com.home.leetcode.easy;
 
 import java.util.Arrays;
 
 /**
+ * 26. 删除有序数组中的重复项
+ *
+ * 给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该保持 一致 。
+ *
+ * 链接：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array
+ *
  * Created by Poet on 2019-01-13.
  */
-public class RemoveDuplicatesFromSortedArray_26 {
+public class LC_26_RemoveDuplicatesFromSortedArray {
 
     /**
-     * 去除sorted array重复元素后的长度
-     *
      * time: O(n)
      * space: O(1)
      */
     public static int removeDuplicates(int[] nums) {
-        if(nums == null || nums.length == 0) return 0;
-        int count = 1;
+        if (nums == null || nums.length < 1) {
+            return 0;
+        }
+
+        // 循环不变量：nums[0, j)没有重复的元素
+        // j指向了下一个要赋值的元素
+        int j = 1;
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i] != nums[i - 1]) {
-                count++;
+            if (nums[i] != nums[j - 1]) {
+                nums[j] = nums[i];
+                j++;
             }
         }
-        return count;
+        return j;
     }
 
+    /**
+     * time: O(n)
+     * space: O(1)
+     */
+    public static int removeDuplicates2(int[] nums) {
+        if (nums == null || nums.length < 1) {
+            return 0;
+        }
+
+        // 循环不变量：nums[0,j]没有重复的元素
+        // j指向赋值的最后一个元素
+        int j = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if(nums[i] != nums[j]){
+                j++;
+                nums[j] = nums[i];
+            }
+        }
+        return j + 1;
+    }
 
     /**
      * 去除sorted array重复元素
