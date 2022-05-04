@@ -48,4 +48,20 @@ public class Offer_06_ReversePrint {
         }
         return ret;
     }
+
+
+//
+//    public ListNode reverseNode(ListNode head){
+//        ListNode pre = null;
+//        ListNode cur = head;
+//
+//        while (cur != null) {
+//            ListNode next = cur.next;
+//            cur.next = pre;
+//            pre = cur;
+//            cur = next;
+//        }
+//
+//        return pre;
+//    }
 }

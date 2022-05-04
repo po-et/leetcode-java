@@ -97,10 +97,14 @@
 - 动态规划：
     - Offer_42_MaximumSubarray （明确状态定义，转移方程！）
     - Offer_49_UglyNumber_II （丑数）
+
+### Solution：
+- [【目录】《剑指Offer》Java实现](https://www.cnblogs.com/yongh/p/9637260.html)
+- [《剑指offer》Java版代码](https://github.com/GaoLeiQin/SwordOffer)
+- [剑指 offer 怎么刷？- 视频课](https://zhuanlan.zhihu.com/p/498715622)
+
+
 ### 在线解题
 - [LeetCode中文](https://leetcode-cn.com/problemset/lcof/)
 - [牛客网](https://www.nowcoder.com/ta/coding-interviews?page=1) 
 
-
-### Solution：
-- [【目录】《剑指Offer》Java实现](https://www.cnblogs.com/yongh/p/9637260.html)
