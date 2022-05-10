@@ -13,17 +13,26 @@ import java.util.Arrays;
  */
 public class LC_026_RemoveDuplicatesFromSortedArray {
 
+    /**
+     * time: O(n)
+     * space: O(1)
+     */
     public static int removeDuplicates(int[] nums) {
-        // nums[0..k]表示所有不重复的数
-        int k = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != nums[k]) {
-                k++;
-                nums[k] = nums[i];
+        if (nums == null || nums.length < 1) {
+            return 0;
+        }
+
+        // 循环不变量：nums[0, j]表示所有不重复的数
+        // j指向已赋值的最后一个元素
+        int j = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if(nums[i] != nums[j]){
+                j++;
+                nums[j] = nums[i];
             }
         }
         // 返回的是length，所以需要+1
-        return k + 1;
+        return j + 1;
     }
 
 
@@ -48,26 +57,6 @@ public class LC_026_RemoveDuplicatesFromSortedArray {
         return j;
     }
 
-    /**
-     * time: O(n)
-     * space: O(1)
-     */
-    public static int removeDuplicates3(int[] nums) {
-        if (nums == null || nums.length < 1) {
-            return 0;
-        }
-
-        // 循环不变量：nums[0, j]没有重复的元素
-        // j指向已赋值的最后一个元素
-        int j = 0;
-        for (int i = 1; i < nums.length; i++) {
-            if(nums[i] != nums[j]){
-                j++;
-                nums[j] = nums[i];
-            }
-        }
-        return j + 1;
-    }
 
 
 
