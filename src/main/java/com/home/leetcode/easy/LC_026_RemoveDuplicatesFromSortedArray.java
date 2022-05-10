@@ -11,7 +11,7 @@ import java.util.Arrays;
  *
  * Created by Poet on 2019-01-13.
  */
-public class LC_26_RemoveDuplicatesFromSortedArray {
+public class LC_026_RemoveDuplicatesFromSortedArray {
 
     /**
      * time: O(n)
@@ -43,8 +43,8 @@ public class LC_26_RemoveDuplicatesFromSortedArray {
             return 0;
         }
 
-        // 循环不变量：nums[0,j]没有重复的元素
-        // j指向赋值的最后一个元素
+        // 循环不变量：nums[0, j]没有重复的元素
+        // j指向已赋值的最后一个元素
         int j = 0;
         for (int i = 1; i < nums.length; i++) {
             if(nums[i] != nums[j]){

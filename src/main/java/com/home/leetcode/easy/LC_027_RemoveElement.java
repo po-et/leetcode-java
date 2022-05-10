@@ -14,7 +14,7 @@ import com.home.leetcode.utils.ArrayUtils;
  * @author Poet
  * @date 2020/5/6
  */
-public class LC_27_RemoveElement {
+public class LC_027_RemoveElement {
 
     public int removeElement(int[] nums, int val) {
         // nums[0..k)表示不是val的数
