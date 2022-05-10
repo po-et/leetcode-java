@@ -1,5 +1,7 @@
 package com.home.leetcode.easy;
 
+import com.home.leetcode.utils.ArrayUtils;
+
 /**
  * Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
  *
@@ -18,14 +20,19 @@ package com.home.leetcode.easy;
  */
 public class LC_283_MoveZeroes {
 
+    /**
+     * swap （Better！）
+     * time: O(n)
+     * space: O(1)
+     */
     public void moveZeroes(int[] nums) {
         // 【循环不变量】 nums[0..k)表示所有非0的数
         int k = 0;
 
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
-                if(k != i) {
-                    swap(nums, k, i);
+                if (k != i) {
+                    ArrayUtils.swap(nums, k, i);
                 }
                 k++;
             }
@@ -33,8 +40,7 @@ public class LC_283_MoveZeroes {
     }
 
     /**
-     * 稳定算法，无swap
-     *
+     * 赋值
      * time: O(n)
      * space: O(1)
      */
@@ -58,11 +64,4 @@ public class LC_283_MoveZeroes {
         }
     }
 
-
-
-    private void swap(int[] nums, int k, int i) {
-        int tmp = nums[k];
-        nums[k] = nums[i];
-        nums[i] = tmp;
-    }
 }
