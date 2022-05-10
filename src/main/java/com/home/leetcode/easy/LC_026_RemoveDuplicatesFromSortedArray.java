@@ -3,21 +3,35 @@ package com.home.leetcode.easy;
 import java.util.Arrays;
 
 /**
- * 26. 删除有序数组中的重复项
+ * Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.
  *
- * 给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该保持 一致 。
+ * Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
  *
- * 链接：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array
- *
- * Created by Poet on 2019-01-13.
+ * @see <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/" >...</a>
+ * @author Poet
+ * @date 2020/5/6
  */
 public class LC_026_RemoveDuplicatesFromSortedArray {
+
+    public static int removeDuplicates(int[] nums) {
+        // nums[0..k]表示所有不重复的数
+        int k = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != nums[k]) {
+                k++;
+                nums[k] = nums[i];
+            }
+        }
+        // 返回的是length，所以需要+1
+        return k + 1;
+    }
+
 
     /**
      * time: O(n)
      * space: O(1)
      */
-    public static int removeDuplicates(int[] nums) {
+    public static int removeDuplicates2(int[] nums) {
         if (nums == null || nums.length < 1) {
             return 0;
         }
@@ -38,7 +52,7 @@ public class LC_026_RemoveDuplicatesFromSortedArray {
      * time: O(n)
      * space: O(1)
      */
-    public static int removeDuplicates2(int[] nums) {
+    public static int removeDuplicates3(int[] nums) {
         if (nums == null || nums.length < 1) {
             return 0;
         }
@@ -54,6 +68,8 @@ public class LC_026_RemoveDuplicatesFromSortedArray {
         }
         return j + 1;
     }
+
+
 
     /**
      * 去除sorted array重复元素
@@ -91,6 +107,7 @@ public class LC_026_RemoveDuplicatesFromSortedArray {
         System.out.println("length: " + result.length + ", result:" + Arrays.toString(result));
         return result;
     }
+
 
     public static void main(String[] args) {
         int[] nums = {1, 1, 2, 2, 3, 4, 5, 5, 6};

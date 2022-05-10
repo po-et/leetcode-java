@@ -9,7 +9,7 @@ package com.home.leetcode.medium;
  * @author Poet
  * @date 2020/5/6
  */
-public class RemoveDuplicatesFromSortedArray_II_80 {
+public class LC_080_RemoveDuplicatesFromSortedArray_II {
 
     public int removeDuplicates(int[] nums) {
         // nums[0..k]表示所有不重复2次的数
@@ -33,4 +33,5 @@ public class RemoveDuplicatesFromSortedArray_II_80 {
         }
         return k + 1;
     }
+
 }
