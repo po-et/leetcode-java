@@ -21,24 +21,26 @@ import java.util.Map;
 public class LC_001_TwoSum {
 
     /**
+     * 方法二：哈希表
      * time: O(n)
      * space: O(n)
      */
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> record = new HashMap<>(nums.length);
+        Map<Integer, Integer> hashMap = new HashMap<>(nums.length);
 
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
-            if(record.containsKey(complement)){
-                return new int[]{i, record.get(complement)};
+            if(hashMap.containsKey(complement)){
+                return new int[]{hashMap.get(complement), i};
             }
-            record.put(nums[i], i);
+            hashMap.put(nums[i], i);
         }
 
         throw new IllegalArgumentException("no solution!");
     }
 
     /**
+     * 方法一：暴力枚举
      * time: O(n^2)
      */
     public int[] twoSum2(int[] nums, int target) {
