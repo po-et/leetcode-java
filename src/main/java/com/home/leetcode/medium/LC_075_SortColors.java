@@ -12,17 +12,18 @@ package com.home.leetcode.medium;
  * Input: [2,0,2,1,1,0]
  * Output: [0,0,1,1,2,2]
  *
- * @see <a href="https://leetcode.com/problems/sort-colors/submissions/" />
+ * @see <a href="https://leetcode.com/problems/sort-colors/" />
+ * @see <a href="https://leetcode.cn/problems/sort-colors/" />
  * @author Poet
  * @date 2020/5/9
  */
-public class SortColors_75 {
+public class LC_075_SortColors {
 
     /**
-     * 基于快排partition的思想
+     * 基于三路快排partition的思想
      */
     public void sortColors(int[] nums) {
-        // 明确参数语义
+        // 循环不变量
         // nums[0..zero] == 0, nums[zero+1..i) == 1, nums[two...length] == 2
         int zero = -1;
         int two = nums.length;
@@ -33,10 +34,10 @@ public class SortColors_75 {
                 zero++;
                 swap(nums, i, zero);
                 i++;
-            } else if(nums[i] == 2) {
-                two --;
+            } else if (nums[i] == 2) {
+                two--;
                 swap(nums, i, two);
-            } else {
+            } else {    // nums[i] == 1
                 assert nums[i] == 1;
                 i++;
             }
@@ -56,9 +57,9 @@ public class SortColors_75 {
     public void sortColors2(int[] nums) {
         int[] stat = {0, 0, 0};
         for (int i = 0; i < nums.length; i++) {
-            if(nums[i] == 0)
+            if (nums[i] == 0)
                 stat[0]++;
-            else if(nums[i] == 1)
+            else if (nums[i] == 1)
                 stat[1]++;
             else {
                 assert nums[i] == 2;
@@ -73,6 +74,5 @@ public class SortColors_75 {
             }
         }
     }
-
 
 }
