@@ -3,6 +3,8 @@ package com.home.leetcode.medium;
 import java.util.PriorityQueue;
 
 /**
+ * 215. 数组中的第K个最大元素
+ *
  * Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
  *
  * Example 1:
@@ -18,28 +20,13 @@ import java.util.PriorityQueue;
  * @author Poet
  * @date 2020/4/11
  */
-public class KthLargestElementInAnArray_215 {
+public class LC_215_KthLargestElementInAnArray {
 
     public static void main(String[] args) {
         int[] nums = {3, 2, 1, 5, 6, 4};
         int   k    = 2;
-//        System.out.println(findKthLargest(nums, k));
+        System.out.println(findKthLargest(nums, k));
         System.out.println(findKthLargest2(nums, k));
-    }
-
-    /**
-     * time: O(nlog(k))
-     * space:
-     */
-    public static int findKthLargest(int[] nums, int k) {
-        PriorityQueue<Integer> queue = new PriorityQueue<>();
-        for (int i = 0; i < nums.length; i++) {
-            queue.add(nums[i]);
-            if (queue.size() > k) {
-                queue.poll();
-            }
-        }
-        return queue.peek();
     }
 
     /**
@@ -47,20 +34,20 @@ public class KthLargestElementInAnArray_215 {
      * time: O(n)
      * space:
      */
-    public static int findKthLargest2(int[] nums, int k) {
-        return findKthLargest2(nums, 0, nums.length - 1, nums.length - k);
+    public static int findKthLargest(int[] nums, int k) {
+        return findKthLargest(nums, 0, nums.length - 1, nums.length - k);
     }
 
-    private static int findKthLargest2(int[] nums, int l, int r, int k) {
+    private static int findKthLargest(int[] nums, int l, int r, int k) {
 
         int p = partition(nums, l, r);
 
         if (p == k) {
             return nums[p];
         } else if (p > k) {
-            return findKthLargest2(nums, l, p - 1, k);
+            return findKthLargest(nums, l, p - 1, k);
         } else { // p < k
-            return findKthLargest2(nums, p + 1, r, k);
+            return findKthLargest(nums, p + 1, r, k);
         }
     }
 
@@ -70,6 +57,7 @@ public class KthLargestElementInAnArray_215 {
         int v = nums[l];
 
         int lt = l;
+        // 循环不变量
         // nums[l...lt]<v, [lt+1...i]>=v
 
         for (int i = l + 1; i <= r; i++) {
@@ -87,6 +75,22 @@ public class KthLargestElementInAnArray_215 {
         int tmp = arr[l];
         arr[l] = arr[r];
         arr[r] = tmp;
+    }
+
+
+    /**
+     * time: O(nlog(k))
+     * space:
+     */
+    public static int findKthLargest2(int[] nums, int k) {
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        for (int i = 0; i < nums.length; i++) {
+            queue.add(nums[i]);
+            if (queue.size() > k) {
+                queue.poll();
+            }
+        }
+        return queue.peek();
     }
 
 }
