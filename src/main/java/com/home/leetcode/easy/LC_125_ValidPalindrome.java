@@ -1,4 +1,4 @@
-package com.home.leetcode;
+package com.home.leetcode.easy;
 
 /**
  * 125. Valid Palindrome
@@ -13,7 +13,7 @@ package com.home.leetcode;
  * @author Poet
  * @date 2020/4/11
  */
-public class ValidPalindrome_125 {
+public class LC_125_ValidPalindrome {
 
     public static void main(String[] args) {
         String s = "A man, a plan, a canal: Panama";
