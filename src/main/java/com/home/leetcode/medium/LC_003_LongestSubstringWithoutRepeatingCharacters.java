@@ -1,6 +1,8 @@
 package com.home.leetcode.medium;
 
 /**
+ * 3. 无重复字符的最长子串
+ *
  * Given a string, find the length of the longest substring without repeating characters.
  *
  * Example 1:
@@ -13,7 +15,7 @@ package com.home.leetcode.medium;
  * @author Poet
  * @date 2020/4/12
  */
-public class LongestSubstringWithoutRepeatingCharacters_3 {
+public class LC_003_LongestSubstringWithoutRepeatingCharacters {
 
     static int[] freq = new int[128];
 
@@ -41,4 +43,5 @@ public class LongestSubstringWithoutRepeatingCharacters_3 {
         String s = "abcabcbb";
         System.out.println(lengthOfLongestSubstring(s));
     }
+
 }
