@@ -4,23 +4,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 438. 找到字符串中所有字母异位词
+ *
  * Given a string s and a non-empty string p, find all the start indices of p's anagrams in s.
+ *
+ * Example 1:
+ *
+ * Input: s = "cbaebabacd", p = "abc"
+ * Output: [0,6]
+ * Explanation:
+ * The substring with start index = 0 is "cba", which is an anagram of "abc".
+ * The substring with start index = 6 is "bac", which is an anagram of "abc".
  *
  * @see <a href="https://leetcode.com/problems/find-all-anagrams-in-a-string/" />
  * @author Poet
  * @date 2020/4/12
  */
-public class FindAllAnagramsInAString_438 {
-
+public class LC_438_FindAllAnagramsInAString {
 
     public static void main(String[] args) {
-        FindAllAnagramsInAString_438 solution = new FindAllAnagramsInAString_438();
+        LC_438_FindAllAnagramsInAString solution = new LC_438_FindAllAnagramsInAString();
         System.out.println(solution.findAnagrams("cbaebabacd", "abc"));
         System.out.println(solution.findAnagrams("abab", "ab"));
     }
 
-
-    int [] freq = new int[128];
 
     /**
      * 滑动窗口问题
@@ -30,6 +37,7 @@ public class FindAllAnagramsInAString_438 {
         if (s == null || p == null || s.length() < p.length())
             return res;
 
+        int [] freq = new int[128];
         for (char c : p.toCharArray()) {
             freq[c]++;
         }
@@ -54,10 +62,8 @@ public class FindAllAnagramsInAString_438 {
                 start++;
             }
         }
-
         return res;
     }
-
 
     /**
      * Good Solution:
@@ -89,5 +95,46 @@ public class FindAllAnagramsInAString_438 {
             if (right - left == p.length() && hash[s.charAt(left++)]++ >= 0) count++;
         }
         return list;
+    }
+
+
+    /**
+     * solution:
+     * <a href="https://leetcode.cn/problems/find-all-anagrams-in-a-string/solution/xiao-song-man-bu-pai-xu-bi-jiao-man-hua-r1d02/" />
+     */
+    public List<Integer> findAnagrams2(String s, String p) {
+        int[] sArr = new int[26];
+        int[] pArr = new int[26];
+        List<Integer> res = new ArrayList<>();
+
+        for (int i = 0; i < p.length(); i++) {
+            pArr[p.charAt(i) - 'a'] ++;
+        }
+
+        // [l...r]滑动窗口
+        int l = 0, r = -1;
+        while (l < s.length()) {
+            if (r + 1 < s.length() && r - l + 1 < p.length()) {
+                r++;
+                sArr[s.charAt(r) - 'a']++;
+            } else {
+                if (isSame(sArr, pArr)) {
+                    res.add(l);
+                }
+                sArr[s.charAt(l) - 'a']--;
+                l++;
+            }
+        }
+
+        return res;
+    }
+
+    private boolean isSame(int[] sArr, int[] pArr) {
+        for (int i = 0; i < sArr.length; i++) {
+            if (sArr[i] != pArr[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 }
