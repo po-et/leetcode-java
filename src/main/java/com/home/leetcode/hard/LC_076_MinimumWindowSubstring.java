@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 76. 最小覆盖子串
+ *
  * Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
  *
  * Example:
@@ -13,11 +15,11 @@ import java.util.Map;
  *
  * @status undone
  * @tag #HARD#
- * @url https://leetcode.com/problems/minimum-window-substring/
+ * @see <a href="https://leetcode.com/problems/minimum-window-substring/" />
  * @author Poet
  * @date 2020/4/12
  */
-public class MinimumWindowSubstring_76 {
+public class LC_076_MinimumWindowSubstring {
 
     /**
      * 滑动窗口解法 Sliding Window
