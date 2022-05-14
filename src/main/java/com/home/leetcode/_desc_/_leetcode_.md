@@ -15,6 +15,7 @@ NextPermutation_31
 
 
 ## 多看几遍（重点是思路）
+LC_209_MinimumSizeSubarraySum （滑动窗口）
 SubstringWithConcatenationOfAllWords_30
 SearchForARange_34
 CombinationSum_39 (backtracking 回溯法)
