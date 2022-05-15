@@ -6,8 +6,9 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Given a pattern and a string str, find if str follows the same pattern.
+ * 290. Word Pattern
  *
+ * Given a pattern and a string str, find if str follows the same pattern.
  * Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in str.
  *
  * Example 1:
@@ -19,10 +20,10 @@ import java.util.Set;
  * @author Poet
  * @date 2020/4/18
  */
-public class WordPattern_290 {
+public class LC_290_WordPattern {
 
     public static void main(String[] args) {
-        WordPattern_290 solution = new WordPattern_290();
+        LC_290_WordPattern solution = new LC_290_WordPattern();
         String pattern = "abba", str = "dog cat cat dog";
         System.out.println(solution.wordPattern(pattern, str));
     }
@@ -55,6 +56,5 @@ public class WordPattern_290 {
 
         return true;
     }
-
 
 }
