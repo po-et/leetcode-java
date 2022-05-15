@@ -3,29 +3,27 @@ package com.home.leetcode.medium;
 import java.util.*;
 
 /**
+ * 451. 根据字符出现频率排序
+ *
  * Given a string, sort it in decreasing order based on the frequency of characters.
  *
  * Example 1:
  *
- * Input:
- * "tree"
- *
- * Output:
- * "eert"
+ * Input: "tree"
+ * Output: "eert"
  *
  * Explanation:
  * 'e' appears twice while 'r' and 't' both appear once.
  * So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid answer.
  *
- *
- * @see <a href="https://leetcode.com/problems/sort-characters-by-frequency/" />
+ * @see <a href="https://leetcode.cn/problems/sort-characters-by-frequency/" />
  * @author Poet
  * @date 2020/4/18
  */
-public class SortCharactersByFrequency_451 {
+public class LC_451_SortCharactersByFrequency {
 
     public static void main(String[] args) {
-        SortCharactersByFrequency_451 solution = new SortCharactersByFrequency_451();
+        LC_451_SortCharactersByFrequency solution = new LC_451_SortCharactersByFrequency();
         String input = "tree";
         System.out.println(solution.frequencySort(input));
         System.out.println(solution.frequencySort2(input));
@@ -38,7 +36,7 @@ public class SortCharactersByFrequency_451 {
         int[][] freq = new int[128][2];
         for (char ch : s.toCharArray()) {
             freq[ch][0] = ch;
-            freq[ch][1] ++;
+            freq[ch][1]++;
         }
 
         Arrays.sort(freq, new Comparator<int[]>() {
@@ -51,8 +49,7 @@ public class SortCharactersByFrequency_451 {
         StringBuilder ret = new StringBuilder();
         for (int i = 0; i < freq.length; i++) {
             for (int j = 0; j < freq[i][1]; j++) {
-                ret.append((char)freq[i][0]);
-                
+                ret.append((char) freq[i][0]);
             }
         }
         return ret.toString();
