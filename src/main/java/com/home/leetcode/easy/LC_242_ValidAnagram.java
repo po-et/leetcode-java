@@ -13,11 +13,11 @@ import java.util.Objects;
  * Note:
  * You may assume the string contains only lowercase alphabets.
  *
- * @see <a href="https://leetcode.com/problemset/all/?search=242" />
+ * @see <a href="https://leetcode.cn/problems/valid-anagram/" />
  * @author Poet
  * @date 2020/4/18
  */
-public class ValidAnagram_242 {
+public class LC_242_ValidAnagram {
 
     public static void main(String[] args) {
 //        String s = "anagram", t = "nagaram";
@@ -30,17 +30,17 @@ public class ValidAnagram_242 {
             return false;
         }
 
-        int[] array = new int[26];
+        int[] arr = new int[26];
 
         for (char ch : s.toCharArray()) {
-            array[ch-'a'] ++;
+            arr[ch - 'a']++;
         }
 
         for (char ch : t.toCharArray()) {
-            if (array[ch - 'a'] == 0) {
+            if (arr[ch - 'a'] == 0) {
                 return false;
             }
-            array[ch - 'a'] --;
+            arr[ch - 'a']--;
         }
 
         return true;
