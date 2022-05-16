@@ -3,7 +3,9 @@ package com.home.leetcode.medium;
 import java.util.*;
 
 /**
- * Given an array of strings, group anagrams together.
+ * 49. Group Anagrams
+ *
+ * Given an array of strings, group anagrams together. You can return the answer in any order.
  *
  * Example:
  *
@@ -15,14 +17,14 @@ import java.util.*;
  *   ["bat"]
  * ]
  *
- * @see <a href = "https://leetcode.com/problems/group-anagrams/" />
+ * @see <a href = "https://leetcode.cn/problems/group-anagrams/" />
  * @author Poet
  * @date 2020/4/20
  */
-public class GroupAnagrams_49 {
+public class LC_049_GroupAnagrams {
 
     public static void main(String[] args) {
-        GroupAnagrams_49 solution = new GroupAnagrams_49();
+        LC_049_GroupAnagrams solution = new LC_049_GroupAnagrams();
 
         String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
         System.out.println(solution.groupAnagrams(strs));
@@ -30,7 +32,7 @@ public class GroupAnagrams_49 {
 
     public List<List<String>> groupAnagrams(String[] strs) {
         if (Objects.isNull(strs) || strs.length == 0) {
-            throw new IllegalArgumentException("strs is not valid!");
+            throw new IllegalArgumentException("param is not valid!");
         }
 
         Map<String, List<String>> record = new HashMap<>();
