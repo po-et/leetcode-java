@@ -6,14 +6,14 @@ import java.util.List;
 import java.util.Objects;
 
 /**
+ * 18. 四数之和
+ *
  * Given an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.
  *
  * Note:
- *
  * The solution set must not contain duplicate quadruplets.
  *
  * Example:
- *
  * Given array nums = [1, 0, -1, 0, -2, 2], and target = 0.
  *
  * A solution set is:
@@ -27,10 +27,10 @@ import java.util.Objects;
  * @author Poet
  * @date 2020/4/19
  */
-public class FourSum_18 {
+public class LC_018_FourSum {
 
     public static void main(String[] args) {
-        FourSum_18 solution = new FourSum_18();
+        LC_018_FourSum solution = new LC_018_FourSum();
 
         int[] nums = new int[]{1, 0, -1, 0, -2, 2};
         int target = 0;
@@ -38,7 +38,7 @@ public class FourSum_18 {
     }
 
     /**
-     * 模仿 ThreeSum_15思路 {@link ThreeSum_15}
+     * 模仿 ThreeSum 思路 {@link LC_015_ThreeSum}
      * time: O(n^3)
      */
     public List<List<Integer>> fourSum(int[] nums, int target) {
@@ -52,31 +52,26 @@ public class FourSum_18 {
 
         for (int i = 0; i < nums.length; i++) {
             //选定nums[i]为第一个数，并去重
-            if(i > 0 && nums[i] == nums[i-1]) continue;
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
 
-            for (int j = i+1; j < nums.length; j++) {
-                if(j > i + 1 && nums[j] == nums[j-1]) continue;
+            for (int j = i + 1; j < nums.length; j++) {
+                if (j > i + 1 && nums[j] == nums[j - 1]) continue;
 
-                int left = j+1, right = nums.length-1;
-                while(left < right){
-                    int sum = nums[i] + nums[j] +  nums[left] + nums[right] ;
+                int left = j + 1, right = nums.length - 1;
+                while (left < right) {
+                    int sum = nums[i] + nums[j] + nums[left] + nums[right];
                     if (sum == target) {
-                        List<Integer> innerRet = new ArrayList<>();
-                        innerRet.add(nums[i]);
-                        innerRet.add(nums[j]);
-                        innerRet.add(nums[left]);
-                        innerRet.add(nums[right]);
-                        ret.add(innerRet);
+                        ret.add(Arrays.asList(nums[i], nums[j], nums[left], nums[right]));
 
                         left++;
                         right--;
 
                         //去重
-                        while(left<right && nums[left] == nums[left-1]) left++;
-                        while(left<right && nums[right] == nums[right+1]) right--;
+                        while (left < right && nums[left] == nums[left - 1]) left++;
+                        while (left < right && nums[right] == nums[right + 1]) right--;
 
                     } else if (sum < target) {
-                        left ++;
+                        left++;
                     } else {  // sum > 0
                         right--;
                     }
