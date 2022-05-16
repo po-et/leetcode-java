@@ -4,10 +4,11 @@ import java.util.Arrays;
 import java.util.Objects;
 
 /**
+ * 16. 最接近的三数之和
+ *
  * Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.
  *
  * Example:
- *
  * Given array nums = [-1, 2, 1, -4], and target = 1.
  *
  * The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
@@ -16,22 +17,25 @@ import java.util.Objects;
  * @author Poet
  * @date 2020/4/19
  */
-public class ThreeSumClosest_16 {
+public class LC_016_ThreeSumClosest {
 
     public static void main(String[] args) {
-        ThreeSumClosest_16 solution = new ThreeSumClosest_16();
+        LC_016_ThreeSumClosest solution = new LC_016_ThreeSumClosest();
 
         int[] nums = new int[]{-1, 2, 1, -4};
-        int target = 1;
-        System.out.println(solution.threeSumClosest(nums,target));
+        System.out.println(solution.threeSumClosest(nums, 1));
+
+        nums = new int[]{-1, 0, -2, 1, 2, -1, -4, 4, -2};
+        System.out.println(solution.threeSumClosest(nums, 8));
     }
 
     /**
-     * 参考 {@link ThreeSum_15}, {@link FourSum_18}
+     * 参考 {@link LC_015_ThreeSum}, {@link LC_018_FourSum}
+     *
      * 注：这道题比3sum和4sum简单的地方就是不需要判断重复问题  "have exactly one solution"
      */
     public int threeSumClosest(int[] nums, int target) {
-        if(Objects.isNull(nums) || nums.length<3)
+        if (Objects.isNull(nums) || nums.length < 3)
             throw new IllegalArgumentException("nums is illegal!");
 
         int closest = Integer.MAX_VALUE;
@@ -40,7 +44,7 @@ public class ThreeSumClosest_16 {
         Arrays.sort(nums);
 
         for (int i = 0; i < nums.length; i++) {
-            int left = i+1, right = nums.length-1;
+            int left = i + 1, right = nums.length - 1;
             while (left < right) {
                 int sum = nums[i] + nums[left] + nums[right];
 
@@ -53,9 +57,9 @@ public class ThreeSumClosest_16 {
                 if (sum == target) {
                     return sum;
                 } else if (sum < target) {
-                    left ++;
+                    left++;
                 } else {
-                    right --;
+                    right--;
                 }
             }
         }
