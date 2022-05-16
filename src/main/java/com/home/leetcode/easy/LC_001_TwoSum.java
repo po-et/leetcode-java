@@ -14,7 +14,7 @@ import java.util.Map;
  * Because nums[0] + nums[1] = 2 + 7 = 9,
  * return [0, 1].
  *
- * @see <a href = "https://leetcode.com/problems/two-sum/" />
+ * @see <a href = "https://leetcode.cn/problems/two-sum/" />
  * @author Poet
  * @date 2020/4/19
  */
@@ -29,8 +29,9 @@ public class LC_001_TwoSum {
         Map<Integer, Integer> hashMap = new HashMap<>(nums.length);
 
         for (int i = 0; i < nums.length; i++) {
+            // 只需要检查查找表里已有的元素
             int complement = target - nums[i];
-            if(hashMap.containsKey(complement)){
+            if (hashMap.containsKey(complement)) {
                 return new int[]{hashMap.get(complement), i};
             }
             hashMap.put(nums[i], i);
