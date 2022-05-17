@@ -72,7 +72,7 @@ public class LC_018_FourSum {
 
                     } else if (sum < target) {
                         left++;
-                    } else {  // sum > 0
+                    } else {  // sum > target
                         right--;
                     }
                 }

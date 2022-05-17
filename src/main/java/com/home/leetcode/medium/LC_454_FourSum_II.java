@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 454. 四数相加 II
+ * 454. 4Sum II
  *
  * Given four lists nums1, nums2, nums3, nums4 of integer values, compute how many tuples (i, j, k, l)
  * there are such that nums1[i] + nums2[j] + nums3[k] + nums4[l] is zero.
@@ -19,6 +19,8 @@ import java.util.Map;
 public class LC_454_FourSum_II {
 
     /**
+     * 查找表
+     *
      * time: O(n^2)
      * space: O(n^2)
      */
