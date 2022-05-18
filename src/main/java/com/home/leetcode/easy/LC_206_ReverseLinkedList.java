@@ -28,6 +28,7 @@ public class LC_206_ReverseLinkedList {
         ListNode cur = head;
         while (cur != null) {
             ListNode next = cur.next;
+
             cur.next = pre;
             pre = cur;
             cur = next;
