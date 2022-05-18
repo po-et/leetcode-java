@@ -9,11 +9,6 @@ MergeTwoSortedLists_21
 DivideTwoIntegers_29 (重点：空间复杂度为O(logn))
 ValidSudoku_36  (判断是否是 数独)
 
-
-## 可能会考
-NextPermutation_31
-
-
 ## 多看几遍（重点是思路）
 LC_209_MinimumSizeSubarraySum （滑动窗口）
 SubstringWithConcatenationOfAllWords_30
@@ -22,6 +17,10 @@ CombinationSum_39 (backtracking 回溯法)
 FirstMissingPositive_41 (桶排序的思想)
 MultiplyStrings_43 （字符串实现整数乘法）
 WildcardMatching_44 （Facebook面试常考）
+LC_092_ReverseLinkedList_II （翻转链表）
+
+## 可能会考
+NextPermutation_31
 
 
 ## 不是很懂（need to read）
