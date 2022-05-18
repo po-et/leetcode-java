@@ -1,6 +1,8 @@
 package com.home.leetcode.utils;
 
 /**
+ * // Definition for singly-linked list.
+ *
  * Created by Poet on 2019-01-11.
  */
 public class ListNode {
