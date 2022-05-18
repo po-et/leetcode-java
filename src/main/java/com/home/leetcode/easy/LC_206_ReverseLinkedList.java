@@ -1,6 +1,8 @@
 package com.home.leetcode.easy;
 
 /**
+ * 206. Reverse Linked List
+ *
  * Reverse a singly linked list.
  *
  * Example:
@@ -9,15 +11,16 @@ package com.home.leetcode.easy;
  *
  * @author Poet
  * @date 2020/4/23
- * @see <a href = "https://leetcode.com/problems/reverse-linked-list/" />
+ * @see <a href = "https://leetcode.cn/problems/reverse-linked-list/" />
  */
-public class ReverseLinkedList_206 {
+public class LC_206_ReverseLinkedList {
 
     // Definition for singly-linked list.
     public class ListNode {
         int val;
         ListNode next;
-        ListNode(int x) { val = x; }
+
+        ListNode(int x) {val = x;}
     }
 
     public ListNode reverseList(ListNode head) {
