@@ -4,6 +4,8 @@ package com.home.leetcode.medium;
 import java.util.Stack;
 
 /**
+ * 445. Add Two Numbers II
+ *
  * You are given two non-empty linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
  *
  * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
@@ -16,11 +18,11 @@ import java.util.Stack;
  * Input: (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
  * Output: 7 -> 8 -> 0 -> 7
  *
- * @see <a href="https://leetcode.com/problems/add-two-numbers-ii/" />
+ * @see <a href="https://leetcode.cn/problems/add-two-numbers-ii/" />
  * @author Poet
  * @date 2020/4/29
  */
-public class AddTwoNumbers_II_445 {
+public class LC_445_AddTwoNumbers_II {
 
     public class ListNode {
         int val;
@@ -59,7 +61,7 @@ public class AddTwoNumbers_II_445 {
             }
 
             // head.val存储进制位，head.val可能为0
-            ListNode head = new ListNode(sum/10);
+            ListNode head = new ListNode(sum / 10);
             head.next = curr;
             // curNode存储结果
             curr.val = sum % 10;
@@ -75,7 +77,7 @@ public class AddTwoNumbers_II_445 {
 
 
     /**
-     * 方法二
+     * 方法二 （更好理解！）
      * 使用类似 {@link LC_002_AddTwoNumbers} 的方法
      */
     public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
@@ -111,8 +113,8 @@ public class AddTwoNumbers_II_445 {
                 val2 = stack2.pop();
             }
 
-            digit = (val1 + val2 + tenth)%10;
-            tenth = (val1 + val2 + tenth)/10;
+            digit = (val1 + val2 + tenth) % 10;
+            tenth = (val1 + val2 + tenth) / 10;
 
             ListNode head = new ListNode(tenth);
             head.next = curr;
