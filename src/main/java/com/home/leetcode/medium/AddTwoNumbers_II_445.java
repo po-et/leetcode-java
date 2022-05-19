@@ -76,7 +76,7 @@ public class AddTwoNumbers_II_445 {
 
     /**
      * 方法二
-     * 使用类似 {@link AddTwoNumbers_2} 的方法
+     * 使用类似 {@link LC_002_AddTwoNumbers} 的方法
      */
     public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
         if(l1 == null) return l2;
