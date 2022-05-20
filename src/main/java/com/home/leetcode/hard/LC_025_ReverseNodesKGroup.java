@@ -5,16 +5,21 @@ import com.home.leetcode.utils.ListNode;
 import java.util.Stack;
 
 /**
- * [leetcode] 25. Reverse Nodes in k-Group
- * 参考答案：https://leetcode.com/problems/reverse-nodes-in-k-group/discuss/11423/Short-but-recursive-Java-code-with-comments
+ * 25. Reverse Nodes in k-Group
+ *
+ * Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list.
  *
  * Given this linked list: 1->2->3->4->5
  *     For k = 2, you should return: 2->1->4->3->5
  *     For k = 3, you should return: 3->2->1->4->5
  *
- * Created by Poet on 2019-01-06.
+ * 参考答案 {@link <a href="https://leetcode.com/problems/reverse-nodes-in-k-group/discuss/11423/Short-but-recursive-Java-code-with-comments />}
+ * 
+ * @see <a href="https://leetcode.cn/problems/reverse-nodes-in-k-group/" />
+ * @author Poet
+ * @date 2019-01-06
  */
-public class ReverseNodesKGroup_25 {
+public class LC_025_ReverseNodesKGroup {
 
     /**
      * time: O(n)
@@ -147,12 +152,13 @@ public class ReverseNodesKGroup_25 {
 
         ListNode dummy = new ListNode(0);
         dummy.next = head;
+
         ListNode curr = dummy;
         ListNode next = dummy.next;
         Stack<ListNode> stack = new Stack<>();
 
         while (next != null) {
-            for (int i = 0; i < k && next!=null; i++) {
+            for (int i = 0; i < k && next != null; i++) {
                 stack.push(next);
                 next = next.next;
             }

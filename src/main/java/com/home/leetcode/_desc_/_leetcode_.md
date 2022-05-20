@@ -24,6 +24,7 @@ NextPermutation_31
 
 
 ## 不是很懂（need to read）
+LC_025_ReverseNodesKGroup
 GenerateParentheses_22 (卡特兰数)
 MergeKSortedLists_23
 SwapNodesinPairs_24
