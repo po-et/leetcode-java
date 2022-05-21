@@ -28,7 +28,7 @@ public class LC_061_RotateList {
     }
 
     /**
-     * 双指针
+     * 方法一：双指针（传统笨方法）
      */
     public ListNode rotateRight(ListNode head, int k) {
         if (head == null || head.next == null) return head;
@@ -66,10 +66,9 @@ public class LC_061_RotateList {
         return head2;
     }
 
-
     /**
      * 方法二：(tricky 推荐！)
-     * <p>
+     *
      * 不用快慢指针，一个指针就够了，原理是先遍历整个链表获得链表长度n，然后此时把链表头和尾链接起来，
      * 在往后走n - k % n个节点就到达新链表的头结点前一个点，这时断开链表即可
      */
