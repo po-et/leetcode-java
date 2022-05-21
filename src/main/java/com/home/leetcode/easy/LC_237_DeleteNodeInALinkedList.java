@@ -1,13 +1,15 @@
 package com.home.leetcode.easy;
 
 /**
+ * 237. Delete Node in a Linked List
+ *
  * Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.
  *
- * @see <a href="https://leetcode.com/problems/delete-node-in-a-linked-list/" />
+ * @see <a href="https://leetcode.cn/problems/delete-node-in-a-linked-list/" />
  * @author Poet
  * @date 2020/5/2
  */
-public class DeleteNodeInALinkedList_237 {
+public class LC_237_DeleteNodeInALinkedList {
 
     public class ListNode {
         int val;
@@ -16,19 +18,20 @@ public class DeleteNodeInALinkedList_237 {
     }
 
     public void deleteNode(ListNode node) {
-        if (node == null)
+        if (node == null){
             return;
+        }
         if (node.next == null) {
             node = null;
             return;
         }
 
-        ListNode next = node.next;
-        node.val = next.val;
-        node.next = next.next;
+        ListNode delNode = node.next;
+        node.val = node.next.val;
+        node.next = node.next.next;
 
         // remove node
-        next.next= null;
+        delNode.next= null;
     }
 
     /**
@@ -38,4 +41,5 @@ public class DeleteNodeInALinkedList_237 {
         node.val = node.next.val;
         node.next = node.next.next;
     }
+
 }
