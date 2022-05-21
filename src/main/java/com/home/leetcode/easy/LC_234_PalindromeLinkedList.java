@@ -1,6 +1,8 @@
 package com.home.leetcode.easy;
 
 /**
+ * 234. Palindrome Linked List
+ *
  * Given a singly linked list, determine if it is a palindrome.
  *
  * Example 2:
@@ -11,11 +13,11 @@ package com.home.leetcode.easy;
  * Follow up:
  * Could you do it in O(n) time and O(1) space?
  *
- * @see <a href = "https://leetcode.com/problems/palindrome-linked-list/" />
+ * @see <a href = "https://leetcode.cn/problems/palindrome-linked-list/" />
  * @author Poet
  * @date 2020/5/2
  */
-public class PalindromeLinkedList_234 {
+public class LC_234_PalindromeLinkedList {
 
     public class ListNode {
         int val;
@@ -28,13 +30,14 @@ public class PalindromeLinkedList_234 {
             return true;
         }
 
-        ListNode fast = head;
-        ListNode slow = head;
         ListNode prev = null;
+        ListNode slow = head;
+        ListNode fast = head;
+
         while (fast != null && fast.next != null) {
             prev = slow;
-            fast = fast.next.next;
             slow = slow.next;
+            fast = fast.next.next;
         }
 
         prev.next = null;
@@ -80,4 +83,5 @@ public class PalindromeLinkedList_234 {
         }
         return prev;
     }
+
 }
