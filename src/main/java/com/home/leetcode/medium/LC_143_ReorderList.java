@@ -5,6 +5,8 @@ import java.util.Queue;
 import java.util.Stack;
 
 /**
+ * 143. Reorder List
+ *
  * Given a singly linked list L: L0→L1→…→Ln-1→Ln,
  * reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
  *
@@ -14,11 +16,11 @@ import java.util.Stack;
  *
  * Given 1->2->3->4, reorder it to 1->4->2->3.
  *
- * @see <a href = "https://leetcode.com/problems/reorder-list/" />
+ * @see <a href = "https://leetcode.cn/problems/reorder-list/" />
  * @author Poet
  * @date 2020/5/2
  */
-public class ReorderList_143 {
+public class LC_143_ReorderList {
 
     public class ListNode {
         int val;
@@ -27,10 +29,10 @@ public class ReorderList_143 {
     }
 
     /**
-     * 使用双指针得到中间结点，倒转链表，拼接
+     * 方法一：使用双指针得到中间结点，倒转链表，拼接
      */
     public void reorderList(ListNode head) {
-        if(head == null || head.next == null) return;
+        if (head == null || head.next == null) return;
 
         ListNode fast = head;
         ListNode slow = head;
@@ -46,13 +48,14 @@ public class ReorderList_143 {
         slow = reverse(slow);
 
         while (head.next != null) {
+            // 保存节点
             ListNode headNext = head.next;
-
             ListNode slowNext = slow.next;
+            // 调整节点指向
             slow.next = head.next;
             head.next = slow;
+            // 移动node
             slow = slowNext;
-
             head = headNext;
         }
 
@@ -74,8 +77,7 @@ public class ReorderList_143 {
     }
 
     /**
-     * 方法二
-     * 使用双指针来得到中间结点，然后使用栈和队列来做
+     * 方法二：使用双指针来得到中间结点，然后使用栈和队列来做
      */
     public void reorderList2(ListNode head) {
         if(head == null || head.next == null) return;
@@ -122,4 +124,5 @@ public class ReorderList_143 {
         curr.next = null;
         head = dummy.next;
     }
+
 }
