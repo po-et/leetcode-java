@@ -1,17 +1,19 @@
-package com.home.leetcode.medium;
+package com.home.leetcode.easy;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
 /**
- * Given a binary tree, return the postorder traversal of its nodes' values.
+ * 144. Binary Tree Preorder Traversal
  *
- * @see <a href = "https://leetcode.com/problems/binary-tree-postorder-traversal/" />
+ * Given a binary tree, return the preorder traversal of its nodes' values.
+ *
+ * @see <a href = "https://leetcode.cn/problems/binary-tree-preorder-traversal/" />
  * @author Poet
  * @date 2020/5/3
  */
-public class BinaryTreePostorderTraversal_145 {
+public class LC_144_BinaryTreePreorderTraversal {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -30,7 +32,7 @@ public class BinaryTreePostorderTraversal_145 {
     /**
      * 递归
      */
-    public List<Integer> postorderTraversal(TreeNode root) {
+    public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> ret = new ArrayList<>();
         traversalRecursive(root, ret);
         return ret;
@@ -41,12 +43,10 @@ public class BinaryTreePostorderTraversal_145 {
             return;
         }
 
+        ret.add(node.val);
         traversalRecursive(node.left, ret);
         traversalRecursive(node.right, ret);
-        ret.add(node.val);
     }
-
-
 
 
     /**
@@ -54,7 +54,7 @@ public class BinaryTreePostorderTraversal_145 {
      *
      * @comment liuyubo提供的方法，可以应用在前、中、后序遍历所有的非递归实现上 （推荐！）
      */
-    public List<Integer> postorderTraversal2(TreeNode root) {
+    public List<Integer> preorderTraversal2(TreeNode root) {
         List<Integer> ret = new ArrayList<>();
         if (root == null) return ret;
 
@@ -68,8 +68,6 @@ public class BinaryTreePostorderTraversal_145 {
                 ret.add(command.node.val);
 
             } else { // command.s.equals("go")
-                stack.push(new Command("print", command.node));
-
                 if (command.node.right != null) {
                     stack.push(new Command("go", command.node.right));
                 }
@@ -77,13 +75,15 @@ public class BinaryTreePostorderTraversal_145 {
                 if (command.node.left != null) {
                     stack.push(new Command("go", command.node.left));
                 }
+
+                stack.push(new Command("print", command.node));
             }
         }
         return ret;
     }
 
     static class Command {
-        String s;
+        String s;   // go, print
         TreeNode node;
         public Command(String s, TreeNode node) {
             this.s = s;

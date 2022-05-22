@@ -1,17 +1,19 @@
-package com.home.leetcode.medium;
+package com.home.leetcode.easy;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
 /**
+ * 94. Binary Tree Inorder Traversal
+ *
  * Given a binary tree, return the inorder traversal of its nodes' values.
  *
- * @see <a href = "https://leetcode.com/problems/binary-tree-inorder-traversal/" />
+ * @see <a href = "https://leetcode.cn/problems/binary-tree-inorder-traversal/" />
  * @author Poet
  * @date 2020/5/3
  */
-public class BinaryTreeInorderTraversal_94 {
+public class LC_094_BinaryTreeInorderTraversal {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -45,8 +47,6 @@ public class BinaryTreeInorderTraversal_94 {
         ret.add(node.val);
         traversalRecursive(node.right, ret);
     }
-
-
 
 
     /**

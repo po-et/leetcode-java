@@ -11,13 +11,16 @@ ValidSudoku_36  (判断是否是 数独)
 
 ## 多看几遍（重点是思路）
 LC_209_MinimumSizeSubarraySum （滑动窗口）
+LC_092_ReverseLinkedList_II （翻转链表）
+LC_144_BinaryTreePreorderTraversal （非递归的栈模拟）
+
 SubstringWithConcatenationOfAllWords_30
 SearchForARange_34
 CombinationSum_39 (backtracking 回溯法)
 FirstMissingPositive_41 (桶排序的思想)
 MultiplyStrings_43 （字符串实现整数乘法）
 WildcardMatching_44 （Facebook面试常考）
-LC_092_ReverseLinkedList_II （翻转链表）
+
 
 ## 可能会考
 NextPermutation_31
@@ -38,4 +41,5 @@ PermutationsII_47 (backtracking)
 SudokuSolver_37 (数独填数)
 
 
-> 注意：多写几遍翻转链表
+> 注意：基础题
+> 如：多写几遍翻转链表
