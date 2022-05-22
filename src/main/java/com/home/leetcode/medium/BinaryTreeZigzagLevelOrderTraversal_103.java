@@ -71,7 +71,7 @@ public class BinaryTreeZigzagLevelOrderTraversal_103 {
 
 
     /**
-     * 模仿 {@link BinaryTreeLevelOrderTraversal_102}
+     * 模仿 {@link LC_102_BinaryTreeLevelOrderTraversal}
      * @param root
      * @return
      */
