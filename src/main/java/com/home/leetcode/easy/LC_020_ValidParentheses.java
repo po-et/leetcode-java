@@ -20,7 +20,8 @@ public class LC_020_ValidParentheses {
 
     /**
      * 方法：栈
-     * 【栈顶元素反映了在嵌套的层次关系中，最近的需要匹配的元素】
+     *
+     * core:【栈顶元素反映了在嵌套的层次关系中，最近的需要匹配的元素】
      */
     public boolean isValid(String s) {
         if (s == null || s.isEmpty())
