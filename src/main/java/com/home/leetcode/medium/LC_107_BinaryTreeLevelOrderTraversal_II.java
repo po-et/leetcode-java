@@ -3,13 +3,16 @@ package com.home.leetcode.medium;
 import java.util.*;
 
 /**
- * Given a binary tree, return the bottom-up level order traversal of its nodes' values. (ie, from left to right, level by level from leaf to root).
+ * 107. Binary Tree Level Order Traversal II
  *
- * @see <a href ="https://leetcode.com/problems/binary-tree-level-order-traversal-ii/" />
+ * Given a binary tree, return the bottom-up level order traversal of its nodes' values.
+ *  (ie, from left to right, level by level from leaf to root).
+ *
+ * @see <a href ="https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/" />
  * @author Poet
  * @date 2020/5/3
  */
-public class BinaryTreeLevelOrderTraversal_II_107 {
+public class LC_107_BinaryTreeLevelOrderTraversal_II {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -25,16 +28,15 @@ public class BinaryTreeLevelOrderTraversal_II_107 {
         }
     }
 
-
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        if (root == null) return Collections.emptyList();
+
         Queue<TreeNode> queue = new LinkedList<>();
         List<List<Integer>> respList = new LinkedList<>();
-        if (root != null) {
-            queue.offer(root);
-        }
+        queue.offer(root);
 
         while (!queue.isEmpty()) {
-            List<Integer> levelList  = new ArrayList<>();
+            List<Integer> levelList = new ArrayList<>();
             int size = queue.size();
 
             for (int i = 0; i < size; i++) {
@@ -47,6 +49,7 @@ public class BinaryTreeLevelOrderTraversal_II_107 {
                 }
                 levelList.add(queue.poll().val);
             }
+
             respList.add(0, levelList);
         }
 
@@ -54,11 +57,8 @@ public class BinaryTreeLevelOrderTraversal_II_107 {
     }
 
 
-
     /**
-     * 模仿 {@link LC_102_BinaryTreeLevelOrderTraversal}
-     * @param root
-     * @return
+     * 模仿 {@link LC_102_BinaryTreeLevelOrderTraversal}，然后返回结果reverse
      */
     public List<List<Integer>> levelOrderBottom2(TreeNode root) {
         if(root == null) return Collections.emptyList();
@@ -89,7 +89,7 @@ public class BinaryTreeLevelOrderTraversal_II_107 {
         return respList;
     }
 
-    static class PairNode {
+    class PairNode {
         TreeNode node;
         Integer level;
         public PairNode(TreeNode node, Integer level) {
