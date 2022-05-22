@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Stack;
 
 /**
+ * 341. Flatten Nested List Iterator
+ *
  * Given a nested list of integers, implement an iterator to flatten it.
  *
  * Each element is either an integer, or a list -- whose elements may also be integers or other lists.
@@ -16,11 +18,11 @@ import java.util.Stack;
  * Explanation: By calling next repeatedly until hasNext returns false,
  *              the order of elements returned by next should be: [1,1,2,1,1].
  *
- * @see <a href = "https://leetcode.com/problems/flatten-nested-list-iterator/" />
+ * @see <a href = "https://leetcode.cn/problems/flatten-nested-list-iterator/" />
  * @author Poet
  * @date 2020/5/3
  */
-public class FlattenNestedListIterator_341 {
+public class LC_341_FlattenNestedListIterator {
 
     /**
      * // This is the interface that allows for creating nested lists.
@@ -49,6 +51,7 @@ public class FlattenNestedListIterator_341 {
     public static class NestedIterator implements Iterator<Integer> {
 
         Stack<NestedInteger> stack = new Stack<>();
+//        Deque<NestedInteger> stack = new ArrayDeque<>(); // 执行用时会快一些
 
         public NestedIterator(List<NestedInteger> nestedList) {
             for (int i = nestedList.size() - 1; i >= 0; i--) {
