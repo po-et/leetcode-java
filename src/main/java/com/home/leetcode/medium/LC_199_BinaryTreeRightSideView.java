@@ -1,11 +1,10 @@
 package com.home.leetcode.medium;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
+ * 199. Binary Tree Right Side View
+ *
  * Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.
  *
  * Example:
@@ -21,11 +20,11 @@ import java.util.Queue;
  *   5     4       <---
  *
  *
- * @see <a href = "https://leetcode.com/problems/binary-tree-right-side-view/" />
+ * @see <a href = "https://leetcode.cn/problems/binary-tree-right-side-view/" />
  * @author Poet
  * @date 2020/5/3
  */
-public class BinaryTreeRightSideView_199 {
+public class LC_199_BinaryTreeRightSideView {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -45,31 +44,35 @@ public class BinaryTreeRightSideView_199 {
      * 思路1： BFS
      */
     public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> respList = new ArrayList<>();
+        if (root == null) return Collections.emptyList();
+
+        List<Integer> retList = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
-        if (root != null)
-            queue.offer(root);
+        queue.offer(root);
 
         while (!queue.isEmpty()) {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 TreeNode treeNode = queue.poll();
                 if (i == size - 1) {
-                    respList.add(treeNode.val);
+                    retList.add(treeNode.val);
                 }
 
-                if(treeNode.left!=null) queue.offer(treeNode.left);
-                if(treeNode.right!=null) queue.offer(treeNode.right);
+                if (treeNode.left != null) {
+                    queue.offer(treeNode.left);
+                }
+                if (treeNode.right != null) {
+                    queue.offer(treeNode.right);
+                }
             }
         }
-
-        return respList;
+        return retList;
     }
 
     /**
      * 思路2: DFS， preorder改一下顺序
      */
-    public List<Integer> rightSideView2(TreeNode root) {
+    public List<Integer> rightSideViewDFS(TreeNode root) {
         List<Integer> retList = new ArrayList<>();
         preOrder(root, 0, retList);
         return retList;
@@ -77,6 +80,7 @@ public class BinaryTreeRightSideView_199 {
 
     public void preOrder(TreeNode node, int level, List<Integer> retList) {
         if(node == null) return;
+
         if (retList.size() == level) {
             retList.add(node.val);
         }

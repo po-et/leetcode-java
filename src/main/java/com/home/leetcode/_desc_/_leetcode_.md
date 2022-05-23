@@ -8,6 +8,7 @@ ValidParentheses_20
 MergeTwoSortedLists_21
 DivideTwoIntegers_29 (重点：空间复杂度为O(logn))
 ValidSudoku_36  (判断是否是 数独)
+LC_199_BinaryTreeRightSideView （树的右视图：两个方法BFS + DFS）
 
 ## 多看几遍（重点是思路）
 LC_209_MinimumSizeSubarraySum （滑动窗口）
