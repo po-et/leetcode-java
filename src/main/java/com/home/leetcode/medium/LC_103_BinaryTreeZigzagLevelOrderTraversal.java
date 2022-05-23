@@ -3,13 +3,19 @@ package com.home.leetcode.medium;
 import java.util.*;
 
 /**
+ * 103. Binary Tree Zigzag Level Order Traversal
+ *
  * Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
  *
- * @see <a href ="https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/" />
+ * Example 1:
+ * Input: root = [3,9,20,null,null,15,7]
+ * Output: [[3],[20,9],[15,7]]
+ *
+ * @see <a href ="https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/" />
  * @author Poet
  * @date 2020/5/3
  */
-public class BinaryTreeZigzagLevelOrderTraversal_103 {
+public class LC_103_BinaryTreeZigzagLevelOrderTraversal {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -27,11 +33,11 @@ public class BinaryTreeZigzagLevelOrderTraversal_103 {
 
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        if(root == null) return Collections.emptyList();
+
         Queue<TreeNode> queue = new LinkedList<>();
         List<List<Integer>> respList = new LinkedList<>();
-        if (root != null) {
-            queue.offer(root);
-        }
+        queue.offer(root);
         int level = 0;
 
         while (!queue.isEmpty()) {
@@ -47,14 +53,17 @@ public class BinaryTreeZigzagLevelOrderTraversal_103 {
                     levelList.add(treeNode.val);
                 }
 
-                if (treeNode.left != null)
+                if (treeNode.left != null) {
                     queue.offer(treeNode.left);
-                if (treeNode.right != null)
+                }
+                if (treeNode.right != null) {
                     queue.offer(treeNode.right);
+                }
             }
 
-            while(!levelStack.isEmpty())
+            while (!levelStack.isEmpty()) {
                 levelList.add(levelStack.pop().val);
+            }
 
             level++;
             respList.add(levelList);
@@ -70,41 +79,7 @@ public class BinaryTreeZigzagLevelOrderTraversal_103 {
     }
 
 
-    /**
-     * 模仿 {@link LC_102_BinaryTreeLevelOrderTraversal}
-     * @param root
-     * @return
-     */
-    public List<List<Integer>> levelOrderBottom2(TreeNode root) {
-        if(root == null) return Collections.emptyList();
-
-        List<List<Integer>> respList = new ArrayList<>();
-        Queue<PairNode> queue = new LinkedList<>();
-        queue.add(new PairNode(root, 0));
-
-        while (!queue.isEmpty()) {
-            PairNode pairNode = queue.poll();
-
-            if(respList.size() == pairNode.level){
-                respList.add(pairNode.level, new ArrayList<>());
-            }
-            respList.get(pairNode.level).add(pairNode.node.val);
-
-            if (pairNode.node.left != null) {
-                queue.add(new PairNode(pairNode.node.left, pairNode.level + 1));
-            }
-            if (pairNode.node.right != null) {
-                queue.add(new PairNode(pairNode.node.right, pairNode.level + 1));
-            }
-        }
-
-        // reverse respList
-        Collections.reverse(respList);
-
-        return respList;
-    }
-
-    static class PairNode {
+    class PairNode {
         TreeNode node;
         Integer level;
         public PairNode(TreeNode node, Integer level) {
@@ -112,4 +87,5 @@ public class BinaryTreeZigzagLevelOrderTraversal_103 {
             this.level = level;
         }
     }
+
 }

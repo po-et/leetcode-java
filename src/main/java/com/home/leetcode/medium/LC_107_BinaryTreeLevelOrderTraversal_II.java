@@ -32,7 +32,7 @@ public class LC_107_BinaryTreeLevelOrderTraversal_II {
         if (root == null) return Collections.emptyList();
 
         Queue<TreeNode> queue = new LinkedList<>();
-        List<List<Integer>> respList = new LinkedList<>();
+        List<List<Integer>> retList = new LinkedList<>();
         queue.offer(root);
 
         while (!queue.isEmpty()) {
@@ -40,20 +40,21 @@ public class LC_107_BinaryTreeLevelOrderTraversal_II {
             int size = queue.size();
 
             for (int i = 0; i < size; i++) {
-                TreeNode treeNode = queue.peek();
+                TreeNode treeNode = queue.poll();
+                levelList.add(treeNode.val);
+
                 if (treeNode.left != null) {
                     queue.offer(treeNode.left);
                 }
                 if (treeNode.right != null) {
                     queue.offer(treeNode.right);
                 }
-                levelList.add(queue.poll().val);
             }
 
-            respList.add(0, levelList);
+            retList.add(0, levelList);
         }
 
-        return respList;
+        return retList;
     }
 
 
@@ -63,17 +64,17 @@ public class LC_107_BinaryTreeLevelOrderTraversal_II {
     public List<List<Integer>> levelOrderBottom2(TreeNode root) {
         if(root == null) return Collections.emptyList();
 
-        List<List<Integer>> respList = new ArrayList<>();
+        List<List<Integer>> retList = new ArrayList<>();
         Queue<PairNode> queue = new LinkedList<>();
         queue.add(new PairNode(root, 0));
 
         while (!queue.isEmpty()) {
             PairNode pairNode = queue.poll();
 
-            if(respList.size() == pairNode.level){
-                respList.add(pairNode.level, new ArrayList<>());
+            if(retList.size() == pairNode.level){
+                retList.add(pairNode.level, new ArrayList<>());
             }
-            respList.get(pairNode.level).add(pairNode.node.val);
+            retList.get(pairNode.level).add(pairNode.node.val);
 
             if (pairNode.node.left != null) {
                 queue.add(new PairNode(pairNode.node.left, pairNode.level + 1));
@@ -83,10 +84,10 @@ public class LC_107_BinaryTreeLevelOrderTraversal_II {
             }
         }
 
-        // reverse respList
-        Collections.reverse(respList);
+        // reverse retList
+        Collections.reverse(retList);
 
-        return respList;
+        return retList;
     }
 
     class PairNode {
