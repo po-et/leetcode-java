@@ -27,8 +27,10 @@ WildcardMatching_44 （Facebook面试常考）
 NextPermutation_31
 
 
-## 不是很懂（need to read）
+## 不懂（need to read）
 LC_025_ReverseNodesKGroup
+LC_279_PerfectSquares （动态规划）
+
 GenerateParentheses_22 (卡特兰数)
 MergeKSortedLists_23
 SwapNodesinPairs_24
