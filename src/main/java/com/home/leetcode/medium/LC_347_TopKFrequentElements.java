@@ -3,49 +3,42 @@ package com.home.leetcode.medium;
 import java.util.*;
 
 /**
+ * 347. Top K Frequent Elements
+ *
  * Given a non-empty array of integers, return the k most frequent elements.
  *
  * Example 1:
- *
  * Input: nums = [1,1,1,2,2,3], k = 2
  * Output: [1,2]
  *
  * Example 2:
- *
  * Input: nums = [1], k = 1
  * Output: [1]
  *
- * @see <a href = "https://leetcode.com/problems/top-k-frequent-elements/" />
+ * @see <a href = "https://leetcode.cn/problems/top-k-frequent-elements/" />
  * @author Poet
  * @date 2020/5/3
  */
-public class TopKFrequentElements_347 {
-
-    static class Freq {
-        int val;
-        int count;
-        public Freq(int val, int count) {
-            this.val = val;
-            this.count = count;
-        }
-    }
+public class LC_347_TopKFrequentElements {
 
     /**
-     * 优先队列
+     * 方法一：优先队列
      */
     public int[] topKFrequent(int[] nums, int k) {
-        if(nums==null || nums.length == 0 || k<=0)
+        if (nums == null || nums.length == 0 || k <= 0)
             throw new IllegalArgumentException("param is not valid.");
 
         int[] ret = new int[k];
+
+        // 统计出现频率
         Map<Integer, Integer> freqMap = new HashMap<>();
         for (int num : nums) {
             freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
         }
 
+        // 数据放入优先队列
         PriorityQueue<Freq> queue = new PriorityQueue<>((o1, o2) -> o1.count - o2.count);
-
-        freqMap.forEach((num, count)->{
+        freqMap.forEach((num, count) -> {
             if (queue.size() < k) {
                 queue.offer(new Freq(num, freqMap.get(num)));
                 return;
@@ -58,19 +51,28 @@ public class TopKFrequentElements_347 {
             }
         });
 
-        int index = 0 ;
+        int index = 0;
         while (!queue.isEmpty()) {
             ret[index++] = queue.poll().val;
         }
         return ret;
     }
 
+    class Freq {
+        int val;
+        int count;
+        public Freq(int val, int count) {
+            this.val = val;
+            this.count = count;
+        }
+    }
+
 
     /**
-     * 桶排序的思路（有趣！）
+     * 方法二：桶排序的思路（有趣！）
      */
     public int[] topKFrequent2(int[] nums, int k) {
-        if(nums==null || nums.length == 0 || k <= 0)
+        if (nums == null || nums.length == 0 || k <= 0)
             throw new IllegalArgumentException("param is not valid.");
 
         //step1—用哈希表统计数组中各元素出现的频次，表中“键”为元素数值，“值”为对应元素出现的频次
@@ -85,7 +87,7 @@ public class TopKFrequentElements_347 {
         for (Integer key : freqMap.keySet()) {
             int count = freqMap.get(key);
             //把出现频次相同的元素“扔”到序号等于频次的桶中
-            if(bucket[count] == null)
+            if (bucket[count] == null)
                 bucket[count] = new ArrayList<>();
             bucket[count].add(key);
         }
