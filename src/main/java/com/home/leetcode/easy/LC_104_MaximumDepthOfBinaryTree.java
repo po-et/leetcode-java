@@ -1,6 +1,8 @@
 package com.home.leetcode.easy;
 
 /**
+ * 104. Maximum Depth of Binary Tree
+ *
  * Given a binary tree, find its maximum depth.
  *
  * The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
@@ -18,11 +20,11 @@ package com.home.leetcode.easy;
  *    15   7
  * return its depth = 3.
  *
- * @see <a href = "https://leetcode.com/problems/maximum-depth-of-binary-tree/" />
+ * @see <a href = "https://leetcode.cn/problems/maximum-depth-of-binary-tree/" />
  * @author Poet
  * @date 2020/5/4
  */
-public class MaximumDepthOfBinaryTree_104 {
+public class LC_104_MaximumDepthOfBinaryTree {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -39,28 +41,9 @@ public class MaximumDepthOfBinaryTree_104 {
     }
 
     /**
-     * 第一种递归写法
+     * 第一种递归写法（更好理解 ）
      */
     public int maxDepth(TreeNode root) {
-        return maxDepth(root, 0);
-    }
-
-    public int maxDepth(TreeNode node, int depth) {
-        if(node == null){
-            return depth;
-        }
-
-        int leftDepth = maxDepth(node.left, depth + 1);
-        int rightDepth = maxDepth(node.right, depth + 1);
-
-        return Math.max(leftDepth, rightDepth);
-    }
-
-
-    /**
-     * 第二种递归写法（本质一样, 更好！）
-     */
-    public int maxDepth2(TreeNode root) {
         if(root == null){
             return 0;
         }
@@ -69,6 +52,26 @@ public class MaximumDepthOfBinaryTree_104 {
 //        int rightDepth = maxDepth2(root.right);
 //        return Math.max(leftDepth, rightDepth) + 1;
 
-        return Math.max(maxDepth2(root.left), maxDepth2(root.right)) + 1;
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;   // 不用声明局部变量
     }
+
+
+    /**
+     * 第二种递归写法
+     */
+    public int maxDepth2(TreeNode root) {
+        return maxDepth2(root, 0);
+    }
+
+    public int maxDepth2(TreeNode node, int depth) {
+        if (node == null) {
+            return depth;
+        }
+
+        int leftDepth = maxDepth2(node.left, depth + 1);
+        int rightDepth = maxDepth2(node.right, depth + 1);
+
+        return Math.max(leftDepth, rightDepth);
+    }
+
 }
