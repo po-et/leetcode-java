@@ -1,7 +1,9 @@
 package com.home.leetcode.easy;
 
 /**
- * Invert a binary tree.
+ * 226. Invert Binary Tree
+ *
+ * Given the root of a binary tree, invert the tree, and return its root.
  *
  * Example:
  *
@@ -21,11 +23,11 @@ package com.home.leetcode.easy;
  *  / \   / \
  * 9   6 3   1
  *
- * @see <a href = "https://leetcode.com/problems/invert-binary-tree/" />
+ * @see <a href = "https://leetcode.cn/problems/invert-binary-tree/" />
  * @author Poet
  * @date 2020/5/4
  */
-public class InvertBinaryTree_226 {
+public class LC_226_InvertBinaryTree {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -42,8 +44,9 @@ public class InvertBinaryTree_226 {
     }
 
     public TreeNode invertTree(TreeNode root) {
-        if(root == null)
+        if (root == null) {
             return null;
+        }
 
         TreeNode leftNode = invertTree(root.left);
         TreeNode rightNode = invertTree(root.right);
@@ -51,4 +54,5 @@ public class InvertBinaryTree_226 {
         root.left = rightNode;
         return root;
     }
+
 }
