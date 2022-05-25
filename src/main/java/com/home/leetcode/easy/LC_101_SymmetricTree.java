@@ -63,7 +63,14 @@ public class LC_101_SymmetricTree {
         if (p == null || q == null)
             return false;
 
-        return p.val == q.val && isSymmetric(p.left, q.right) && isSymmetric(p.right, q.left);
+        if (p.val != q.val) {
+            return false;
+        } else {
+            return isSymmetric(p.left, q.right) && isSymmetric(p.right, q.left);
+        }
+
+        // 上述简单写法
+//        return p.val == q.val && isSymmetric(p.left, q.right) && isSymmetric(p.right, q.left);
     }
 
 
