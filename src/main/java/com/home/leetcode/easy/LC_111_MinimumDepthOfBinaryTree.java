@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
+ * 111. Minimum Depth of Binary Tree
+ *
  * Given a binary tree, find its minimum depth.
  *
  * The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
@@ -21,11 +23,11 @@ import java.util.Queue;
  *    15   7
  * return its minimum depth = 2.
  *
- * @see <a href = "https://leetcode.com/problems/minimum-depth-of-binary-tree/" />
+ * @see <a href = "https://leetcode.cn/problems/minimum-depth-of-binary-tree/" />
  * @author Poet
  * @date 2020/5/4
  */
-public class MinimumDepthOfBinaryTree_111 {
+public class LC_111_MinimumDepthOfBinaryTree {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -56,7 +58,7 @@ public class MinimumDepthOfBinaryTree_111 {
             return minDepth(root.right) + 1;
 
         // 左右孩子节点都存在
-        return Math.min( minDepth(root.left), minDepth(root.right) ) + 1;
+        return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
     }
 
 
@@ -75,11 +77,13 @@ public class MinimumDepthOfBinaryTree_111 {
 
         while (!queue.isEmpty()) {
             int size = queue.size();
+
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
                 if (node.left == null && node.right == null) {
                     return depth;
                 }
+
                 if (node.left != null)
                     queue.offer(node.left);
                 if (node.right != null)
@@ -87,6 +91,8 @@ public class MinimumDepthOfBinaryTree_111 {
             }
             depth ++;
         }
+
         return depth;
     }
+
 }

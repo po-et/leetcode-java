@@ -14,7 +14,8 @@ LC_199_BinaryTreeRightSideView （树的右视图：两个方法BFS + DFS）
 LC_209_MinimumSizeSubarraySum （滑动窗口）
 LC_092_ReverseLinkedList_II （翻转链表）
 LC_144_BinaryTreePreorderTraversal （非递归的栈模拟）
-LC_023_MergeKSortedLists （优先队列，K路归并排序）
+LC_023_MergeKSortedLists （优先队列：K路归并排序）
+LC_111_MinimumDepthOfBinaryTree （递归：二叉树最大/最小长度）
 
 SubstringWithConcatenationOfAllWords_30
 SearchForARange_34
