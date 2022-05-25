@@ -24,6 +24,9 @@ FirstMissingPositive_41 (桶排序的思想)
 MultiplyStrings_43 （字符串实现整数乘法）
 WildcardMatching_44 （Facebook面试常考）
 
+## 这几道题多复习几遍
+LC_222_CountCompleteTreeNodes （完全二叉树节点数）
+
 
 ## 可能会考
 NextPermutation_31

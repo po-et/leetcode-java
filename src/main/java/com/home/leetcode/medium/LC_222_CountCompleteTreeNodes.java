@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
+ * 222. Count Complete Tree Nodes
  *
  * Given a complete binary tree, count the number of nodes.
  *
@@ -23,11 +24,11 @@ import java.util.Queue;
  *
  * Output: 6
  *
- * @see <a href = "https://leetcode.com/problems/count-complete-tree-nodes/" />
+ * @see <a href = "https://leetcode.cn/problems/count-complete-tree-nodes/" />
  * @author Poet
  * @date 2020/5/4
  */
-public class CountCompleteTreeNodes_222 {
+public class LC_222_CountCompleteTreeNodes {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -44,7 +45,7 @@ public class CountCompleteTreeNodes_222 {
     }
 
     /**
-     * BFS
+     * BFS（层序遍历）
      */
     public int countNodes(TreeNode root) {
         if(root == null)
@@ -68,40 +69,47 @@ public class CountCompleteTreeNodes_222 {
 
 
     /**
+     * 递归：
      * 在LeetCode上Time Limited Exceeded
      * 这种方法可以处理普通二叉树，能够统计任意二叉树的节点数，但并没有利用到完全二叉树的特性。
      */
     public int countNodes4NormalRecursively(TreeNode root) {
-        return root == null ? 0 : 1 + countNodes4NormalRecursively(root.left) + countNodes4NormalRecursively(root.right);
+        if (root == null) {
+            return 0;
+        }
+
+        return countNodes4NormalRecursively(root.left) + countNodes4NormalRecursively(root.right) + 1;
     }
 
     /**
+     * 递归：
      * 对完全二叉子树进行合并统计
      * @see <a href = "https://blog.csdn.net/jmspan/article/details/51056085" />
      */
     public int countNodes4Recursively(TreeNode root) {
-        if(root == null ) return 0;
+        if (root == null)
+            return 0;
 
         int leftMost = 0;
         TreeNode left = root;
         while (left != null) {
-            leftMost ++;
+            leftMost++;
             left = left.left;
         }
 
         int rightMost = 0;
         TreeNode right = root;
         while (right != null) {
-            rightMost ++;
+            rightMost++;
             right = right.right;
         }
 
-        if(leftMost == rightMost)
-            return (1<<leftMost) - 1;
+        if (leftMost == rightMost)
+//            return (1 << leftMost) - 1;   // 可替换为下面的写法
+            return (int) Math.pow(2, leftMost + 1) - 1;
         else {
             return countNodes4Recursively(root.left) + countNodes4Recursively(root.right) + 1;
         }
     }
-
 
 }
