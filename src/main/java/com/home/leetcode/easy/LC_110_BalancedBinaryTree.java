@@ -1,13 +1,13 @@
 package com.home.leetcode.easy;
 
 /**
+ * 110. Balanced Binary Tree
+ *
  * Given a binary tree, determine if it is height-balanced.
  *
  * For this problem, a height-balanced binary tree is defined as:
  *
  * a binary tree in which the left and right subtrees of every node differ in height by no more than 1.
- *
- *
  *
  * Example 1:
  *
@@ -33,11 +33,11 @@ package com.home.leetcode.easy;
  *  4   4
  * Return false.
  *
- * @see <a href = "https://leetcode.com/problems/balanced-binary-tree/ " />
+ * @see <a href = "https://leetcode.cn/problems/balanced-binary-tree/ " />
  * @author Poet
  * @date 2020/5/4
  */
-public class BalancedBinaryTree_110 {
+public class LC_110_BalancedBinaryTree {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -57,22 +57,23 @@ public class BalancedBinaryTree_110 {
      * 递归写法
      */
     public boolean isBalanced(TreeNode root) {
-        if(root == null)
+        if (root == null)
             return true;
 
         int leftDepth = getMaxDepth(root.left);
         int rightDepth = getMaxDepth(root.right);
 
-        if (Math.abs(leftDepth - rightDepth) > 1 )
+        if (Math.abs(leftDepth - rightDepth) > 1)
             return false;
         else
             return isBalanced(root.left) && isBalanced(root.right);
     }
 
-    public int getMaxDepth(TreeNode node){
-        if(node == null)
+    public int getMaxDepth(TreeNode node) {
+        if (node == null)
             return 0;
 
         return Math.max(getMaxDepth(node.left), getMaxDepth(node.right)) + 1;
     }
+
 }
