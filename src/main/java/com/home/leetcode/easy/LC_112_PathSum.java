@@ -51,8 +51,7 @@ public class LC_112_PathSum {
             return root.val == targetSum;
         }
 
-        return hasPathSum(root.left, targetSum - root.val)
-                || hasPathSum(root.right, targetSum - root.val);
+        return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
     }
 
 }

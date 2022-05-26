@@ -1,6 +1,8 @@
 package com.home.leetcode.easy;
 
 /**
+ * 437. Path Sum III
+ *
  * You are given a binary tree in which each node contains an integer value.
  *
  * Find the number of paths that sum to a given value.
@@ -27,11 +29,11 @@ package com.home.leetcode.easy;
  * 2.  5 -> 2 -> 1
  * 3. -3 -> 11
  *
- * @see <a href="https://leetcode.com/problems/path-sum-iii/" />
+ * @see <a href="https://leetcode.cn/problems/path-sum-iii/" />
  * @author Poet
  * @date 2020/5/4
  */
-public class PathSum_III_437 {
+public class LC_437_PathSum_III {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -47,8 +49,9 @@ public class PathSum_III_437 {
         }
     }
 
+    // 在以root为根节点的二叉树中，寻找和为sum的路径，返回这样的路径个数
     public int pathSum(TreeNode root, int sum) {
-        if(root == null)
+        if (root == null)
             return 0;
 
         // 当前包含sum节点
@@ -61,7 +64,7 @@ public class PathSum_III_437 {
     }
 
     private int findPath(TreeNode root, int sum) {
-        if(root == null)
+        if (root == null)
             return 0;
 
         int res = 0;
