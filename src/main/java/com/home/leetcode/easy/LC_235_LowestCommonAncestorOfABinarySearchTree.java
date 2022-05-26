@@ -1,13 +1,15 @@
 package com.home.leetcode.easy;
 
 /**
+ * 235. Lowest Common Ancestor of a Binary Search Tree
+ *
  * Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.
  *
- * @see <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/" />
+ * @see <a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/" />
  * @author Poet
  * @date 2020/5/4
  */
-public class LowestCommonAncestorOfABinarySearchTree_235 {
+public class LC_235_LowestCommonAncestorOfABinarySearchTree {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -24,14 +26,20 @@ public class LowestCommonAncestorOfABinarySearchTree_235 {
     }
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if(root == null)
+        if (root == null) {
             return null;
+        }
 
-        if(p.val < root.val && q.val < root.val)
+        // 值都比root小，则最小公共祖先在root的左子树中
+        if (p.val < root.val && q.val < root.val) {
             return lowestCommonAncestor(root.left, p, q);
-        if(p.val > root.val && q.val > root.val)
+        }
+        // 值都比root大，则最小公共祖先在root的右子树中
+        if (p.val > root.val && q.val > root.val) {
             return lowestCommonAncestor(root.right, p, q);
+        }
 
+        // 同时包含三种情况：1)p q分布在root的左右, 2)p就是root, 3)q就是root
         return root;
     }
 
