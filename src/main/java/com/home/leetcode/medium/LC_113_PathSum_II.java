@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * 113. Path Sum II
+ *
  * Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
  *
  * Note: A leaf is a node with no children.
@@ -27,11 +29,11 @@ import java.util.List;
  *    [5,8,4,5]
  * ]
  *
- * @see <a href="https://leetcode.com/problems/path-sum-ii/" />
+ * @see <a href="https://leetcode.cn/problems/path-sum-ii/" />
  * @author Poet
  * @date 2020/5/4
  */
-public class PathSum_II_113 {
+public class LC_113_PathSum_II {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -47,6 +49,9 @@ public class PathSum_II_113 {
         }
     }
 
+    /**
+     * 方法一
+     */
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<List<Integer>> retList = new LinkedList<>();
 
@@ -67,7 +72,6 @@ public class PathSum_II_113 {
                 retList.add(innerList);
             }
         }
-
         List<List<Integer>> rightList = pathSum(root.right, sum - root.val);
         for (List<Integer> innerList : rightList) {
             if (innerList != null) {
@@ -80,8 +84,10 @@ public class PathSum_II_113 {
     }
 
 
-    // 方法二 （更好懂！更简洁！）
-    // https://leetcode.com/problems/path-sum-ii/discuss/665522/Java-99.9-faster-1ms
+    /**
+     * 方法二 （更好懂！更简洁！）
+     * https://leetcode.com/problems/path-sum-ii/discuss/665522/Java-99.9-faster-1ms
+     */
     List<List<Integer>> res;
     public List<List<Integer>> pathSum_Better(TreeNode root, int sum) {
         res = new ArrayList<>();
@@ -109,6 +115,5 @@ public class PathSum_II_113 {
 
         p.remove(p.size() - 1);
     }
-
 
 }
