@@ -1,6 +1,8 @@
 package com.home.leetcode.medium;
 
 /**
+ * 129. Sum Root to Leaf Numbers
+ *
  * Given a binary tree containing digits from 0-9 only, each root-to-leaf path could represent a number.
  *
  * An example is the root-to-leaf path 1->2->3 which represents the number 123.
@@ -35,11 +37,11 @@ package com.home.leetcode.medium;
  * The root-to-leaf path 4->0 represents the number 40.
  * Therefore, sum = 495 + 491 + 40 = 1026.
  *
- * @see <a href="https://leetcode.com/problems/sum-root-to-leaf-numbers/" />
+ * @see <a href="https://leetcode.cn/problems/sum-root-to-leaf-numbers/" />
  * @author Poet
  * @date 2020/5/4
  */
-public class SumRootToLeafNumbers_129 {
+public class LC_129_SumRootToLeafNumbers {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -56,22 +58,27 @@ public class SumRootToLeafNumbers_129 {
     }
 
     /**
-     * 递归
+     * DFS 深度优先搜索
+     *
+     * time: O(n)
+     * space: O(n)
      */
     public int sumNumbers(TreeNode root) {
         return dfs(root, 0);
     }
 
-    public int dfs(TreeNode root, int curSum){
-        if(root == null)
+    public int dfs(TreeNode root, int prevSum) {
+        if (root == null) {
             return 0;
-
-        curSum = curSum * 10 + root.val;
-
-        if (root.left == null && root.right == null) {
-            return curSum;
         }
 
-        return dfs(root.left, curSum) + dfs(root.right, curSum);
+        int sum = prevSum * 10 + root.val;
+
+        if (root.left == null && root.right == null) {
+            return sum;
+        } else {
+            return dfs(root.left, sum) + dfs(root.right, sum);
+        }
     }
+
 }
