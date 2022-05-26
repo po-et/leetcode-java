@@ -16,6 +16,7 @@ LC_092_ReverseLinkedList_II （翻转链表）
 LC_144_BinaryTreePreorderTraversal （非递归的栈模拟）
 LC_023_MergeKSortedLists （优先队列：K路归并排序）
 LC_111_MinimumDepthOfBinaryTree （递归：二叉树最大/最小长度）
+LC_257_BinaryTreePaths（找出二叉树的所有路径，重点理解递归过程）
 
 SubstringWithConcatenationOfAllWords_30
 SearchForARange_34

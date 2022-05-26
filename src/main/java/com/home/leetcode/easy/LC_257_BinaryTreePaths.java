@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 257. Binary Tree Paths
+ *
  * Given a binary tree, return all root-to-leaf paths.
  *
  * Note: A leaf is a node with no children.
@@ -22,11 +24,11 @@ import java.util.List;
  *
  * Explanation: All root-to-leaf paths are: 1->2->5, 1->3
  *
- * @see <a href = "https://leetcode.com/problems/binary-tree-paths/" />
+ * @see <a href = "https://leetcode.cn/problems/binary-tree-paths/" />
  * @author Poet
  * @date 2020/5/4
  */
-public class BinaryTreePaths_257 {
+public class LC_257_BinaryTreePaths {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -47,20 +49,19 @@ public class BinaryTreePaths_257 {
 
         if (root == null)
             return retList;
-
-        if (root.left == null && root.right == null) {
+        if (root.left == null && root.right == null) {  // 叶子结点
             retList.add(root.val + "");
             return retList;
         }
 
         List<String> leftList = binaryTreePaths(root.left);
-        for (String str : leftList)
+        for (String str : leftList) {
             retList.add(root.val + "->" + str);
-
+        }
         List<String> rightList = binaryTreePaths(root.right);
-        for (String str : rightList)
+        for (String str : rightList) {
             retList.add(root.val + "->" + str);
-
+        }
         return retList;
     }
 }
