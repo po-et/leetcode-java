@@ -29,7 +29,7 @@ public class LC_024_SwapNodesInPairs {
     }
 
     /**
-     * 使用四个指针（更好理解）
+     * 方法一：使用四个指针（更好理解）
      *
      * prev —> node1 -> node2 -> next
      * prev -> node2 -> node1 -> next
@@ -60,6 +60,9 @@ public class LC_024_SwapNodesInPairs {
         return dummyHead.next;
     }
 
+    /**
+     * 方法二：省略方法一的next节点
+     */
     public ListNode swapPairs2(ListNode head) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
