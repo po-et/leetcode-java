@@ -1,6 +1,8 @@
 package com.home.leetcode.easy;
 
 /**
+ * 112. Path Sum
+ *
  * Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
  *
  * Note: A leaf is a node with no children.
@@ -18,11 +20,11 @@ package com.home.leetcode.easy;
  * 7    2      1
  * return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
  *
- * @see <a href ="https://leetcode.com/problems/path-sum/" />
+ * @see <a href ="https://leetcode.cn/problems/path-sum/" />
  * @author Poet
  * @date 2020/5/4
  */
-public class PathSum_112 {
+public class LC_112_PathSum {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -38,19 +40,16 @@ public class PathSum_112 {
         }
     }
 
-    public boolean hasPathSum(TreeNode root, int sum) {
-        if (root == null)
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        if (root == null) {
             return false;
-        if (root.left == null && root.right == null)
-            return root.val == sum;
+        }
+        if (root.left == null && root.right == null) {   // 叶子结点
+            return root.val == targetSum;
+        }
 
-//        if (hasPathSum(root.left, sum - root.val))
-//            return true;
-//        if (hasPathSum(root.right, sum - root.val))
-//            return true;
-//        return false;
-
-        // simplify
-        return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
+        return hasPathSum(root.left, targetSum - root.val)
+                || hasPathSum(root.right, targetSum - root.val);
     }
+
 }
