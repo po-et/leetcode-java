@@ -40,6 +40,9 @@ public class LC_112_PathSum {
         }
     }
 
+    /**
+     * 重点：注意递归的终止条件（从根节点到叶子结点的路径sum）
+     */
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if (root == null) {
             return false;

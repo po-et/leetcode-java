@@ -45,6 +45,7 @@ public class LC_111_MinimumDepthOfBinaryTree {
 
     /**
      * DFS
+     * 重点：注意递归的终止条件（从根节点到叶子结点的最短路径长度）
      */
     public int minDepth(TreeNode root) {
         if (root == null)
