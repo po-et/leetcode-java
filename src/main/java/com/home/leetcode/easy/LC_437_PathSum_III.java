@@ -63,6 +63,7 @@ public class LC_437_PathSum_III {
         return res;
     }
 
+    // 在以node为根节点的二叉树中，寻找包含node的路径，和为num，返回这样的路径个数
     private int findPath(TreeNode root, int sum) {
         if (root == null)
             return 0;
