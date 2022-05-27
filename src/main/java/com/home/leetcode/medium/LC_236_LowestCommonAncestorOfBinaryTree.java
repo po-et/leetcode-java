@@ -1,13 +1,15 @@
 package com.home.leetcode.medium;
 
 /**
+ * 236. Lowest Common Ancestor of a Binary Tree
+ *
  * Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.
  *
- * @see <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/" />
+ * @see <a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/" />
  * @author Poet
  * @date 2020/5/4
  */
-public class LowestCommonAncestorOfBinaryTree_236 {
+public class LC_236_LowestCommonAncestorOfBinaryTree {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -23,12 +25,15 @@ public class LowestCommonAncestorOfBinaryTree_236 {
         }
     }
 
-
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        //如果找到 p 或者 q 那么就没有必要接着递归，因为共同祖先只可能是该节点或该节点祖先
         //如果 root 为空，说明这条路径上不可能有 p 或 q 节点，返回空
-        if (root == null || root == p || root == q)
+        if (root == null) {
+            return null;
+        }
+        //如果找到 p 或者 q 那么就没有必要接着递归，因为共同祖先只可能是该节点或该节点祖先
+        if (root == p || root == q) {
             return root;
+        }
 
         TreeNode left = lowestCommonAncestor(root.left, p, q);    //往左分支上寻找
         TreeNode right = lowestCommonAncestor(root.right, p, q);  //往右分支上寻找
