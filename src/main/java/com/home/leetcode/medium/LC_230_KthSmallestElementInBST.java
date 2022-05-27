@@ -1,6 +1,8 @@
 package com.home.leetcode.medium;
 
 /**
+ * 230. Kth Smallest Element in a BST
+ *
  * Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
  *
  * Note:
@@ -16,11 +18,11 @@ package com.home.leetcode.medium;
  *    2
  * Output: 1
  *
- * @see <a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/" />
+ * @see <a href="https://leetcode.cn/problems/kth-smallest-element-in-a-bst/" />
  * @author Poet
  * @date 2020/5/5
  */
-public class KthSmallestElementInBST_230 {
+public class LC_230_KthSmallestElementInBST {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -46,12 +48,13 @@ public class KthSmallestElementInBST_230 {
     }
 
     private void inOrder(TreeNode root, int k) {
-        if(root == null)
+        if (root == null) {
             return;
+        }
 
         inOrder(root.left, k);
         counter++;
-        if(counter == k){
+        if (counter == k) {
             resNode = root;
             return;
         }
