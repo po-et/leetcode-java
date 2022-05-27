@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 98. Validate Binary Search Tree
+ *
  * Given a binary tree, determine if it is a valid binary search tree (BST).
  *
  * Assume a BST is defined as follows:
@@ -33,11 +35,11 @@ import java.util.List;
  * Output: false
  * Explanation: The root node's value is 5 but its right child's value is 4.
  *
- * @see <a href="https://leetcode.com/problems/validate-binary-search-tree/" />
+ * @see <a href="https://leetcode.cn/problems/validate-binary-search-tree/" />
  * @author Poet
  * @date 2020/5/4
  */
-public class ValidateBinarySearchTree_98 {
+public class LC_098_ValidateBinarySearchTree {
 
     // Definition for a binary tree node.
     public class TreeNode {
@@ -54,47 +56,58 @@ public class ValidateBinarySearchTree_98 {
     }
 
     /**
+     * 方法一: 递归
+     *
      * 利用本身的性质: 即左<根<右
-     * @comment 初始化时带入系统最大值和最小值，在递归过程中换成它们自己的节点值，用long代替int是为了包括int的边界条件
+     * 初始化时带入系统最大值和最小值，在递归过程中换成它们自己的节点值，用long代替int是为了包括int的边界条件
+     *
+     * time: O(n)，其中 n 为二叉树的节点个数
+     * space: O(n)，其中 n 为二叉树的节点个数
      */
     public boolean isValidBST(TreeNode root) {
         return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
     private boolean isValidBST(TreeNode root, long minValue, long maxValue) {
-        if(root == null)
+        if (root == null)
             return true;
-        if(root.val <= minValue || root.val >= maxValue)
+        if (root.val <= minValue || root.val >= maxValue)
             return false;
 
         return isValidBST(root.left, minValue, root.val) && isValidBST(root.right, root.val, maxValue);
     }
 
 
-
     /**
-     * 【中序遍历】的方法
+     * 方法二：【中序遍历】的方法
+     *
+     * time: O(n)，其中 n 为二叉树的节点个数
+     * space: O(n)，其中 n 为二叉树的节点个数
      */
     public boolean isValidBST2(TreeNode root) {
-        if(root == null)
+        if (root == null) {
             return true;
+        }
 
         List<Integer> records = new ArrayList<>();
         inOrder(root, records);
 
         for (int i = 1; i < records.size(); i++) {
-            if(records.get(i-1) >= records.get(i))
+            if (records.get(i - 1) >= records.get(i)) {
                 return false;
+            }
         }
         return true;
     }
 
-    private void inOrder(TreeNode root, List<Integer> records){
-        if(root == null)
+    private void inOrder(TreeNode root, List<Integer> records) {
+        if (root == null) {
             return;
+        }
 
         inOrder(root.left, records);
         records.add(root.val);
         inOrder(root.right, records);
     }
+
 }
