@@ -21,26 +21,30 @@ import java.util.List;
  *   [3,2,1]
  * ]
  *
- * @see <a href="https://leetcode.com/problems/permutations/" />
+ * @see <a href="https://leetcode.cn/problems/permutations/" />
  * @author Poet
  * @date 2020/6/3
  */
-public class Permutations_46 {
+public class LC_046_Permutations {
 
     List<List<Integer>> res;
     boolean[] used;
 
     public List<List<Integer>> permute(int[] nums) {
         res = new LinkedList<>();
-        if(nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             return res;
+        }
 
         LinkedList<Integer> p = new LinkedList<>();
         used = new boolean[nums.length];
+
         generatePermutation(nums, 0, p);
         return res;
     }
 
+    // p中保存了一个有index个元素的排列
+    // 向这个排列的末尾添加第index+1个元素，获得一个有index+1个元素的排列
     private void generatePermutation(int[] nums, int index, LinkedList<Integer> p) {
         if (index == nums.length) {
             // 防止p更改，复制一份新的list
@@ -63,7 +67,7 @@ public class Permutations_46 {
     }
 
     public static void main(String[] args) {
-        Permutations_46 solution = new Permutations_46();
+        LC_046_Permutations solution = new LC_046_Permutations();
         int[] nums = {1, 2, 3};
         System.out.println(solution.permute(nums));
     }

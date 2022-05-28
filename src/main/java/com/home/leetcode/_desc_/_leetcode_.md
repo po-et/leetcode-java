@@ -20,6 +20,7 @@ LC_257_BinaryTreePaths （找出二叉树的所有路径，重点理解递归过
 LC_129_SumRootToLeafNumbers （二叉树所有路径的和，重点理解递归中的prevSum）
 LC_098_ValidateBinarySearchTree （判断是否是二分搜索树）
 LC_230_KthSmallestElementInBST （二分搜索树中找k大 /rank）
+LC_017_LetterCombinationsOfPhoneNumber （回溯法，理解backtrack思路）
 
 SubstringWithConcatenationOfAllWords_30
 SearchForARange_34
