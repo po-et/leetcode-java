@@ -22,8 +22,9 @@ LC_098_ValidateBinarySearchTree （判断是否是二分搜索树）
 LC_230_KthSmallestElementInBST （二分搜索树中找k大 /rank）
 
 LC_017_LetterCombinationsOfPhoneNumber （回溯法，理解backtrack思路）
-LC_046_Permutations （回溯法）
-LC_077_Combinations （回溯法，理解剪枝优化）
+LC_046_Permutations （回溯法，排列问题）
+LC_077_Combinations （回溯法，组合问题，重点剪枝优化）
+LC_079_WordSearch （回溯法，单次搜索）
 
 SubstringWithConcatenationOfAllWords_30
 SearchForARange_34
