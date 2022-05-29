@@ -44,7 +44,7 @@ public class LC_509_FibonacciNumber {
      *
      * time: O(n)
      */
-    public int fibNP(int n){
+    public int fibDP(int n){
         if (n == 0) {
             return 0;
         }
