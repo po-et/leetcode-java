@@ -41,6 +41,9 @@ public class LC_200_NumberOfIslands {
      * Floodfill算法（liuyubo讲解）
      *
      * 思路类似 {@link LC_079_WordSearch}
+     *
+     * time: O(M x N) 其中 M 和 N 分别为行数和列数
+     * space: O(M x N) 在最坏情况下，整个网格均为陆地，深度优先搜索的深度达到 M x N
      */
     public int numIslands(char[][] grid) {
         m = grid.length;
