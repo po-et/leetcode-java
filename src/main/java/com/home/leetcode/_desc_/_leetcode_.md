@@ -45,8 +45,9 @@ NextPermutation_31
 
 
 ## 不是很懂（need to read again!）
-LC_025_ReverseNodesKGroup
+LC_025_ReverseNodesKGroup （链表K翻转）
 LC_279_PerfectSquares （动态规划）
+LC_120_Triangle （动态规划）
 
 GenerateParentheses_22 (卡特兰数)
 MergeKSortedLists_23

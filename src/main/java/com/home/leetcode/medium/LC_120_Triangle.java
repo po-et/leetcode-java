@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * 120. Triangle
+ *
  * Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
  *
  * For example, given the following triangle
@@ -21,14 +23,46 @@ import java.util.List;
  *
  * Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows in the triangle.
  *
- *
- * @see <a href="https://leetcode.com/problems/triangle/" />
+ * @see <a href="https://leetcode.cn/problems/triangle/" />
  * @author Poet
  * @date 2020/5/12
  */
-public class Triangle_120 {
+public class LC_120_Triangle {
 
-    public static int minimumTotal(List<List<Integer>> triangle) {
+
+    /**
+     * 官方答案
+     *
+     * 状态转移方程：
+     * f[i][j] = f[i-1][0] + c[i][0]                    j=0
+     *           f[i-1][i-1] + c[i][i]                  j=i
+     *           min(f[i-1][j-1], f[i-1][j]) + c[i][j]  otherwise
+     *
+     * @see <a href="https://leetcode.cn/problems/triangle/solution/san-jiao-xing-zui-xiao-lu-jing-he-by-leetcode-solu/" />
+     */
+    public int minimumTotal(List<List<Integer>> triangle) {
+        int n = triangle.size();
+        int[][] f = new int[n][n];
+
+        f[0][0] = triangle.get(0).get(0);
+        for (int i = 1; i < n; i++) {
+            f[i][0] = f[i - 1][0] + triangle.get(i).get(0);
+            for (int j = 1; j < i; j++) {
+                f[i][j] = Math.min(f[i - 1][j - 1], f[i - 1][j]) + triangle.get(i).get(j);
+            }
+            f[i][i] = f[i - 1][i - 1] + triangle.get(i).get(i);
+        }
+
+        int minTotal = f[n - 1][0];
+        for (int i = 1; i < n; i++) {
+            minTotal = Math.min(minTotal, f[n - 1][i]);
+        }
+
+        return minTotal;
+    }
+
+
+    public static int minimumTotal_2(List<List<Integer>> triangle) {
         int length = triangle.size();
         if (length == 0) return 0;
         if (length == 1) return triangle.get(0).get(0);
@@ -80,7 +114,6 @@ public class Triangle_120 {
     }
 
 
-
     public static void main(String[] args) {
         List<List<Integer>> triangle = new ArrayList<>();
         triangle.add(Arrays.asList(2));
@@ -88,7 +121,8 @@ public class Triangle_120 {
         triangle.add(Arrays.asList(6,5,7));
         triangle.add(Arrays.asList(4,1,8,3));
 
-        int min = minimumTotal(triangle);
+        LC_120_Triangle solution = new LC_120_Triangle();
+        int min = solution.minimumTotal(triangle);
         System.out.println(min);
     }
 }
