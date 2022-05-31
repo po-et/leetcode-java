@@ -25,9 +25,10 @@ LC_017_LetterCombinationsOfPhoneNumber （回溯法，理解backtrack思路）
 LC_046_Permutations （回溯法，排列问题）
 LC_077_Combinations （回溯法，组合问题，重点剪枝优化）
 LC_079_WordSearch （回溯法，单次搜索）
-
 LC_200_NumberOfIslands （递归/回溯：floodfill算法）
 LC_051_N_Queens （回溯法：N皇后问题）
+
+LC_343_IntegerBreak （记忆化搜索 -> 动态规划）
 
 SubstringWithConcatenationOfAllWords_30
 SearchForARange_34
