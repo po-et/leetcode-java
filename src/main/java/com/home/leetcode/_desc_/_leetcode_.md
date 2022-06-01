@@ -29,6 +29,7 @@ LC_200_NumberOfIslands （递归/回溯：floodfill算法）
 LC_051_N_Queens （回溯法：N皇后问题）
 
 LC_343_IntegerBreak （记忆化搜索 -> 动态规划）
+LC_198_HouseRobber （状态的定义 + 状态的转移）
 
 SubstringWithConcatenationOfAllWords_30
 SearchForARange_34
