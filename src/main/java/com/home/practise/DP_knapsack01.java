@@ -64,8 +64,8 @@ public class DP_knapsack01 {
         int[][] memo = new int[n][C];
 
         // 先解决最基础的问题
-        for (int i = 0; i <= C; i++) {
-            memo[0][i] = i >= weights.get(0) ? values.get(0) : 0;
+        for (int j = 0; j <= C; j++) {
+            memo[0][j] = j >= weights.get(0) ? values.get(0) : 0;
         }
 
         // 然后开始递推
