@@ -9,6 +9,7 @@ package com.home.leetcode.medium;
  *
  * Search for a node to remove.
  * If the node is found, delete the node.
+ *
  * Note: Time complexity should be O(height of tree).
  *
  * @see <a href="https://leetcode.cn/problems/delete-node-in-a-bst/" />
