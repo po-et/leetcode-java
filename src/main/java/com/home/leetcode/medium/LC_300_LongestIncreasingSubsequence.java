@@ -25,6 +25,21 @@ package com.home.leetcode.medium;
  */
 public class LC_300_LongestIncreasingSubsequence {
 
+    /**
+     * 状态的定义：
+     *     LIS(i)表示以第i个数字为结尾的最长上升子序列的长度
+     *
+     *     即，LIS(i)表示[0...i]的范围内，选择数字nums[i]可以获得的最长上升子序列的长度
+     *
+     * 状态转移方程：
+     *     LIS(i) = max (1 + LIS(j) if nums[i] > nums[j] )     (j < i)
+     */
+
+
+    /**
+     * 动态规划
+     * time: O(n^2)
+     */
     public int lengthOfLIS(int[] nums) {
         if (nums.length == 0) {
             return 0;
