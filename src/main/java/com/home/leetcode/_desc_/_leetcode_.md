@@ -30,8 +30,11 @@ LC_051_N_Queens （回溯法：N皇后问题）
 
 LC_343_IntegerBreak （记忆化搜索 -> 动态规划）
 LC_198_HouseRobber （状态的定义 + 状态的转移）
-LC_300_LongestIncreasingSubsequence （动态规划 经典问题LIS）
 DP_knapsack01 （背包问题，最重要！）
+LC_300_LongestIncreasingSubsequence （动态规划 经典问题LIS 【最长上升子序列】）
+DP_LongestCommonSubsequence（动态规划 经典问题LCS 【最长公共子序列】）
+
+LC_455_AssignCookies （贪心算法）
 
 SubstringWithConcatenationOfAllWords_30
 SearchForARange_34
