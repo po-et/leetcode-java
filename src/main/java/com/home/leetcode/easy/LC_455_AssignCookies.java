@@ -20,7 +20,7 @@ import java.util.Arrays;
  * Output: 2
  *
  * @see <a href="https://leetcode.cn/problems/assign-cookies/" />
- * @author bin.yang
+ * @author poet
  * @date 2022/6/4
  */
 public class LC_455_AssignCookies {

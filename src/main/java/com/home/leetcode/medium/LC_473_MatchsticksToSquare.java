@@ -17,7 +17,7 @@ import java.util.Arrays;
  * Explanation: You can form a square with length 2, one side of the square came two sticks with length 1.
  *
  * @see <a href="https://leetcode.cn/problems/matchsticks-to-square/" />
- * @author bin.yang
+ * @author poet
  * @date 2022/6/1
  */
 public class LC_473_MatchsticksToSquare {
