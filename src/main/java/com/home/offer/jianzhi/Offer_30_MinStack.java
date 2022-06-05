@@ -14,12 +14,13 @@ import java.util.Stack;
  * minStack.push(-2);
  * minStack.push(0);
  * minStack.push(-3);
- * minStack.min();   --> 返回 -3.
+ * minStack.min();      --> 返回 -3.
  * minStack.pop();
  * minStack.top();      --> 返回 0.
- * minStack.min();   --> 返回 -2.
+ * minStack.min();      --> 返回 -2.
  *
- * @see <a href="https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof" />
+ * @see <a href="https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof" /> 剑指offer
+ * @see <a href="https://leetcode.cn/problems/min-stack/" /> 主站
  * @author Poet
  * @date 2020/5/30
  */
