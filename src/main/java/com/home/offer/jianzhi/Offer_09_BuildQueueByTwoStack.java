@@ -1,6 +1,7 @@
 package com.home.offer.jianzhi;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 /**
  * 面试题09. 用两个栈实现队列
@@ -13,7 +14,7 @@ import java.util.Stack;
  * [[],[3],[],[]]
  * 输出：[null,null,3,-1]
  *
- * 链接：https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof
+ * @see <a href="https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof" />
  * @author Poet
  * @date 2020/5/20
  */
@@ -29,14 +30,17 @@ public class Offer_09_BuildQueueByTwoStack {
 
     /**
      * 更好的思路：只转移一次，stack为空时才继续转移
+     *
+     * time:  均摊复杂度为 O(1)
+     * space: O(n) 其中 n 是操作总数
      */
     class CQueue {
-        private Stack<Integer> dataStack ;
-        private Stack<Integer> tmpStack ;
+        private Deque<Integer> dataStack;
+        private Deque<Integer> tmpStack;
 
         public CQueue() {
-            dataStack = new Stack<>();
-            tmpStack = new Stack<>();
+            dataStack = new ArrayDeque<>();
+            tmpStack = new ArrayDeque<>();
         }
 
         public void appendTail(int value) {

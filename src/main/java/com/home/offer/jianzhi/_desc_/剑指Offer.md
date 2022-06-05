@@ -1,4 +1,4 @@
-##《剑指Offer》
+# 《剑指Offer》
 
 ### 题目
 - (1) 找出数组中重复的数字 
@@ -107,4 +107,8 @@
 ### 在线解题
 - [LeetCode中文](https://leetcode-cn.com/problemset/lcof/)
 - [牛客网](https://www.nowcoder.com/ta/coding-interviews?page=1) 
+
+
+### 学习计划
+- [LeetCode学习计划：剑指 Offer 1](https://leetcode.cn/study-plan/lcof/)
 

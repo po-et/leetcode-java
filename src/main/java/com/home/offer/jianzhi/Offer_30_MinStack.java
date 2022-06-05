@@ -1,5 +1,7 @@
 package com.home.offer.jianzhi;
 
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -17,14 +19,16 @@ import java.util.Stack;
  * minStack.top();      --> 返回 0.
  * minStack.min();   --> 返回 -2.
  *
- * 链接：https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof
+ * @see <a href="https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof" />
  * @author Poet
  * @date 2020/5/30
  */
 public class Offer_30_MinStack {
 
+    /**
+     * 好理解，但时间复杂度不符合要求，pop()操作不是O(1)
+     */
     static class MinStack {
-
         private Stack<Integer> stack;
         private Stack<Integer> helpStack;
         private Integer minVal;
@@ -67,15 +71,55 @@ public class Offer_30_MinStack {
     }
 
 
+
+    /**
+     * 方法：辅助栈（官方）
+     * 我们只需要设计一个数据结构，使得每个元素 a 与其相应的最小值 m 时刻保持一一对应。因此我们可以使用一个辅助栈，与元素栈同步插入与删除，用于存储与每个元素对应的最小值。
+     * 官方答案：https://leetcode.cn/problems/bao-han-minhan-shu-de-zhan-lcof/solution/bao-han-minhan-shu-de-zhan-by-leetcode-s-i2fk/
+     *
+     * time:  O(1)
+     * space: O(n)
+     */
+    class MinStack_2_official {
+        Deque<Integer> xStack;
+        Deque<Integer> minStack;
+
+        public MinStack_2_official() {
+            xStack = new LinkedList<>();
+            minStack = new LinkedList<>();
+            minStack.push(Integer.MAX_VALUE);
+        }
+
+        public void push(int x) {
+            xStack.push(x);
+            minStack.push(Math.min(minStack.peek(), x));
+        }
+
+        public void pop() {
+            xStack.pop();
+            minStack.pop();
+        }
+
+        public int top() {
+            return xStack.peek();
+        }
+
+        public int min() {
+            return minStack.peek();
+        }
+    }
+
+
+
     /**
      * Better Solution!!!
      *
      * 建立辅助栈：辅助栈中存储原栈中所有【非严格降序】的元素
      * https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/solution/mian-shi-ti-30-bao-han-minhan-shu-de-zhan-fu-zhu-z/
      */
-    class MinStack_Better {
+    class MinStack_3 {
         Stack<Integer> A, B;
-        public MinStack_Better() {
+        public MinStack_3() {
             A = new Stack<>();
             B = new Stack<>();
         }
