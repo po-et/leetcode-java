@@ -9,7 +9,7 @@ package com.home.offer.jianzhi;
  * 输入：head = [1,3,2]
  * 输出：[2,3,1]
  *
- * 链接：https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof
+ * @see <a href="https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof" />
  * @author Poet
  * @date 2020/5/20
  */
@@ -22,9 +22,11 @@ public class Offer_06_ReversePrint {
     }
 
     public int[] reversePrint(ListNode head) {
-        if (head == null)
+        if (head == null) {
             return new int[0];
+        }
 
+        // 计算链表长度
         int size = 0;
 
         // reverse
@@ -64,4 +66,6 @@ public class Offer_06_ReversePrint {
 //
 //        return pre;
 //    }
+
+
 }
