@@ -14,7 +14,7 @@ package com.home.leetcode.easy;
  * Explanation: (100) + (101) + (110) + (111) = 4 + 5 + 6 + 7 = 22
  *
  * @see <a href="https://leetcode.cn/problems/sum-of-root-to-leaf-binary-numbers/" />
- * @author bin.yang
+ * @author poet
  * @date 2022/5/30
  */
 public class LC_1022_SumOfRootToLeafBinaryNumbers {

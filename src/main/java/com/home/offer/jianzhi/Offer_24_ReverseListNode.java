@@ -9,7 +9,7 @@ package com.home.offer.jianzhi;
  * 输入: 1->2->3->4->5->NULL
  * 输出: 5->4->3->2->1->NULL
  *
- * 链接：https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof
+ * @see <a href="https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof" />
  * @author Poet
  * @date 2020/5/29
  */

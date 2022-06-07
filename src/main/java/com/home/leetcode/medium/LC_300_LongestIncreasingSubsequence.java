@@ -1,7 +1,7 @@
 package com.home.leetcode.medium;
 
 /**
- * 300. Longest Increasing Subsequence
+ * 300. Longest Increasing Subsequence （最长上升子序列）
  *
  * Given an integer array nums, return the length of the longest strictly increasing subsequence.
  *

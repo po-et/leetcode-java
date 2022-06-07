@@ -16,7 +16,7 @@ package com.home.leetcode.hard;
  * Explanation: 9 = 4 + 5 = 2 + 3 + 4
  *
  * @see <a href="https://leetcode.cn/problems/consecutive-numbers-sum/" />
- * @author bin.yang
+ * @author poet
  * @date 2022/6/3
  */
 public class LC_829_ConsecutiveNumbersSum {
