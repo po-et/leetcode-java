@@ -10,7 +10,7 @@ package com.home.offer.jianzhi;
  * [2, 3, 1, 0, 2, 5, 3]
  * 输出：2 或 3
  *
- * 链接：https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof
+ * @see <a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof" />
  * @author Poet
  * @date 2020/5/20
  */
@@ -19,8 +19,9 @@ public class Offer_03_FindRepeatNumber {
     private static int[] freq;
 
     public static int findRepeatNumber(int[] nums) {
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             throw new IllegalArgumentException("param is not valid");
+        }
 
         freq = new int[nums.length];
 
