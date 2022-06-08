@@ -32,7 +32,8 @@ public class Offer_53_I_FindFirstAndLastPositionOfElementInSortedArray {
         int r = n - 1;
 
         while (l < r) {
-            int mid = l + (r - l + 1) / 2;
+            int mid = l + (r - l + 1) / 2;  // 重点注意
+
             if (nums[mid] >= target) {
                 r = mid - 1;
             } else {

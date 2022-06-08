@@ -9,7 +9,7 @@ package com.home.offer.jianzhi;
  * 输入: [0,1,3]
  * 输出: 2
  *
- * 链接：https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof
+ * @see <a href="https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof" />
  * @author Poet
  * @date 2020/6/14
  */
