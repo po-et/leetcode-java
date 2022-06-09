@@ -9,7 +9,7 @@ package com.home.offer.jianzhi;
  * 输入：s = "We are happy."
  * 输出："We%20are%20happy."
  *
- * 链接：https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof
+ * @see <a href="https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof" />
  * @author Poet
  * @date 2020/5/20
  */
@@ -22,7 +22,7 @@ public class Offer_05_ReplaceSpace {
 
         StringBuilder ret = new StringBuilder();
         for (char c : s.toCharArray()) {
-            if (' ' == c ) {
+            if (' ' == c) {
                 ret.append("%20");
             } else {
                 ret.append(c);
@@ -31,4 +31,5 @@ public class Offer_05_ReplaceSpace {
 
         return ret.toString();
     }
+
 }
