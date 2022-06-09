@@ -14,22 +14,20 @@ package com.home.offer.jianzhi;
  * 输入：[2,2,2,0,1]
  * 输出：0
  *
- * 链接：https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof
+ * @see <a href="https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof" />
  * @author Poet
  * @date 2020/5/26
  */
 public class Offer_11_FindMinInLoopSortedArray {
 
+    /**
+     * 方法一：二分查找
+     *
+     * time:  平均时间复杂度为 O(logn),
+     *        而在最坏情况下，如果数组中的元素完全相同，那么while循环就需要执行m次，每次忽略区间的右端点，时间复杂度为 O(n)
+     * space: O(1)
+     */
     public int minArray(int[] numbers) {
-        if (numbers == null)
-            throw new IllegalArgumentException("param is not valid.");
-        if (numbers.length == 1) {
-            return numbers[0];
-        }
-        if (numbers.length == 2) {
-            return Math.min(numbers[0], numbers[1]);
-        }
-
 
         // 在[l..r]区间寻找最小值
         int l = 0, r = numbers.length - 1;
@@ -49,6 +47,5 @@ public class Offer_11_FindMinInLoopSortedArray {
 
         return numbers[l];
     }
-
 
 }

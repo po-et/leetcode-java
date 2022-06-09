@@ -14,7 +14,7 @@ import java.util.Random;
  *
  *
  * @see <a href="https://leetcode.cn/problems/random-point-in-non-overlapping-rectangles" />
- * @author bin.yang
+ * @author poet
  * @date 2022/6/9
  */
 public class LC_497_RandomPointInNonOverlappingRectangles {
