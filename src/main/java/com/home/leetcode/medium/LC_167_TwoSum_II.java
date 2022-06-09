@@ -3,7 +3,7 @@ package com.home.leetcode.medium;
 import java.util.Arrays;
 
 /**
- * 167. 两数之和 II - 输入有序数组
+ * 167. Two Sum II - Input Array Is Sorted （两数之和 II - 输入有序数组）
  *
  * Example:
  *  Input: numbers = [2,7,11,15], target = 9
@@ -20,16 +20,12 @@ public class LC_167_TwoSum_II {
      * 对撞指针
      */
     public static int[] twoSum(int[] numbers, int target) {
-
-        int[] res = new int[2];
-        int l = 0 ;
+        int l = 0;
         int r = numbers.length - 1;
 
         while (l < r) {
             if (numbers[l] + numbers[r] == target) {
-                res[0] = l + 1;
-                res[1] = r + 1;
-                return res;
+                return new int[]{l + 1, r + 1};
             } else if (numbers[l] + numbers[r] < target) {
                 l++;
             } else {
@@ -37,7 +33,7 @@ public class LC_167_TwoSum_II {
             }
         }
 
-        throw new IllegalArgumentException("not existed solution!");
+        throw new IllegalArgumentException("no solution!");
     }
 
     public static void main(String[] args) {

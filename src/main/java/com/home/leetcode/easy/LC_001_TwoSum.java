@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 1. 两数之和
+ * 1. Two Sum （两数之和）
  *
  * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
  * You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -14,38 +14,39 @@ import java.util.Map;
  * Because nums[0] + nums[1] = 2 + 7 = 9,
  * return [0, 1].
  *
- * @see <a href = "https://leetcode.cn/problems/two-sum/" />
+ * @see <a href="https://leetcode.cn/problems/two-sum/" />
  * @author Poet
  * @date 2020/4/19
  */
 public class LC_001_TwoSum {
 
     /**
-     * 方法二：哈希表
+     * 方法一：哈希表
+     *
      * time: O(n)
      * space: O(n)
      */
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> hashMap = new HashMap<>(nums.length);
+        Map<Integer, Integer> map = new HashMap<>(nums.length);
 
         for (int i = 0; i < nums.length; i++) {
             // 只需要检查查找表里已有的元素
             int complement = target - nums[i];
-            if (hashMap.containsKey(complement)) {
-                return new int[]{hashMap.get(complement), i};
+            if (map.containsKey(complement)) {
+                return new int[]{map.get(complement), i};
             }
-            hashMap.put(nums[i], i);
+            map.put(nums[i], i);
         }
 
         throw new IllegalArgumentException("no solution!");
     }
 
     /**
-     * 方法一：暴力枚举
+     * 方法二：暴力枚举
+     *
      * time: O(n^2)
      */
-    public int[] twoSum2(int[] nums, int target) {
-
+    public int[] twoSum_2(int[] nums, int target) {
         int[] res = new int[2];
 
         for (int i = 0; i < nums.length - 1; i++) {
