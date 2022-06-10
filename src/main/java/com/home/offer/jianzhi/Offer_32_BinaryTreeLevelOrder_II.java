@@ -11,7 +11,7 @@ import java.util.Queue;
  * 从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
  *
  * 例如:
- * 给定二叉树: [3,9,20,null,null,15,7],
+ * 给定二叉树: [3,9,20,null,null,15,7],
  *
  *     3
  *    / \
@@ -26,11 +26,11 @@ import java.util.Queue;
  *   [15,7]
  * ]
  *
- * 链接：https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof
+ * @see <a href="https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof" />
  * @author Poet
  * @date 2020/5/30
  */
-public class Offer_32_II_BinaryTreeLevelOrder {
+public class Offer_32_BinaryTreeLevelOrder_II {
 
     public class TreeNode {
         int val;
@@ -40,8 +40,9 @@ public class Offer_32_II_BinaryTreeLevelOrder {
     }
 
     public List<List<Integer>> levelOrder(TreeNode root) {
-        if(root == null)
+        if (root == null) {
             return new ArrayList<>();
+        }
 
         List<List<Integer>> ret = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
@@ -56,10 +57,11 @@ public class Offer_32_II_BinaryTreeLevelOrder {
                 TreeNode node = queue.poll();
                 levelList.add(node.val);
 
-                if(node.left != null) queue.offer(node.left);
-                if(node.right != null) queue.offer(node.right);
+                if (node.left != null) queue.offer(node.left);
+                if (node.right != null) queue.offer(node.right);
             }
         }
         return ret;
     }
+
 }
