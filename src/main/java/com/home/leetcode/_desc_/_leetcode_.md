@@ -33,6 +33,7 @@ LC_198_HouseRobber （状态的定义 + 状态的转移）
 DP_knapsack01 （背包问题，最重要！）
 LC_300_LongestIncreasingSubsequence （动态规划 经典问题LIS 【最长上升子序列】）
 DP_LongestCommonSubsequence（动态规划 经典问题LCS 【最长公共子序列】）
+LC_053_MaximumSubarray（动态规划 经典问题【最大子序和】）
 
 LC_455_AssignCookies （贪心算法）
 LC_435_NonOverlappingIntervals （贪心选择性质）
@@ -57,6 +58,7 @@ NextPermutation_31
 LC_025_ReverseNodesKGroup （链表K翻转）
 LC_279_PerfectSquares （动态规划）
 LC_120_Triangle （动态规划）
+LC_005_LongestPalindromicSubstring（最长回文子串）（DP）
 
 GenerateParentheses_22 (卡特兰数)
 MergeKSortedLists_23
