@@ -6,7 +6,7 @@ package com.home.leetcode.easy;
  * F(0) = 0, F(1) = 1
  * F(n) = F(n - 1) + F(n - 2), for n > 1.
  *
- * @see <a href = "https://leetcode.cn/problems/fibonacci-number/" />
+ * @see <a href="https://leetcode.cn/problems/fibonacci-number/" />
  * @author Poet
  * @date 2022/5/29
  */
@@ -44,7 +44,7 @@ public class LC_509_FibonacciNumber {
      *
      * time: O(n)
      */
-    public int fibDP(int n){
+    public int fib_DP(int n){
         if (n == 0) {
             return 0;
         }

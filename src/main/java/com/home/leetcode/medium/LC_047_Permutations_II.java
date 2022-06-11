@@ -22,7 +22,7 @@ import java.util.List;
  * @author Poet
  * @date 2019-01-21
  */
-public class LC_047_PermutationsII {
+public class LC_047_Permutations_II {
 
     List<List<Integer>> res;
     boolean[] visited;
@@ -58,7 +58,7 @@ public class LC_047_PermutationsII {
 
         for (int i = 0; i < nums.length; i++) {
             // 保证在填第index个数的时候重复数字只会被填入一次
-            // （对原数组排序，保证相同的数字都相邻，然后每次填入的数一定是这个数所在重复数集合中「从左往右第一个未被填过的数字」）
+            // 对原数组排序，保证相同的数字都相邻，然后每次填入的数一定是这个数所在重复数集合中「从左往右第一个未被填过的数字」
             if (visited[i] || (i > 0 && nums[i] == nums[i - 1] && !visited[i - 1])) {
                 continue;
             }
@@ -66,7 +66,6 @@ public class LC_047_PermutationsII {
             perm.add(nums[i]);
             visited[i] = true;
             backtrack(nums, index + 1, perm);
-
             visited[i] = false;
             perm.remove(perm.size() - 1);
         }
