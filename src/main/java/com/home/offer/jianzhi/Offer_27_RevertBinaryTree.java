@@ -7,25 +7,25 @@ package com.home.offer.jianzhi;
  *
  * 例如输入：
  *
- *      4
- *    /   \
- *   2     7
- *  / \   / \
- * 1   3 6   9
+ *   4
+ *  /  \
+ *  2   7
+ * / \  / \
+ * 1  3 6  9
  * 镜像输出：
  *
- *      4
- *    /   \
- *   7     2
- *  / \   / \
- * 9   6 3   1
- *  
+ *   4
+ *  /  \
+ *  7   2
+ * / \  / \
+ * 9  6 3 1
+ * 
  *
  * 示例 1：
  * 输入：root = [4,2,7,1,3,6,9]
  * 输出：[4,7,2,9,6,3,1]
  *
- * 链接：https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof
+ * @see <a href="https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof" />
  * @author Poet
  * @date 2020/5/29
  */
@@ -38,6 +38,7 @@ public class Offer_27_RevertBinaryTree {
         TreeNode(int x) { val = x; }
     }
 
+    // 递归
     public TreeNode mirrorTree(TreeNode root) {
         if(root == null)
             return null;
