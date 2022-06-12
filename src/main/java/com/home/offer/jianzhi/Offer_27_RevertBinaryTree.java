@@ -40,8 +40,9 @@ public class Offer_27_RevertBinaryTree {
 
     // 递归
     public TreeNode mirrorTree(TreeNode root) {
-        if(root == null)
+        if (root == null) {
             return null;
+        }
 
         TreeNode leftChild = mirrorTree(root.left);
         TreeNode rightChild = mirrorTree(root.right);
