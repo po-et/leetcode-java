@@ -52,7 +52,7 @@ public class Offer_63_BestTimeToBuyAndSellStock {
      * 状态转移方程：
      *   由于题目限定 “买卖该股票一次” ，因此前 i 日最大利润 dp[i] 等于前 i - 1 日最大利润 dp[i-1] 和第 i 日卖出的最大利润中的最大值。
      *   前i日最大利润 = max( 前(i−1)日最大利润, 第i日价格−前i日最低价格 )
-     *   dp[i] = max( dp[i−1], prices[i]−min(prices[0:i]) )
+     *   dp[i] = max( dp[i−1], prices[i] − min(prices[0:i]) )
      *
      * 初始状态：
      *   dp[0] = 0, 即首日利润为 0
@@ -69,6 +69,10 @@ public class Offer_63_BestTimeToBuyAndSellStock {
      * 题解：https://leetcode.cn/problems/gu-piao-de-zui-da-li-run-lcof/solution/mian-shi-ti-63-gu-piao-de-zui-da-li-run-dong-tai-2/
      */
     public int maxProfit_dp(int[] prices) {
+        if (prices.length == 0) {
+            return 0;
+        }
+
         int n = prices.length;
         int[] dp = new int[n];
         int minPrice = prices[0];
