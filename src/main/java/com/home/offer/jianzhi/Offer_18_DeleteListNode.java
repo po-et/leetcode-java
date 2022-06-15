@@ -13,9 +13,9 @@ package com.home.offer.jianzhi;
  *
  * 输入: head = [4,5,1,9], val = 5
  * 输出: [4,1,9]
- * 解释: 给定你链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -> 1 -> 9.
+ * 解释: 给定你链表中值为5的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -> 1 -> 9.
  *
- * 链接：https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof
+ * @see <a href="https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof" />
  * @author Poet
  * @date 2020/5/28
  */

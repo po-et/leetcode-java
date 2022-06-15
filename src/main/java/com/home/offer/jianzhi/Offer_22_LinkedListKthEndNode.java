@@ -9,7 +9,7 @@ package com.home.offer.jianzhi;
  * 给定一个链表: 1->2->3->4->5, 和 k = 2.
  * 返回链表 4->5.
  *
- * 链接：https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof
+ * @see <a href="https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof" />
  * @author Poet
  * @date 2020/5/29
  */
@@ -21,9 +21,13 @@ public class Offer_22_LinkedListKthEndNode {
         ListNode(int x) { val = x; }
     }
 
+    /**
+     * 方法：双指针
+     */
     public ListNode getKthFromEnd(ListNode head, int k) {
-        if(head == null)
+        if (head == null) {
             return null;
+        }
 
         ListNode slow = head;
         ListNode fast = head;
@@ -31,14 +35,14 @@ public class Offer_22_LinkedListKthEndNode {
         // get listNode length
         int length = 0;
         while (slow != null) {
-            length ++;
+            length++;
             slow = slow.next;
         }
 
         // 考虑K大于链表长度的情形
         k = k > length ? k % length : k;
-        slow = head;
 
+        slow = head;
         for (int i = 0; i < k; i++) {
             fast = fast.next;
         }
@@ -47,8 +51,33 @@ public class Offer_22_LinkedListKthEndNode {
             fast = fast.next;
             slow = slow.next;
         }
-
         return slow;
+    }
+
+
+    /**
+     * 方法：计算length后移动
+     */
+    public ListNode getKthFromEnd_(ListNode head, int k) {
+        if(head == null){
+            return null;
+        }
+
+        ListNode dummyHead = new ListNode(0);
+        dummyHead.next = head;
+
+        ListNode cur = dummyHead;
+        int length = 0;
+        while (cur.next != null) {
+            length++;
+            cur = cur.next;
+        }
+
+        cur = dummyHead;
+        for (int i = 0; i < length - k; i++) {
+            cur = cur.next;
+        }
+        return cur;
     }
 
 }
