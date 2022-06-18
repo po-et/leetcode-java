@@ -24,6 +24,9 @@ public class LC_005_LongestPalindromicSubstring {
      * 方法一：动态规划
      *
      * 官方题解：https://leetcode.cn/problems/longest-palindromic-substring/solution/zui-chang-hui-wen-zi-chuan-by-leetcode-solution/
+     *
+     * time:  O(n^2)
+     * space: O(n^2)
      */
     public String longestPalindrome(String s) {
         int len = s.length();
