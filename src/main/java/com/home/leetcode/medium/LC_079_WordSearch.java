@@ -15,7 +15,7 @@ package com.home.leetcode.medium;
  * Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "SEE"
  * Output: true
  *
- * @see <a href = "https://leetcode.cn/problems/word-search/" />
+ * @see <a href="https://leetcode.cn/problems/word-search/" />
  * @author Poet
  * @date 2022/5/29
  */
