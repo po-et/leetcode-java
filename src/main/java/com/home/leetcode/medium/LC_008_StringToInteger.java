@@ -1,4 +1,4 @@
-package com.home.leetcode;
+package com.home.leetcode.medium;
 
 /**
  * StringToInteger
@@ -7,9 +7,11 @@ package com.home.leetcode;
  * time: O(n)
  * space: O(1)
  * <p>
+ *
+ * @see <a href="https://leetcode.cn/problems/string-to-integer-atoi/" />
  * Created by Poet on 2019-01-08.
  */
-public class StringToInteger_8 {
+public class LC_008_StringToInteger {
     public static void main(String[] args) {
         System.out.println(myAtoi("1234567"));
         System.out.println(myAtoi("+1234567"));

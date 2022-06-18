@@ -24,7 +24,7 @@ package com.home.leetcode.medium;
 public class LC_055_JumpGame {
 
     /**
-     * 方法一：贪心
+     * 方法一：贪心 (Greedy的思想)
      *
      * time:  O(n) 其中 n 为数组的大小。只需要访问 nums 数组一遍，共 n 个位置。
      * space: O(1)
