@@ -1,5 +1,7 @@
 package com.home.jianzhi_offer;
 
+import com.home.leetcode.hard.LC_295_FindMedianFromDataStream;
+
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -27,6 +29,8 @@ import java.util.Queue;
  * ["MedianFinder","addNum","findMedian","addNum","findMedian"]
  * [[],[2],[],[3],[]]
  * 输出：[null,null,2.00000,null,2.50000]
+ *
+ * 题目同主站 {@link LC_295_FindMedianFromDataStream}
  *
  * @see <a href="https://leetcode-cn.com/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/" />
  * @author Poet
