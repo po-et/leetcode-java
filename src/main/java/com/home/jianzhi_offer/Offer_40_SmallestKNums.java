@@ -11,7 +11,7 @@ import java.util.Arrays;
  * 输入：arr = [3,2,1], k = 2
  * 输出：[1,2] 或者 [2,1]
  *
- * 链接：https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof
+ * @see <a href="https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof" />
  * @author Poet
  * @date 2020/5/31
  */
@@ -22,8 +22,9 @@ public class Offer_40_SmallestKNums {
      * 时间复杂度：O(n)，空间复杂度：O(logn)，递归调用的期望深度为O(logn)，每层需要的空间为O(1)，只有常数个变量。
      */
     public int[] getLeastNumbers(int[] arr, int k) {
-        if(arr == null || arr.length == 0 || k == 0)
+        if(arr == null || arr.length == 0 || k == 0) {
             return new int[0];
+        }
 
         // 最后一个参数表示我们要找的是下标为k-1的数
         return quickSearch(arr, 0, arr.length - 1, k - 1);
@@ -42,16 +43,22 @@ public class Offer_40_SmallestKNums {
     // 快排切分，返回下标p，使得比nums[p]小的数都在p的左边，比nums[p]大的数都在p的右边。
     private int partition(int[] arr, int l, int r) {
         // swap random
-        swap(arr, l, (int)(Math.random() * (r-l+1)) + l);
+        swap(arr, l, (int) (Math.random() * (r - l + 1)) + l);
         int v = arr[l];
 
         // arr[l+1..i) <= v, (j..r] >= v
         int i = l + 1, j = r;
 
         while (true) {
-            while(i <= r && arr[i] < v) i++;
-            while(j >= l+1 && arr[j] > v) j--;
-            if(i > j) break;
+            while (i <= r && arr[i] < v) {
+                i++;
+            }
+            while (j >= l + 1 && arr[j] > v) {
+                j--;
+            }
+            if (i > j) {
+                break;
+            }
 
             swap(arr, i, j);
             i++;
@@ -67,10 +74,26 @@ public class Offer_40_SmallestKNums {
         arr[j] = tmp;
     }
 
+
     /**
      * 方法二：最大堆
      * 时间复杂度：O(nlogk)，空间复杂度：O(k)
      */
 
 
+
+    /**
+     * 方法三：原生排序算法
+     */
+    public int[] getLeastNumbers_(int[] arr, int k) {
+        Arrays.sort(arr);
+        int[] res = new int[k];
+        for (int i = 0; i < k; i++) {
+            res[i] = arr[i];
+        }
+        return res;
+    }
+
 }
+
+

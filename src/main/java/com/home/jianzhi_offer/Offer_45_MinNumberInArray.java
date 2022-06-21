@@ -15,7 +15,7 @@ import java.util.Arrays;
  * 输入: [3,30,34,5,9]
  * 输出: "3033459"
  *
- * @see <a href="https://leetcode-cn.com/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof" />
+ * @see <a href="https://leetcode.cn/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof" />
  * @author Poet
  * @date 2020/6/1
  */
@@ -76,6 +76,7 @@ public class Offer_45_MinNumberInArray {
         if (l >= r) {
             return;
         }
+
         int p = partition(strs, l, r);
         quickSort(strs, l, p - 1);
         quickSort(strs, p + 1, r);
