@@ -38,7 +38,6 @@ public class LC_235_LowestCommonAncestorOfABinarySearchTree {
         if (p.val > root.val && q.val > root.val) {
             return lowestCommonAncestor(root.right, p, q);
         }
-
         // 同时包含三种情况：1)p q分布在root的左右, 2)p就是root, 3)q就是root
         return root;
     }
