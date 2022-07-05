@@ -9,14 +9,13 @@ package com.home.jianzhi_offer;
  * 输入: n = 1
  * 输出: [1,2,3,4,5,6,7,8,9]
  *
- * 链接：https://leetcode-cn.com/problems/da-yin-cong-1dao-zui-da-de-nwei-shu-lcof
+ * @see <a href="https://leetcode.cn/problems/da-yin-cong-1dao-zui-da-de-nwei-shu-lcof/" />
  * @author Poet
  * @date 2020/5/28
  */
 public class Offer_17_PrintNumbers {
 
     public int[] printNumbers(int n) {
-
         int size = 1;
         for (int i = 0; i < n; i++) {
             size *= 10;
