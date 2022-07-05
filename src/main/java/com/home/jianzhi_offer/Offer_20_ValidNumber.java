@@ -3,9 +3,11 @@ package com.home.jianzhi_offer;
 /**
  * 面试题20. 表示数值的字符串
  *
- * 请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串"+100"、"5e2"、"-123"、"3.1416"、"0123"都表示数值，但"12e"、"1a3.14"、"1.2.3"、"+-5"、"-1E-16"及"12e+5.4"都不是。
+ * 请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。
+ * 例如，字符串"+100"、"5e2"、"-123"、"3.1416"、"0123"都表示数值，但"12e"、"1a3.14"、"1.2.3"、"+-5"、"-1E-16"及"12e+5.4"都不是。
  *
- * 链接：https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof
+ * @see <a href="https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof" />
+ *
  * @author Poet
  * @date 2020/5/28
  */
@@ -15,8 +17,9 @@ public class Offer_20_ValidNumber {
      * Solution: https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/solution/javaban-ben-ti-jie-luo-ji-qing-xi-by-yangshyu6/
      */
     public boolean isNumber(String s) {
-        if(s == null || s.trim().length() == 0)
+        if(s == null || s.trim().length() == 0) {
             return false;
+        }
 
         // 标记是否遇到相应情况
         boolean numSeen = false;
