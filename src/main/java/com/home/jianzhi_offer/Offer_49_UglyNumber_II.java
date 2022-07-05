@@ -9,9 +9,8 @@ package com.home.jianzhi_offer;
  * 输入: n = 10
  * 输出: 12
  * 解释: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 是前 10 个丑数。
- * 说明:  
  *
- * 链接：https://leetcode-cn.com/problems/chou-shu-lcof
+ * @see <a href="https://leetcode.cn/problems/chou-shu-lcof/" />
  * @author Poet
  * @date 2020/6/1
  */
@@ -22,6 +21,8 @@ public class Offer_49_UglyNumber_II {
      *
      * 状态定义：设动态规划列表dp ，dp[i]代表第 i + 1个丑数。
      * 转移方程：dp[i] = min(dp[a]×2, dp[b]×3, dp[c]×5)
+     *
+     * solution: https://leetcode.cn/problems/chou-shu-lcof/solution/mian-shi-ti-49-chou-shu-dong-tai-gui-hua-qing-xi-t/
      */
     public int nthUglyNumber(int n) {
         int a = 0, b = 0, c = 0;
