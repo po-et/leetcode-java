@@ -14,7 +14,12 @@ import java.util.Stack;
  * push(1), push(2), push(3), push(4), pop() -> 4,
  * push(5), pop() -> 5, pop() -> 3, pop() -> 2, pop() -> 1
  *
- * 链接：https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof
+ * 示例 2：
+ * 输入：pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
+ * 输出：false
+ * 解释：1 不能在 2 之前弹出。
+ *
+ * @see <a href="https://leetcode.cn/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/" />
  * @author Poet
  * @date 2020/5/30
  */
@@ -22,6 +27,7 @@ public class Offer_31_ValidateStackSequences {
 
     /**
      * 辅助栈
+     *
      * https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/solution/mian-shi-ti-31-zhan-de-ya-ru-dan-chu-xu-lie-mo-n-2/
      */
     public boolean validateStackSequences(int[] pushed, int[] popped) {
@@ -29,8 +35,8 @@ public class Offer_31_ValidateStackSequences {
         int i = 0;
 
         for (int num : pushed) {
-            stack.push(num);
-            while (!stack.isEmpty() && stack.peek() == popped[i]) {
+            stack.push(num); // num 入栈
+            while (!stack.isEmpty() && stack.peek() == popped[i]) { // 循环判断与出栈
                 stack.pop();
                 i++;
             }
