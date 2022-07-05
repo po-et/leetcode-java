@@ -17,7 +17,7 @@ package com.home.jianzhi_offer;
  * 输入: [1,6,3,2,5]
  * 输出: false
  *
- * 链接：https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof
+ * @see <a href="https://leetcode.cn/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/" />
  * @author Poet
  * @date 2020/5/30
  */
@@ -32,27 +32,43 @@ public class Offer_33_BST_VerifyPostorder {
 
     /**
      * 方法一：递归分治
+     *
      *  1、划分左右子树
      *  2、判断是否为二叉搜索树
-     * https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/solution/mian-shi-ti-33-er-cha-sou-suo-shu-de-hou-xu-bian-6/
+     *
+     * 官方题解：https://leetcode.cn/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/solution/mian-shi-ti-33-er-cha-sou-suo-shu-de-hou-xu-bian-6/
+     *
+     * time:  O(N^2) 每次调用 recur(i,j) 减去一个根节点，因此递归占用 O(N) ；最差情况下（即当树退化为链表），每轮递归都需遍历树所有节点，占用 O(N)
+     * space: O(N) 最差情况下（即当树退化为链表），递归深度将达到 N
+     *
      */
     public boolean verifyPostorder(int[] postorder) {
-        if(postorder == null)
+        if(postorder == null) {
             return false;
+        }
+
         return recur(postorder, 0, postorder.length - 1);
     }
 
     private boolean recur(int[] postorder, int i, int j) {
-        if (i >= j)
+        // 当 i≥j ，说明此子树节点数量 ≤1 ，无需判别正确性，因此直接返回 true
+        if (i >= j) {
             return true;
+        }
 
         int p = i;
-        while(postorder[p] < postorder[j]) p++;  // 找到左子树
+        while (postorder[p] < postorder[j]) {
+            p++;  // 找到左子树
+        }
         int m = p;
-        while(postorder[p] > postorder[j]) p++;  // 找到右子树
+        while (postorder[p] > postorder[j]) {
+            p++;  // 找到右子树
+        }
 
         // 说明当前数组 不是二叉搜索树的后序
-        if(p != j) return false;
+        if (p != j) {
+            return false;
+        }
 
         // 所有子树都需正确才可判定正确，因此使用 与逻辑符 && 连接
         return recur(postorder, i, m - 1) && recur(postorder, m, j - 1);
