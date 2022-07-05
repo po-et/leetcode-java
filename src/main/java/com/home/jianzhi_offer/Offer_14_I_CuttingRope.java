@@ -1,5 +1,7 @@
 package com.home.jianzhi_offer;
 
+import com.home.leetcode.medium.LC_343_IntegerBreak;
+
 /**
  * 面试题14- I. 剪绳子
  *
@@ -11,18 +13,21 @@ package com.home.jianzhi_offer;
  * 输出: 1
  * 解释: 2 = 1 + 1, 1 × 1 = 1
  *
- * 链接：https://leetcode-cn.com/problems/jian-sheng-zi-lcof
  * 注意：本题与主站 343 题相同：https://leetcode-cn.com/problems/integer-break/
+ * {@link LC_343_IntegerBreak}
+ *
+ * @see <a href="https://leetcode.cn/problems/jian-sheng-zi-lcof/" />
  * @author Poet
  * @date 2020/5/27
  */
-public class Offer_14_CuttingRope_I {
+public class Offer_14_I_CuttingRope {
 
     private int[] memo;
 
     public int cuttingRope(int n) {
-        if (n <= 1)
+        if (n <= 1) {
             throw new IllegalArgumentException("param is not valid.");
+        }
 
         memo = new int[n + 1];
         return cuttingRecursive(n);
@@ -30,6 +35,7 @@ public class Offer_14_CuttingRope_I {
 
     /**
      * [递归（记忆化搜索）]
+     *
      * 将n分割求最大乘积（至少分割为两部分）
      */
     public int cuttingRecursive(int n){

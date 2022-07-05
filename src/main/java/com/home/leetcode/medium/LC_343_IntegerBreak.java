@@ -34,10 +34,12 @@ public class LC_343_IntegerBreak {
      * 最后，再考虑使用自底向上的方法，转成（动态规划）
      */
 
-    private int[] memo;
+
     /**
-     * 记忆化搜索
+     * 方法一：记忆化搜索
      */
+    private int[] memo;
+
     public int integerBreak(int n) {
         assert n >= 2;
         // memo[i]表示将i分割，得到的最大乘积
@@ -66,7 +68,7 @@ public class LC_343_IntegerBreak {
 
 
     /**
-     * 动态规划
+     * 方法二：动态规划
      */
     public int integerBreak_DP(int n) {
         assert n >= 2;
