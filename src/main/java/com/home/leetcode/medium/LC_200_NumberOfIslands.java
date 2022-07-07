@@ -91,8 +91,9 @@ public class LC_200_NumberOfIslands {
      */
     public int numIslands_2(char[][] grid) {
         // 参数校验
-        if (grid == null || grid.length == 0 || grid[0].length == 0)
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
             return 0;
+        }
 
         int m = grid.length;
         int n = grid[0].length;

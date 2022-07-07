@@ -47,6 +47,7 @@ public class LC_343_IntegerBreak {
 
         return breakInteger(n);
     }
+
     // 将n进行分割（至少分割成两部分），可以获得的最大乘积
     private int breakInteger(int n) {
         if (n == 1) {
