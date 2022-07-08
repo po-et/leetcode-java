@@ -25,6 +25,7 @@ LC_129_SumRootToLeafNumbers （二叉树所有路径的和，重点理解递归�
 LC_098_ValidateBinarySearchTree （判断是否是二分搜索树）
 LC_230_KthSmallestElementInBST （二分搜索树中找k大 /rank）
 
+// 回溯法
 LC_017_LetterCombinationsOfPhoneNumber （回溯法，理解backtrack思路）
 LC_046_Permutations （回溯法，排列问题）
 LC_077_Combinations （回溯法，组合问题，重点剪枝优化）
@@ -32,12 +33,14 @@ LC_079_WordSearch （回溯法，单次搜索）
 LC_200_NumberOfIslands （回溯：floodfill算法）
 LC_051_N_Queens （回溯法：N皇后问题）
 
+// 动态规划
 LC_343_IntegerBreak （记忆化搜索 -> 动态规划）
 LC_198_HouseRobber （状态的定义 + 状态的转移）
 DP_knapsack01 （背包问题，最重要！）
 LC_300_LongestIncreasingSubsequence （动态规划 经典问题LIS 【最长上升子序列】）
 DP_LongestCommonSubsequence（动态规划 经典问题LCS 【最长公共子序列】）
 LC_053_MaximumSubarray（动态规划 经典问题【最大子序和】）
+LC_005_LongestPalindromicSubstring（动态规划 检点问题 【最长回文子串】）
 LC_121_BestTimeToBuyAndSellStock, LC_122_BestTimeToBuyAndSellStock_II（动态规划 买卖股票的最佳时机）
 Offer_47_MaxValue（动态规划 二维DP矩阵的最大价值）
 
@@ -56,6 +59,8 @@ WildcardMatching_44 （Facebook面试常考）
 LC_222_CountCompleteTreeNodes （完全二叉树节点数）
 LC_450_DeleteNodeInBST (二分搜索树删除节点)
 
+## 解题的思路特别精彩
+
 ## 可能会考
 NextPermutation_31
 
@@ -64,7 +69,6 @@ NextPermutation_31
 LC_025_ReverseNodesKGroup （链表K翻转）
 LC_279_PerfectSquares （动态规划）
 LC_120_Triangle （动态规划）
-LC_005_LongestPalindromicSubstring（最长回文子串）（DP）
 LC_498_DiagonalTraverse （对角线遍历）
 
 GenerateParentheses_22 (卡特兰数)

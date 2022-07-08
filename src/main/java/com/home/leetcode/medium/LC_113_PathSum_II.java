@@ -92,8 +92,9 @@ public class LC_113_PathSum_II {
     List<List<Integer>> res;
     public List<List<Integer>> pathSum_Better(TreeNode root, int sum) {
         res = new ArrayList<>();
-        if (root == null)
+        if (root == null) {
             return res;
+        }
 
         List<Integer> p = new ArrayList<>();
         recursive(root, sum, p);
@@ -101,13 +102,14 @@ public class LC_113_PathSum_II {
     }
 
     private void recursive(TreeNode root, int sum, List<Integer> p) {
-        if (root == null)
+        if (root == null) {
             return;
+        }
 
         p.add(root.val);
-        sum -= root.val;
+        sum = sum - root.val;
 
-        if (root.left == null && root.right == null && sum == 0) {
+        if (sum == 0 && root.left == null && root.right == null) {
             res.add(new ArrayList<>(p));
         }
 

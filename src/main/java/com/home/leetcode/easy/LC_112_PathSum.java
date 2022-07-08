@@ -20,7 +20,7 @@ package com.home.leetcode.easy;
  * 7    2      1
  * return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
  *
- * @see <a href ="https://leetcode.cn/problems/path-sum/" />
+ * @see <a href="https://leetcode.cn/problems/path-sum/" />
  * @author Poet
  * @date 2020/5/4
  */

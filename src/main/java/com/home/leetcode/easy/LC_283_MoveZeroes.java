@@ -1,8 +1,10 @@
 package com.home.leetcode.easy;
 
-import com.home.leetcode.utils.ArrayUtils;
+import java.util.Arrays;
 
 /**
+ * 283. Move Zeroes
+ *
  * Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
  *
  * Example:
@@ -14,7 +16,7 @@ import com.home.leetcode.utils.ArrayUtils;
  * You must do this in-place without making a copy of the array.
  * Minimize the total number of operations.
  *
- * @see <a href="https://leetcode.com/problems/move-zeroes/" />
+ * @see <a href="https://leetcode.cn/problems/move-zeroes/" />
  * @author Poet
  * @date 2020/5/6
  */
@@ -32,7 +34,7 @@ public class LC_283_MoveZeroes {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
                 if (k != i) {
-                    ArrayUtils.swap(nums, k, i);
+                    swap(nums, k, i);
                 }
                 k++;
             }
@@ -64,4 +66,19 @@ public class LC_283_MoveZeroes {
         }
     }
 
+    private static void swap(int arr[], int l, int r) {
+        int tmp = arr[l];
+        arr[l] = arr[r];
+        arr[r] = tmp;
+    }
+
+
+    public static void main(String[] args) {
+        LC_283_MoveZeroes solution = new LC_283_MoveZeroes();
+
+        int[] nums = {0, 1, 0, 2, 0, 3, 0, 4, 0};
+        System.out.println(Arrays.toString(nums));
+        solution.moveZeroes(nums);
+        System.out.println(Arrays.toString(nums));
+    }
 }

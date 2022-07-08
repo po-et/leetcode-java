@@ -38,12 +38,14 @@ public class LC_236_LowestCommonAncestorOfBinaryTree {
         TreeNode left = lowestCommonAncestor(root.left, p, q);    //往左分支上寻找
         TreeNode right = lowestCommonAncestor(root.right, p, q);  //往右分支上寻找
 
-        if (left != null && right != null)
+        if (left != null && right != null) {
             return root;  //说明 p 和 q 是分布在 root 两侧，返回即可
-        if (left != null)
+        }
+        if (left != null) {
             return left;  //说明在 left 分支上找到 p 或 q 节点，返回即可
-        else
+        } else {
             return right;  //否则返回 right
+        }
     }
 
 }

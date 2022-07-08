@@ -3,13 +3,16 @@ package com.home.leetcode.easy;
 import com.home.leetcode.utils.ArrayUtils;
 
 /**
+ * 27. Remove Element
+ *
  * Given an array nums and a value val, remove all instances of that value in-place and return the new length.
  *
  * Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
  *
  * The order of elements can be changed. It doesn't matter what you leave beyond the new length.
  *
- * @see <a href="https://leetcode.com/problems/remove-element/" />
+ * （类似26，80题）
+ *
  * @see <a href="https://leetcode.cn/problems/remove-element/" />
  * @author Poet
  * @date 2020/5/6
@@ -21,10 +24,10 @@ public class LC_027_RemoveElement {
         int k = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != val) {
-                if(k != i)
-                    nums[k++] = nums[i];
-                else
-                    k++;
+                if(k != i) {
+                    nums[k] = nums[i];
+                }
+                k++;
             }
         }
         return k;
