@@ -22,7 +22,6 @@ public class Offer_24_ReverseListNode {
     }
 
     public ListNode reverseList(ListNode head) {
-
         ListNode prev = null;
         ListNode curr = head;
 

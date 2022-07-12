@@ -40,7 +40,6 @@ public class Offer_03_FindRepeatNumber {
 
     public static void main(String[] args) {
         int[] arr = {2, 3, 1, 0, 2, 5, 3};
-
         System.out.println(findRepeatNumber(arr));
     }
 

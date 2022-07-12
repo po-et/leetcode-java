@@ -34,10 +34,41 @@ public class Offer_07_BuildTree {
         TreeNode(int x) { val = x; }
     }
 
+
     /**
-     * 方法一：递归
+     * 分治算法
+     *
+     * 作者：jyd
+     * 链接：https://leetcode.cn/problems/zhong-jian-er-cha-shu-lcof/solution/mian-shi-ti-07-zhong-jian-er-cha-shu-di-gui-fa-qin/
      */
     class Solution {
+        int[] preorder;
+        HashMap<Integer, Integer> dic = new HashMap<>();  // 为了提升效率，使用哈希表 dic 存储中序遍历的值与索引的映射，查找操作的时间复杂度为 O(1)
+
+        public TreeNode buildTree(int[] preorder, int[] inorder) {
+            this.preorder = preorder;
+            for (int i = 0; i < inorder.length; i++) {
+                dic.put(inorder[i], i);
+            }
+            return recur(0, 0, inorder.length - 1);
+        }
+
+        TreeNode recur(int root, int left, int right) {
+            if (left > right) return null;                                    // 递归终止
+
+            TreeNode node = new TreeNode(preorder[root]);                     // 建立根节点
+            int i = dic.get(preorder[root]);                                  // 划分根节点、左子树、右子树
+            node.left = recur(root + 1, left, i - 1);              // 开启左子树递归
+            node.right = recur(root + i - left + 1, i + 1, right);  // 开启右子树递归
+            return node;                                                      // 回溯返回根节点
+        }
+    }
+
+
+    /**
+     * 方法：递归
+     */
+    class Solution_2 {
         private Map<Integer, Integer> indexMap;
 
         public TreeNode buildTree(int[] preorder, int[] inorder) {
