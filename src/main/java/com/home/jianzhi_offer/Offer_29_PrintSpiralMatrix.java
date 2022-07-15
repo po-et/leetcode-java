@@ -23,6 +23,8 @@ public class Offer_29_PrintSpiralMatrix {
 
     /**
      * 方法一：模拟
+     *
+     * solution: https://leetcode.cn/problems/spiral-matrix/solution/luo-xuan-ju-zhen-by-leetcode-solution/
      */
     public int[] spiralOrder(int[][] matrix) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {

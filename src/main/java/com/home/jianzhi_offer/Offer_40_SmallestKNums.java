@@ -1,6 +1,7 @@
 package com.home.jianzhi_offer;
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 /**
  * 面试题40. 最小的k个数
@@ -11,7 +12,7 @@ import java.util.Arrays;
  * 输入：arr = [3,2,1], k = 2
  * 输出：[1,2] 或者 [2,1]
  *
- * @see <a href="https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof" />
+ * @see <a href="https://leetcode.cn/problems/zui-xiao-de-kge-shu-lcof/" />
  * @author Poet
  * @date 2020/5/31
  */
@@ -26,7 +27,7 @@ public class Offer_40_SmallestKNums {
             return new int[0];
         }
 
-        // 最后一个参数表示我们要找的是下标为k-1的数
+        // 最后一个参数表示我们要找的是下标为 k-1 的数
         return quickSearch(arr, 0, arr.length - 1, k - 1);
     }
 
@@ -36,7 +37,7 @@ public class Offer_40_SmallestKNums {
         if (p == k) {
             return Arrays.copyOf(arr, p + 1);
         }
-        // 否则根据下标p与k的大小关系来决定继续切分左段还是右段。
+        // 否则根据下标p与k的大小关系来决定继续切分左段还是右段
         return p > k ? quickSearch(arr, lo, p - 1, k) : quickSearch(arr, p + 1, hi, k);
     }
 
@@ -79,13 +80,34 @@ public class Offer_40_SmallestKNums {
      * 方法二：最大堆
      * 时间复杂度：O(nlogk)，空间复杂度：O(k)
      */
+    public int[] getLeastNumbers_heap(int[] arr, int k) {
+        int[] res = new int[k];
+        if (k == 0) {
+            return res;
+        }
 
+        PriorityQueue<Integer> queue = new PriorityQueue<>((o1, o2) -> o2 - o1);
+        for (int i = 0; i < k; i++) {
+            queue.offer(arr[i]);
+        }
+
+        for (int i = k; i < arr.length; i++) {
+            if (queue.peek() > arr[i]) {
+                queue.poll();
+                queue.offer(arr[i]);
+            }
+        }
+        for (int i = 0; i < k; i++) {
+            res[i] = queue.poll();
+        }
+        return res;
+    }
 
 
     /**
      * 方法三：原生排序算法
      */
-    public int[] getLeastNumbers_(int[] arr, int k) {
+    public int[] getLeastNumbers_sort(int[] arr, int k) {
         Arrays.sort(arr);
         int[] res = new int[k];
         for (int i = 0; i < k; i++) {

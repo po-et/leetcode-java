@@ -1,7 +1,7 @@
 package com.home.leetcode.medium;
 
 /**
- * 3. 无重复字符的最长子串
+ * 3. Longest Substring Without Repeating Characters（无重复字符的最长子串）
  *
  * Given a string, find the length of the longest substring without repeating characters.
  *
@@ -10,6 +10,11 @@ package com.home.leetcode.medium;
  * Input: "abcabcbb"
  * Output: 3
  * Explanation: The answer is "abc", with the length of 3.
+ *
+ * Example 2:
+ * Input: s = "bbbbb"
+ * Output: 1
+ * Explanation: The answer is "b", with the length of 1.
  *
  * @see <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" />
  * @author Poet

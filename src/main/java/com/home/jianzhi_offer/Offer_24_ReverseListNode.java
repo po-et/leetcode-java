@@ -22,17 +22,17 @@ public class Offer_24_ReverseListNode {
     }
 
     public ListNode reverseList(ListNode head) {
-        ListNode prev = null;
-        ListNode curr = head;
+        ListNode pre = null;
+        ListNode cur = head;
 
-        while (curr != null) {
-            ListNode next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
         }
 
-        return prev;
+        return pre;
     }
 
 }
