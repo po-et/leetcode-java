@@ -13,14 +13,16 @@ import java.util.Map;
  * A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
  *
  * Example 1:
- *
  * Input: digits = "23"
  * Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
  *
  * Example 2:
- *
  * Input: digits = ""
  * Output: []
+ *
+ * Example 3:
+ * Input: digits = "2"
+ * Output: ["a","b","c"]
  *
  * @see <a href="https://leetcode.cn/problems/letter-combinations-of-a-phone-number/" />
  * @author Poet
@@ -54,7 +56,7 @@ public class LC_017_LetterCombinationsOfPhoneNumber {
         return res;
     }
 
-    // preStr中保存了此时从digits[0...index-1]翻译得到的一个字母字符串
+    // preStr中保存了此时从digits[0...index-1]翻译得到的一个字母字符串，
     // 寻找和digits[index]匹配的字母，获得digits[0...index]翻译得到的解
     private void findCombination(String digits, int index, String preStr) {
         if (index == digits.length()) {
@@ -105,8 +107,8 @@ public class LC_017_LetterCombinationsOfPhoneNumber {
 
         char digit = digits.charAt(index);
         String letters = phoneMap.get(digit);
-        int lettersCount = letters.length();
-        for (int i = 0; i < lettersCount; i++) {
+
+        for (int i = 0; i < letters.length(); i++) {
             combination.append(letters.charAt(i));
             backtrack(combinations, phoneMap, digits, index + 1, combination);
             combination.deleteCharAt(index);
