@@ -22,8 +22,8 @@ public class LC_011_ContainerWithMostWater {
     /**
      * 方法一：双指针
      *
-     * time complexity:  O(n)
-     * space complexity: O(1)
+     * time:  O(n)
+     * space: O(1)
      */
     public int maxArea(int[] height) {
         int res = 0;

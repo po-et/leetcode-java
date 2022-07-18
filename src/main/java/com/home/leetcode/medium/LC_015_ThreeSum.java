@@ -35,9 +35,9 @@ public class LC_015_ThreeSum {
      * space: O(1)
      */
     public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> ret = new ArrayList<>();
+        List<List<Integer>> res = new ArrayList<>();
         if (nums == null || nums.length < 3) {
-            return ret;
+            return res;
         }
 
         // 先排序 O(nlogn)
@@ -53,7 +53,7 @@ public class LC_015_ThreeSum {
                 int sum = nums[i] + nums[left] + nums[right];
 
                 if (sum == 0) {
-                    ret.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    res.add(Arrays.asList(nums[i], nums[left], nums[right]));
 
                     left++;
                     right--;
@@ -68,8 +68,9 @@ public class LC_015_ThreeSum {
                 }
             }
         }
-        return ret;
+        return res;
     }
+
 
 
     public static void main(String[] args) {
