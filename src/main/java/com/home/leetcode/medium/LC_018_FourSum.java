@@ -3,10 +3,9 @@ package com.home.leetcode.medium;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 /**
- * 18. 四数之和
+ * 18. 4Sum (四数之和)
  *
  * Given an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.
  *
@@ -34,9 +33,9 @@ public class LC_018_FourSum {
      * time: O(n^3)
      */
     public List<List<Integer>> fourSum(int[] nums, int target) {
-        List<List<Integer>> ret = new ArrayList<>();
-        if (Objects.isNull(nums) || nums.length < 4) {
-            return ret;
+        List<List<Integer>> res = new ArrayList<>();
+        if (nums == null || nums.length < 4) {
+            return res;
         }
 
         // 先排序 O(nlogn)
@@ -53,7 +52,7 @@ public class LC_018_FourSum {
                 while (left < right) {
                     int sum = nums[i] + nums[j] + nums[left] + nums[right];
                     if (sum == target) {
-                        ret.add(Arrays.asList(nums[i], nums[j], nums[left], nums[right]));
+                        res.add(Arrays.asList(nums[i], nums[j], nums[left], nums[right]));
 
                         left++;
                         right--;
@@ -70,7 +69,7 @@ public class LC_018_FourSum {
                 }
             }
         }
-        return ret;
+        return res;
     }
 
 
