@@ -7,11 +7,10 @@ package com.home.leetcode.easy;
  * the nodes of the first two lists.
  *
  * Example:
- *
  * Input: 1->2->4, 1->3->4
  * Output: 1->1->2->3->4->4
  *
- * @see <a href = "https://leetcode.cn/problems/merge-two-sorted-lists/" />
+ * @see <a href="https://leetcode.cn/problems/merge-two-sorted-lists/" />
  * @author Poet
  * @date 2020/4/27
  */
@@ -25,39 +24,40 @@ public class LC_021_MergeTwoSortedLists {
 
     /**
      * 迭代
-     * time: O(m+n)
+     * time:  O(m+n)
      * space: O(1)
      */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);
-        ListNode curr = dummy;
+        ListNode cur = dummy;
 
         while (l1 != null && l2 != null) {
             if (l1.val <= l2.val) {
-                curr.next = l1;
+                cur.next = l1;
                 l1 = l1.next;
             } else {
-                curr.next = l2;
+                cur.next = l2;
                 l2 = l2.next;
             }
-            curr = curr.next;
+            cur = cur.next;
         }
 
         if (l1 != null) {
-            curr.next = l1;
+            cur.next = l1;
         }
         if (l2 != null) {
-            curr.next = l2;
+            cur.next = l2;
         }
+
         return dummy.next;
     }
 
 
     /**
      * 递归
-     * time: O(n+m)，其中 n 和 m 分别为两个链表的长度
-     * space:  O(n+m)，其中 n 和 m 分别为两个链表的长度。递归调用 mergeTwoLists 函数时需要消耗栈空间，栈空间的大小取决于递归调用的深度。
-     *         结束递归调用时 mergeTwoLists 函数最多调用 n+m 次，因此空间复杂度为 O(n+m)
+     * time:  O(n+m)，其中 n 和 m 分别为两个链表的长度
+     * space: O(n+m)，其中 n 和 m 分别为两个链表的长度。递归调用 mergeTwoLists 函数时需要消耗栈空间，栈空间的大小取决于递归调用的深度。
+     *                结束递归调用时 mergeTwoLists 函数最多调用 n+m 次，因此空间复杂度为 O(n+m)
      */
     public ListNode mergeTwoListsRecursive(ListNode l1, ListNode l2) {
         if (l1 == null) {

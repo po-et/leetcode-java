@@ -9,9 +9,9 @@ package com.home.leetcode.easy;
  * Input: 1->2->3->4->5->NULL
  * Output: 5->4->3->2->1->NULL
  *
+ * @see <a href="https://leetcode.cn/problems/reverse-linked-list/" />
  * @author Poet
  * @date 2020/4/23
- * @see <a href = "https://leetcode.cn/problems/reverse-linked-list/" />
  */
 public class LC_206_ReverseLinkedList {
 
@@ -19,20 +19,20 @@ public class LC_206_ReverseLinkedList {
     public class ListNode {
         int val;
         ListNode next;
-
         ListNode(int x) {val = x;}
     }
 
     public ListNode reverseList(ListNode head) {
         ListNode pre = null;
         ListNode cur = head;
+
         while (cur != null) {
             ListNode next = cur.next;
-
             cur.next = pre;
             pre = cur;
             cur = next;
         }
+
         return pre;
     }
 
