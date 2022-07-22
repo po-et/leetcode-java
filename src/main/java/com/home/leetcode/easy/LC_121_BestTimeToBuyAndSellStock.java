@@ -30,8 +30,8 @@ public class LC_121_BestTimeToBuyAndSellStock {
      *
      * 状态转移方程：
      *   由于题目限定 “买卖该股票一次” ，因此前 i 日最大利润 dp[i] 等于前 i - 1 日最大利润 dp[i-1] 和第 i 日卖出的最大利润中的最大值。
-     *   前i日最大利润 = max( 前(i−1)日最大利润, 第i日价格−前i日最低价格 )
-     *   dp[i] = max( dp[i−1], prices[i]−min(prices[0:i]) )
+     *   前i日最大利润 = max( 前(i−1)日最大利润, 第i日价格 − 前i日最低价格 )
+     *      dp[i]    = max( dp[i−1], prices[i] − min(prices[0:i]) )
      *
      * 初始状态：
      *   dp[0] = 0, 即首日利润为 0
@@ -71,6 +71,7 @@ public class LC_121_BestTimeToBuyAndSellStock {
         }
         return profit;
     }
+
 
     public static void main(String[] args) {
         LC_121_BestTimeToBuyAndSellStock solution = new LC_121_BestTimeToBuyAndSellStock();

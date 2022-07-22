@@ -69,10 +69,6 @@ public class Offer_63_BestTimeToBuyAndSellStock {
      * 题解：https://leetcode.cn/problems/gu-piao-de-zui-da-li-run-lcof/solution/mian-shi-ti-63-gu-piao-de-zui-da-li-run-dong-tai-2/
      */
     public int maxProfit_dp(int[] prices) {
-        if (prices.length == 0) {
-            return 0;
-        }
-
         int n = prices.length;
         int[] dp = new int[n];
         int minPrice = prices[0];
