@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 141. Linked List Cycle
+ * 141. Linked List Cycle (环形链表)
  *
  * Given head, the head of a linked list, determine if the linked list has a cycle in it.
  *
@@ -12,20 +12,32 @@ import java.util.Set;
  *
  * Return true if there is a cycle in the linked list. Otherwise, return false.
  *
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode.cn/problems/linked-list-cycle
- * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- * 
+ * Example 1:
+ * Input: head = [3,2,0,-4], pos = 1
+ * Output: true
+ * Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
+ *
+ * Example 2:
+ * Input: head = [1,2], pos = 0
+ * Output: true
+ * Explanation: There is a cycle in the linked list, where the tail connects to the 0th node.
+ *
+ * Example 3:
+ * Input: head = [1], pos = -1
+ * Output: false
+ * Explanation: There is no cycle in the linked list.
+ *
+ * Follow up: Can you solve it using O(1) (i.e. constant) memory?
+ *
+ * @see <a href="https://leetcode.cn/problems/linked-list-cycle" />
  * @author Poet
  * @date 2022/6/11
  */
 public class LC_141_LinkedListCycle {
 
-    // Definition for singly-linked list.
     class ListNode {
         int val;
         ListNode next;
-
         ListNode(int x) {
             val = x;
             next = null;
@@ -65,6 +77,7 @@ public class LC_141_LinkedListCycle {
 
         ListNode slow = head;
         ListNode fast = head.next;
+
         while (fast != slow) {
             if (fast == null || fast.next == null) {
                 return false;
@@ -73,6 +86,24 @@ public class LC_141_LinkedListCycle {
             slow = slow.next;
         }
         return true;
+    }
+
+    public boolean hasCycle_2(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+
+        ListNode fast = head;
+        ListNode slow = head;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
