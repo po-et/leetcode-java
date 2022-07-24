@@ -9,7 +9,7 @@ import java.util.Stack;
  *
  * Given a binary tree, return the postorder traversal of its nodes' values.
  *
- * @see <a href = "https://leetcode.com/problems/binary-tree-postorder-traversal/" />
+ * @see <a href="https://leetcode.com/problems/binary-tree-postorder-traversal/" />
  * @author Poet
  * @date 2020/5/3
  */
@@ -56,7 +56,9 @@ public class LC_145_BinaryTreePostorderTraversal {
      */
     public List<Integer> postorderTraversal2(TreeNode root) {
         List<Integer> ret = new ArrayList<>();
-        if (root == null) return ret;
+        if (root == null) {
+            return ret;
+        }
 
         Stack<Command> stack = new Stack<>();
         stack.push(new Command("go", root));

@@ -9,7 +9,7 @@ import java.util.Stack;
  *
  * Given a binary tree, return the preorder traversal of its nodes' values.
  *
- * @see <a href = "https://leetcode.cn/problems/binary-tree-preorder-traversal/" />
+ * @see <a href="https://leetcode.cn/problems/binary-tree-preorder-traversal/" />
  * @author Poet
  * @date 2020/5/3
  */
@@ -56,7 +56,9 @@ public class LC_144_BinaryTreePreorderTraversal {
      */
     public List<Integer> preorderTraversal2(TreeNode root) {
         List<Integer> ret = new ArrayList<>();
-        if (root == null) return ret;
+        if (root == null) {
+            return ret;
+        }
 
         Stack<Command> stack = new Stack<>();
         stack.push(new Command("go", root));
