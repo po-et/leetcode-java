@@ -83,6 +83,6 @@ LC_437_PathSum_III （比较难的递归）
 10 (正则)
 SudokuSolver_37 (数独填数)
 
+## 数据结构类问题
+LC_1206_DesignSkiplist （设计跳表）
 
-> 注意：基础题
-> 如：多写几遍翻转链表

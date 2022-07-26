@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 98. Validate Binary Search Tree
+ * 98. Validate Binary Search Tree (验证二叉搜索树)
  *
  * Given a binary tree, determine if it is a valid binary search tree (BST).
  *
@@ -58,21 +58,24 @@ public class LC_098_ValidateBinarySearchTree {
     /**
      * 方法一: 递归
      *
-     * 利用本身的性质: 即左<根<右
+     * 利用本身的性质: 即 左<根<右
      * 初始化时带入系统最大值和最小值，在递归过程中换成它们自己的节点值，用long代替int是为了包括int的边界条件
      *
-     * time: O(n)，其中 n 为二叉树的节点个数
+     * time:  O(n)，其中 n 为二叉树的节点个数
      * space: O(n)，其中 n 为二叉树的节点个数
      */
     public boolean isValidBST(TreeNode root) {
+        // 函数递归调用的入口为 helper(root, -inf, +inf)， inf 表示一个无穷大的值。
         return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
     private boolean isValidBST(TreeNode root, long minValue, long maxValue) {
-        if (root == null)
+        if (root == null) {
             return true;
-        if (root.val <= minValue || root.val >= maxValue)
+        }
+        if (root.val <= minValue || root.val >= maxValue) {
             return false;
+        }
 
         return isValidBST(root.left, minValue, root.val) && isValidBST(root.right, root.val, maxValue);
     }

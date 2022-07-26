@@ -42,4 +42,22 @@ public class LC_235_LowestCommonAncestorOfABinarySearchTree {
         return root;
     }
 
+
+    // 另一种写法，将结束条件写在最前
+    public TreeNode lowestCommonAncestor_2(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) {
+            return null;
+        }
+        if (root.val == p.val || root.val == q.val
+                || (root.val < p.val && root.val > q.val)
+                || (root.val > p.val && root.val < q.val)) {
+            return root;
+        }
+
+        if(root.val < p.val && root.val < q.val){
+            return lowestCommonAncestor(root.right, p, q);
+        } else {
+            return lowestCommonAncestor(root.left, p, q);
+        }
+    }
 }

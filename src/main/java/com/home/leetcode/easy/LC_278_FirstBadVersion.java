@@ -53,6 +53,7 @@ public class LC_278_FirstBadVersion {
         }
     }
 
+    // 题目中没有给出父类，这里增加避免编译错误
     private class VersionControl {
          boolean isBadVersion(int mid){
              return false;

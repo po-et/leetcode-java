@@ -84,7 +84,9 @@ public class LC_142_LinkedListCycle_II {
             }
             fast = fast.next.next;
             slow = slow.next;
-            if (fast == slow) break;
+            if (fast == slow) {
+                break;
+            }
         }
 
         ListNode cur = head;
