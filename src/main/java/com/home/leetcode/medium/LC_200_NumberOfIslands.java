@@ -42,7 +42,7 @@ public class LC_200_NumberOfIslands {
      *
      * 思路类似 {@link LC_079_WordSearch}
      *
-     * time: O(M x N) 其中 M 和 N 分别为行数和列数
+     * time:  O(M x N) 其中 M 和 N 分别为行数和列数
      * space: O(M x N) 在最坏情况下，整个网格均为陆地，深度优先搜索的深度达到 M x N
      */
     public int numIslands(char[][] grid) {
@@ -62,7 +62,7 @@ public class LC_200_NumberOfIslands {
         return res;
     }
 
-    // 从grid[x][y]的位置开始，进行floodfill
+    // 从grid[x][y]的位置开始，进行flood fill
     // 保证(x,y)合法，且grid[x][y]是没有被访问过的陆地
     private void dfs(char[][] grid, int x, int y) {
         // 注意：没有递归条件
@@ -86,7 +86,7 @@ public class LC_200_NumberOfIslands {
 
 
     /**
-     * Floodfill算法
+     * Flood fill算法
      * Solution: https://blog.csdn.net/DERRANTCM/article/details/47970795
      */
     public int numIslands_2(char[][] grid) {
@@ -97,22 +97,20 @@ public class LC_200_NumberOfIslands {
 
         int m = grid.length;
         int n = grid[0].length;
-        int result = 0;
-
         // 元素默认值是false
         boolean[][] visited = new boolean[m][n];
+        int res = 0;
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-
                 // 如果此位置没有被访问过，并且此位置是岛，就广度优先遍历
                 if (!visited[i][j] && grid[i][j] == '1') {
-                    result++;
+                    res++;
                     dfsSearch(grid, m, n, i, j, visited);
                 }
             }
         }
-        return result;
+        return res;
     }
 
     /**
