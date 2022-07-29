@@ -38,7 +38,7 @@ public class LC_200_NumberOfIslands {
     // 位移坐标
     private int[][] directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
     /**
-     * Floodfill算法（liuyubo讲解）
+     * Flood fill算法（liuyubo讲解）
      *
      * 思路类似 {@link LC_079_WordSearch}
      *

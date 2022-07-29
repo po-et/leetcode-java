@@ -1,19 +1,20 @@
 package com.home.leetcode.medium;
 
 /**
- * 79. Word Search
+ * 79. Word Search （单词搜索）
  *
  * Given an m x n grid of characters board and a string word, return true if word exists in the grid.
  *
  * Example 1:
- *
  * Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCCED"
  * Output: true
  *
  * Example 2:
- *
  * Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "SEE"
  * Output: true
+ *
+ * Follow up: Could you use search pruning to make your solution faster with a larger board?
+ * 进阶：你可以使用搜索剪枝的技术来优化解决方案，使其在 board 更大的情况下可以更快解决问题？
  *
  * @see <a href="https://leetcode.cn/problems/word-search/" />
  * @author Poet
@@ -27,7 +28,6 @@ public class LC_079_WordSearch {
     private int[][] directions = new int[][]{{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
     public boolean exist(char[][] board, String word) {
-
         m = board.length;
         n = board[0].length;
         visited = new boolean[m][n];
