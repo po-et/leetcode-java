@@ -47,17 +47,18 @@ public class LC_1161_MaximumLevelSumOfABinaryTree {
     /**
      * 方法一：广度优先搜索
      *
+     * 思路一：直接套用DFS的思路，我们需要在队列中存储节点和节点的层号。
+     * 思路二：一次遍历完一整层的节点，遍历的同时，累加该层的节点的元素之和，同时用这层的节点得到下一层的节点，这种做法不需要记录层号。
+     *
      * time:  O(n) 其中 n 是二叉树的节点个数
      * space: O(n) 最坏情况下，数组中有 O(n) 个节点
      */
     public int maxLevelSum(TreeNode root) {
-        if (root == null) {
-            return 0;
-        }
-
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         List<Integer> levelList = new ArrayList<>();
+        int res = 0;
+        int max = Integer.MIN_VALUE;
 
         while (!queue.isEmpty()) {
             int sum = 0;
@@ -73,16 +74,13 @@ public class LC_1161_MaximumLevelSumOfABinaryTree {
                 }
             }
             levelList.add(sum);
-        }
 
-        int max = Integer.MIN_VALUE;
-        int res = 0;
-        for (int i = 0; i < levelList.size(); i++) {
-            if (levelList.get(i) > max) {
-                max = levelList.get(i);
-                res = i + 1;
+            if (sum > max) {
+                max = sum;
+                res = levelList.size();
             }
         }
+
         return res;
     }
 

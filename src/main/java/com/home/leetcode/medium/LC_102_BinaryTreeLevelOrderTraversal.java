@@ -58,7 +58,7 @@ public class LC_102_BinaryTreeLevelOrderTraversal {
 
         List<List<Integer>> res = new ArrayList<>();
         Queue<PairNode> queue = new LinkedList<>();
-        queue.offer(new PairNode(root, 0));
+        queue.offer(new PairNode(root, 0));     // 记录节点和节点的层号
 
         while (!queue.isEmpty()) {
             PairNode pairNode = queue.poll();
@@ -116,4 +116,5 @@ public class LC_102_BinaryTreeLevelOrderTraversal {
 
         return res;
     }
+
 }

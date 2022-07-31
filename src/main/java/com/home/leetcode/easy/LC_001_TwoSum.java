@@ -7,6 +7,7 @@ import java.util.Map;
  * 1. Two Sum （两数之和）
  *
  * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+ *
  * You may assume that each input would have exactly one solution, and you may not use the same element twice.
  *
  * Example:
@@ -23,8 +24,8 @@ public class LC_001_TwoSum {
     /**
      * 方法一：哈希表
      *
-     * time: O(n)
-     * space: O(n)
+     * time:  O(n)
+     * space: O(n) 其中 N 是数组中的元素数量。主要为哈希表的开销。
      */
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>(nums.length);
@@ -47,17 +48,15 @@ public class LC_001_TwoSum {
      * time: O(n^2)
      */
     public int[] twoSum_2(int[] nums, int target) {
-        int[] res = new int[2];
 
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
-                    res[0] = i;
-                    res[1] = j;
-                    return res;
+                    return new int[]{i, j};
                 }
             }
         }
+
         throw new IllegalArgumentException("not exist solution.");
     }
 
