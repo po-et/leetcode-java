@@ -1,7 +1,7 @@
 package com.home.leetcode.easy;
 
 /**
- * 234. Palindrome Linked List
+ * 234. Palindrome Linked List （回文链表）
  *
  * Given a singly linked list, determine if it is a palindrome.
  *
@@ -13,7 +13,7 @@ package com.home.leetcode.easy;
  * Follow up:
  * Could you do it in O(n) time and O(1) space?
  *
- * @see <a href = "https://leetcode.cn/problems/palindrome-linked-list/" />
+ * @see <a href="https://leetcode.cn/problems/palindrome-linked-list/" />
  * @author Poet
  * @date 2020/5/2
  */
@@ -25,6 +25,12 @@ public class LC_234_PalindromeLinkedList {
         ListNode(int x) { val = x; }
     }
 
+    /**
+     * 快慢指针
+     *
+     * time:  O(n) 其中 n 指的是链表的大小
+     * space: O(1) 我们只会修改原本链表中节点的指向，而在堆栈上的堆栈帧不超过 O(1)
+     */
     public boolean isPalindrome(ListNode head) {
         if (head == null || head.next == null) {
             return true;

@@ -25,7 +25,7 @@ public class LC_206_ReverseLinkedList {
     /**
      * 方法一：迭代
      *
-     * time:  O(n) 其中 n 是链表的长度。需要遍历链表一次。
+     * time:  O(n) 其中 n 是链表的长度。需要遍历链表一次
      * space: O(1)
      */
     public ListNode reverseList(ListNode head) {
@@ -45,8 +45,8 @@ public class LC_206_ReverseLinkedList {
     /**
      * 方法二：递归 (递归版本稍微复杂一些，其关键在于反向工作)
      *
-     * time:  O(n)，其中 n 是链表的长度。需要对链表的每个节点进行反转操作。
-     * space: O(n)，其中 n 是链表的长度。空间复杂度主要取决于递归调用的栈空间，最多为 n 层。
+     * time:  O(n) 其中 n 是链表的长度。需要对链表的每个节点进行反转操作
+     * space: O(n) 其中 n 是链表的长度。空间复杂度主要取决于递归调用的栈空间，最多为 n 层
      */
     public ListNode reverseList_recursive(ListNode head) {
         if (head == null || head.next == null) {

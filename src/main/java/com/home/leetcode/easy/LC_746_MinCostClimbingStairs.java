@@ -60,10 +60,12 @@ public class LC_746_MinCostClimbingStairs {
     }
 
     /**
+     * 动态规划的优化
+     *
      * 当 i≥2 时，dp[i] 只和 dp[i−1] 与 dp[i−2] 有关，因此可以使用滚动数组的思想，将空间复杂度优化到 O(1)
      *
      * time:  O(n)
-     * space: O(1) 使用滚动数组的思想，只需要使用有限的额外空间。
+     * space: O(1) 使用滚动数组的思想，只需要使用有限的额外空间
      */
     public int minCostClimbingStairs_space_o1(int[] cost) {
         int n = cost.length;
