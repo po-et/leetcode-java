@@ -1,7 +1,7 @@
 package com.home.leetcode.easy;
 
 /**
- * 206. Reverse Linked List
+ * 206. Reverse Linked List (反转链表)
  *
  * Reverse a singly linked list.
  *

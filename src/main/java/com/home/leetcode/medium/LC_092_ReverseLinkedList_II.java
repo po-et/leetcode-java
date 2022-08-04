@@ -1,7 +1,7 @@
 package com.home.leetcode.medium;
 
 /**
- * 92. Reverse Linked List II
+ * 92. Reverse Linked List II (反转链表 II)
  *
  * Reverse a linked list from position m to n. Do it in one-pass.
  *
@@ -26,7 +26,7 @@ public class LC_092_ReverseLinkedList_II {
 
     /**
      * 方法一：穿针引线
-     * time: O(n) 其中 n 是链表总节点数。最坏情况下，需要遍历整个链表。
+     * time:  O(n) 其中 n 是链表总节点数。最坏情况下，需要遍历整个链表。
      * space: O(1) 只使用到常数个变量。
      *
      * 方法一的缺点是：如果 left 和 right 的区域很大，恰好是链表的头节点和尾节点时，找到 left 和 right 需要遍历一次，
@@ -66,15 +66,16 @@ public class LC_092_ReverseLinkedList_II {
         // 第 5 步：接回到原来的链表中
         pre.next = rightNode;
         leftNode.next = curr;
+
         return dummyNode.next;
     }
 
     /**
      * 方法二：一次遍历「穿针引线」反转链表（头插法）
+     *
      * @see <a href="https://leetcode.cn/problems/reverse-linked-list-ii/solution/fan-zhuan-lian-biao-ii-by-leetcode-solut-teyq/" />
      */
-    public ListNode reverseBetween2(ListNode head, int left, int right) {
-
+    public ListNode reverseBetween_2(ListNode head, int left, int right) {
         ListNode dummyHead = new ListNode(-1);
         dummyHead.next = head;
 
@@ -84,9 +85,8 @@ public class LC_092_ReverseLinkedList_II {
         }
 
         ListNode cur = pre.next;
-        ListNode next;
         for (int i = 0; i < right - left; i++) {
-            next = cur.next;
+            ListNode next = cur.next;
             cur.next = next.next;
             next.next = pre.next;
             pre.next = next;
@@ -94,6 +94,7 @@ public class LC_092_ReverseLinkedList_II {
 
         return dummyHead.next;
     }
+
 
     private void reverseLinkedList(ListNode head) {
         // 也可以使用递归反转一个链表

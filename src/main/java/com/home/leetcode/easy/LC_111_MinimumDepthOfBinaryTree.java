@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * 111. Minimum Depth of Binary Tree
+ * 111. Minimum Depth of Binary Tree (二叉树的最小深度)
  *
  * Given a binary tree, find its minimum depth.
  *
@@ -23,7 +23,7 @@ import java.util.Queue;
  *    15   7
  * return its minimum depth = 2.
  *
- * @see <a href = "https://leetcode.cn/problems/minimum-depth-of-binary-tree/" />
+ * @see <a href="https://leetcode.cn/problems/minimum-depth-of-binary-tree/" />
  * @author Poet
  * @date 2020/5/4
  */
@@ -48,15 +48,19 @@ public class LC_111_MinimumDepthOfBinaryTree {
      * 重点：注意递归的终止条件（从根节点到叶子结点的最短路径长度）
      */
     public int minDepth(TreeNode root) {
-        if (root == null)
+        if (root == null) {
             return 0;
-        if (root.left == null && root.right == null)
+        }
+        if (root.left == null && root.right == null) {
             return 1;
+        }
 
-        if (root.right == null)
+        if (root.right == null) {
             return minDepth(root.left) + 1;
-        if (root.left == null)
+        }
+        if (root.left == null) {
             return minDepth(root.right) + 1;
+        }
 
         // 左右孩子节点都存在
         return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
@@ -69,8 +73,9 @@ public class LC_111_MinimumDepthOfBinaryTree {
      *     （因为按照层次遍历第一个左右子树都为空的结点肯定就是深度最小的叶子结点）
      */
     public int minDepth2(TreeNode root) {
-        if(root == null)
+        if(root == null) {
             return 0;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
         int depth = 1;
@@ -85,10 +90,12 @@ public class LC_111_MinimumDepthOfBinaryTree {
                     return depth;
                 }
 
-                if (node.left != null)
+                if (node.left != null) {
                     queue.offer(node.left);
-                if (node.right != null)
+                }
+                if (node.right != null) {
                     queue.offer(node.right);
+                }
             }
             depth ++;
         }

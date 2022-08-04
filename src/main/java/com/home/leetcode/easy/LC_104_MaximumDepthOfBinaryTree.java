@@ -1,7 +1,7 @@
 package com.home.leetcode.easy;
 
 /**
- * 104. Maximum Depth of Binary Tree
+ * 104. Maximum Depth of Binary Tree (二叉树的最大深度)
  *
  * Given a binary tree, find its maximum depth.
  *
@@ -20,7 +20,7 @@ package com.home.leetcode.easy;
  *    15   7
  * return its depth = 3.
  *
- * @see <a href = "https://leetcode.cn/problems/maximum-depth-of-binary-tree/" />
+ * @see <a href="https://leetcode.cn/problems/maximum-depth-of-binary-tree/" />
  * @author Poet
  * @date 2020/5/4
  */
@@ -48,10 +48,6 @@ public class LC_104_MaximumDepthOfBinaryTree {
             return 0;
         }
 
-//        int leftDepth = maxDepth2(root.left);
-//        int rightDepth = maxDepth2(root.right);
-//        return Math.max(leftDepth, rightDepth) + 1;
-
         return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;   // 不用声明局部变量
     }
 
@@ -59,7 +55,7 @@ public class LC_104_MaximumDepthOfBinaryTree {
     /**
      * 第二种递归写法
      */
-    public int maxDepth2(TreeNode root) {
+    public int maxDepth_2(TreeNode root) {
         return maxDepth2(root, 0);
     }
 
