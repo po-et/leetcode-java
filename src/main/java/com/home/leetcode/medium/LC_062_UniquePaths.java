@@ -55,6 +55,7 @@ public class LC_062_UniquePaths {
                 f[i][j] = f[i - 1][j] + f[i][j - 1];
             }
         }
+
         return f[m - 1][n - 1];
     }
 }

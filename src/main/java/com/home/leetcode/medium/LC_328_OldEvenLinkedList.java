@@ -8,7 +8,7 @@ package com.home.leetcode.medium;
  * You should try to do it in place. The program should run in O(1) space complexity and O(nodes) time complexity.
  *
  * Example 1:
- * Input: 1->2->3->4->5->NULL
+ * Input:  1->2->3->4->5->NULL
  * Output: 1->3->5->2->4->NULL
  *
  * @see <a href="https://leetcode.cn/problems/odd-even-linked-list/" />
@@ -53,7 +53,7 @@ public class LC_328_OldEvenLinkedList {
         return oddHead.next;
     }
 
-    public ListNode oddEvenList2(ListNode head) {
+    public ListNode oddEvenList_2(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }

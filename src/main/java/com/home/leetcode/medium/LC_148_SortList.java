@@ -1,7 +1,7 @@
 package com.home.leetcode.medium;
 
 /**
- * 148. Sort List
+ * 148. Sort List (排序链表)
  *
  * Sort a linked list in O(n log n) time using constant space complexity.
  *
@@ -28,8 +28,12 @@ public class LC_148_SortList {
     }
 
     /**
+     * 方法一：自顶向下归并排序
+     *
      * 题目对时间复杂度有要求，在链表中选择不需要数组随机访问的归并排序
-     * time: O(nlogn)
+     *
+     * time:  O(nlogn)
+     * space: O(logn) 其中 n 是链表的长度。空间复杂度主要取决于递归调用的栈空间
      */
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null) {
@@ -43,13 +47,14 @@ public class LC_148_SortList {
             slow = slow.next;
             fast = fast.next.next;
         }
+
         //【重点】: 这里需要一个pre指针来保存slow的上一个node，因为需要把上一个node的next设为null
         prev.next = null;
 
         ListNode l1 = sortList(head);
         ListNode l2 = sortList(slow);
 
-        //merge的时候，参数是两个sort好的linkedList的head，需要使用sortList的返回值。
+        // merge的时候，参数是两个sort好的linkedList的head，需要使用sortList的返回值。
         return merge(l1, l2);
     }
 
@@ -65,7 +70,7 @@ public class LC_148_SortList {
         }
     }
 
-    private ListNode merge2(ListNode l1, ListNode l2) {
+    private ListNode merge_iteration(ListNode l1, ListNode l2) {
         ListNode dummyHead = new ListNode(0);
         ListNode curr = dummyHead;
         while (l1 != null && l2 != null) {
