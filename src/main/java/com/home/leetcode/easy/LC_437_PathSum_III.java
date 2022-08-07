@@ -1,7 +1,7 @@
 package com.home.leetcode.easy;
 
 /**
- * 437. Path Sum III
+ * 437. Path Sum III （路径总和）
  *
  * You are given a binary tree in which each node contains an integer value.
  *
@@ -49,10 +49,16 @@ public class LC_437_PathSum_III {
         }
     }
 
+    /**
+     * 方法一：深度优先搜索
+     * time:  O(n^2)
+     * space: O(n)
+     */
     // 在以root为根节点的二叉树中，寻找和为sum的路径，返回这样的路径个数
     public int pathSum(TreeNode root, int sum) {
-        if (root == null)
+        if (root == null) {
             return 0;
+        }
 
         // 当前包含sum节点
         int res = findPath(root, sum);
@@ -64,17 +70,21 @@ public class LC_437_PathSum_III {
     }
 
     // 在以node为根节点的二叉树中，寻找包含node的路径，和为num，返回这样的路径个数
-    private int findPath(TreeNode root, int sum) {
-        if (root == null)
+    private int findPath(TreeNode root, long sum) {
+        if (root == null) {
             return 0;
+        }
 
         int res = 0;
-        if (root.val == sum)
+
+        if (root.val == sum) {
             res += 1;
+        }
 
         res += findPath(root.left, sum - root.val);
         res += findPath(root.right, sum - root.val);
 
         return res;
     }
+
 }

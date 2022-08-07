@@ -1,7 +1,7 @@
 package com.home.leetcode.easy;
 
 /**
- * 543. Diameter of Binary Tree
+ * 543. Diameter of Binary Tree （二叉树的直径）
  *
  * Given the root of a binary tree, return the length of the diameter of the tree.
  *
@@ -43,7 +43,7 @@ public class LC_543_DiameterOfBinaryTree {
      * 方法一：深度优先搜索
      *
      * time:  O(n)
-     * space: O(Height)
+     * space: O(Height) 其中 HeightHeight 为二叉树的高度
      */
     private int res;
     public int diameterOfBinaryTree(TreeNode root) {
@@ -57,9 +57,10 @@ public class LC_543_DiameterOfBinaryTree {
             return 0;
         }
 
-        int leftDepth = depth(node.left);      // 左儿子为根的子树的深度
-        int rightDepth = depth(node.right);    // 右儿子为根的子树的深度
+        int leftDepth = depth(node.left);           // 左儿子为根的子树的深度
+        int rightDepth = depth(node.right);         // 右儿子为根的子树的深度
         res = Math.max(res, leftDepth + rightDepth + 1);    // 计算d_node即L+R+1 并更新res
         return Math.max(leftDepth, rightDepth) + 1;         // 返回该节点为根的子树的深度
     }
+
 }
