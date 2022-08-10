@@ -1,7 +1,7 @@
 package com.home.leetcode.easy;
 
 /**
- * 108. Convert Sorted Array to Binary Search Tree
+ * 108. Convert Sorted Array to Binary Search Tree （将有序数组转换为二叉搜索树）
  *
  * Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
  *
@@ -39,6 +39,11 @@ public class LC_108_ConvertSortedArrayToBinarySearchTree {
         }
     }
 
+    /**
+     * 方法一：中序遍历，总是选择中间位置左边的数字作为根节点
+     *
+     * solution: https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/solution/jiang-you-xu-shu-zu-zhuan-huan-wei-er-cha-sou-s-33/
+     */
     public TreeNode sortedArrayToBST(int[] nums) {
         if (nums == null || nums.length == 0) {
             return null;
@@ -47,15 +52,21 @@ public class LC_108_ConvertSortedArrayToBinarySearchTree {
         return buildBST(nums, 0, nums.length - 1);
     }
 
-    private TreeNode buildBST(int[] nums, int l, int r) {
-        if (l > r) {
+    private TreeNode buildBST(int[] nums, int left, int right) {
+        if (left > right) {
             return null;
         }
 
-        int mid = l + (r - l) / 2;
+        // 方法一：总是选择中间位置左边的数字作为根节点
+        int mid = (left + right ) /2;
+        // 方法二：总是选择中间位置右边的数字作为根节点
+//        int mid = (left + right + 1) / 2;
+        // 方法三：选择任意一个中间位置数字作为根节点
+//        int mid = (left + right + rand.nextInt(2)) / 2;
+
         TreeNode root = new TreeNode(nums[mid]);
-        root.left = buildBST(nums, l, mid - 1);
-        root.right = buildBST(nums, mid + 1, r);
+        root.left = buildBST(nums, left, mid - 1);
+        root.right = buildBST(nums, mid + 1, right);
         return root;
     }
 
