@@ -21,14 +21,15 @@ package com.home.leetcode.medium;
 public class LC_198_HouseRobber {
 
     /**
-     * 【重点】
+     * 【重点】DP的思路
      *
      * 状态的定义：（函数的定义，即要做什么）
      *    考虑偷取[x...n-1]范围里的房子
      *
      * 状态的转移：（函数的转移，即要怎么做）
      *    根据对状态的定义，决定状态的转移：
-     *    f(0) = max{ v(0)+f(2), v(1)+f(3), v(2)+f(4), .... v(n-3)+f(n-1), v(n-2), v(n-1) }  【状态转移方程】
+     *    状态转移方程：
+     *    f(0) = max{ v(0)+f(2), v(1)+f(3), v(2)+f(4), .... v(n-3)+f(n-1), v(n-2), v(n-1) }
      */
 
 
@@ -36,7 +37,7 @@ public class LC_198_HouseRobber {
     private int[] memo;
 
     /**
-     * 递归（记忆化搜索）
+     * 方法一：递归（记忆化搜索）
      */
     public int rob(int[] nums) {
         memo = new int[nums.length];
@@ -62,7 +63,7 @@ public class LC_198_HouseRobber {
 
 
     /**
-     * 动态规划
+     * 方法二：动态规划
      */
     public int robDP(int[] nums) {
         int n = nums.length;
@@ -73,6 +74,7 @@ public class LC_198_HouseRobber {
         // memo[i]表示考虑抢劫 nums[i...n) 所能获得的最大收益
         int[] memo = new int[n];
         memo[n - 1] = nums[n - 1];
+
         for (int i = n - 2; i >= 0; i--) {
             for (int j = i; j < n; j++) {
                 memo[i] = Math.max(memo[i], nums[j] + (j + 2 < n ? memo[j + 2] : 0));
