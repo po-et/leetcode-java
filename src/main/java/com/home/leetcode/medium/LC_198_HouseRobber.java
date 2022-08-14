@@ -65,11 +65,8 @@ public class LC_198_HouseRobber {
     /**
      * 方法二：动态规划
      */
-    public int robDP(int[] nums) {
+    public int rob_DP(int[] nums) {
         int n = nums.length;
-        if (n == 0) {
-            return 0;
-        }
 
         // memo[i]表示考虑抢劫 nums[i...n) 所能获得的最大收益
         int[] memo = new int[n];
