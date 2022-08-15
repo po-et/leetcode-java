@@ -1,6 +1,5 @@
 package com.home.leetcode.medium;
 
-
 /**
  * 33. Search in Rotated Sorted Array (搜索旋转排序数组)
  *
@@ -34,6 +33,9 @@ public class LC_033_SearchInRotatedSortedArray {
      * 方法一：二分查找
      *
      * 官方solution：https://leetcode.cn/problems/search-in-rotated-sorted-array/solution/sou-suo-xuan-zhuan-pai-xu-shu-zu-by-leetcode-solut/
+     *
+     * time:  O(logn) 整个算法时间复杂度即为二分查找的时间复杂度 O(logn)
+     * space: O(1)
      */
     public int search(int[] nums, int target) {
         int n = nums.length;

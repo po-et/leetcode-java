@@ -187,10 +187,4 @@ public class LC_438_FindAllAnagramsInAString {
         return true;
     }
 
-
-//    public static void main(String[] args) {
-//        LC_438_FindAllAnagramsInAString solution = new LC_438_FindAllAnagramsInAString();
-//        System.out.println(solution.findAnagrams("cbaebabacd", "abc"));
-//        System.out.println(solution.findAnagrams("abab", "ab"));
-//    }
 }
