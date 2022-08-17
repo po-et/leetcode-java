@@ -29,7 +29,6 @@ import java.util.Queue;
  */
 public class LC_111_MinimumDepthOfBinaryTree {
 
-    // Definition for a binary tree node.
     public class TreeNode {
         int val;
         TreeNode left;
@@ -72,7 +71,7 @@ public class LC_111_MinimumDepthOfBinaryTree {
      * 思路：利用队列来实现，依次将每个结点的左右子树入队列，出队列的时候看这个结点的左右子树是否为空，为空的话则这个结点的深度就是我们要求的最小深度。
      *     （因为按照层次遍历第一个左右子树都为空的结点肯定就是深度最小的叶子结点）
      */
-    public int minDepth2(TreeNode root) {
+    public int minDepth_BFS(TreeNode root) {
         if(root == null) {
             return 0;
         }

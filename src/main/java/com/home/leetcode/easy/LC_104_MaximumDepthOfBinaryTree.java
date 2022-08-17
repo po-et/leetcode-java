@@ -26,7 +26,6 @@ package com.home.leetcode.easy;
  */
 public class LC_104_MaximumDepthOfBinaryTree {
 
-    // Definition for a binary tree node.
     public class TreeNode {
         int val;
         TreeNode left;
@@ -41,10 +40,10 @@ public class LC_104_MaximumDepthOfBinaryTree {
     }
 
     /**
-     * 第一种递归写法（更好理解 ）
+     * 第一种递归写法（更好理解）
      */
     public int maxDepth(TreeNode root) {
-        if(root == null){
+        if (root == null) {
             return 0;
         }
 
@@ -56,16 +55,16 @@ public class LC_104_MaximumDepthOfBinaryTree {
      * 第二种递归写法
      */
     public int maxDepth_2(TreeNode root) {
-        return maxDepth2(root, 0);
+        return calcDepth(root, 0);
     }
 
-    public int maxDepth2(TreeNode node, int depth) {
+    public int calcDepth(TreeNode node, int depth) {
         if (node == null) {
             return depth;
         }
 
-        int leftDepth = maxDepth2(node.left, depth + 1);
-        int rightDepth = maxDepth2(node.right, depth + 1);
+        int leftDepth = calcDepth(node.left, depth + 1);
+        int rightDepth = calcDepth(node.right, depth + 1);
 
         return Math.max(leftDepth, rightDepth);
     }
