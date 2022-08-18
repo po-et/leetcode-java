@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
- * 844. Backspace String Compare
+ * 844. Backspace String Compare (比较含退格的字符串)
  *
  * Given two strings s and t, return true if they are equal when both are typed into empty text editors. '#' means a backspace character.
  *
@@ -66,6 +66,7 @@ public class LC_844_BackspaceStringCompare {
         }
         return builder.reverse().toString();
     }
+
 
     /**
      * 方法二：双指针

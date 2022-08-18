@@ -36,6 +36,7 @@ package com.home.leetcode.medium;
  * myCircularQueue.deQueue();  // return True
  * myCircularQueue.enQueue(4); // return True
  *
+ *
  * @see <a href="https://leetcode.cn/problems/design-circular-queue/" />
  * @author Poet
  * @date 2022/8/2

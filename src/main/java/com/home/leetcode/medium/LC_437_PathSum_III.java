@@ -1,4 +1,4 @@
-package com.home.leetcode.easy;
+package com.home.leetcode.medium;
 
 /**
  * 437. Path Sum III （路径总和）
@@ -35,7 +35,6 @@ package com.home.leetcode.easy;
  */
 public class LC_437_PathSum_III {
 
-    // Definition for a binary tree node.
     public class TreeNode {
         int val;
         TreeNode left;
