@@ -26,7 +26,7 @@ public class LC_234_PalindromeLinkedList {
     }
 
     /**
-     * 快慢指针
+     * 快慢指针 (better!)
      *
      * time:  O(n) 其中 n 指的是链表的大小
      * space: O(1) 我们只会修改原本链表中节点的指向，而在堆栈上的堆栈帧不超过 O(1)
