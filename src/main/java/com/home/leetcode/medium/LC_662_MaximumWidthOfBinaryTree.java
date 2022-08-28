@@ -95,6 +95,9 @@ public class LC_662_MaximumWidthOfBinaryTree {
 
     /**
      * 方法二：深度优先搜索
+     *
+     * time:  O(n) 其中 n 是二叉树的节点个数，需要遍历所有节点
+     * space: O(n) 递归的深度最多为 O(n)
      */
     Map<Integer, Integer> levelMin = new HashMap<>();
 
