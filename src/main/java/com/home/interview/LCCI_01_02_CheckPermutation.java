@@ -21,7 +21,7 @@ import java.util.Map;
  * @author Poet
  * @date 2022/9/27
  */
-public class Interview_01_02_CheckPermutationLCCI {
+public class LCCI_01_02_CheckPermutation {
 
     public boolean CheckPermutation(String s1, String s2) {
         Map<Character, Integer> map = new HashMap<>();
