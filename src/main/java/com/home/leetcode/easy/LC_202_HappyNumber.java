@@ -40,7 +40,6 @@ public class LC_202_HappyNumber {
         Set<Integer> record = new HashSet<>();
         n = Math.abs(n);
         int sum = n;
-
         while (true) {
             sum = sumSquare(sum);
             if (sum == 1) {
@@ -62,6 +61,31 @@ public class LC_202_HappyNumber {
         }
         return sum;
     }
+
+
+    /**
+     * 方法二：快慢指针法
+     */
+    public boolean isHappy_2(int n) {
+        int slowRunner = n;
+        int fastRunner = getNext(n);
+        while (fastRunner != 1 && fastRunner != slowRunner) {
+            slowRunner = getNext(slowRunner);
+            fastRunner = getNext(getNext(fastRunner));
+        }
+        return fastRunner == 1;
+    }
+
+    public int getNext(int n) {
+        int totalSum = 0;
+        while (n > 0) {
+            int d = n % 10;
+            n = n / 10;
+            totalSum += d * d;
+        }
+        return totalSum;
+    }
+
 
 
     public static void main(String[] args) {

@@ -20,10 +20,13 @@ import java.util.List;
  * @author Poet
  * @date 2022/8/1
  */
-public class LC_54_SpiralMatrix {
+public class LC_054_SpiralMatrix {
 
     /**
      * 方法一：模拟
+     *
+     * time:  O(mn) 其中 m 和 n 分别是输入矩阵的行数和列数
+     * space: O(mn)
      */
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> res = new ArrayList<>();
@@ -42,7 +45,8 @@ public class LC_54_SpiralMatrix {
             res.add(matrix[row][col]);
             visited[row][col] = true;
 
-            int nextRow = row + directions[directionIndex][0], nextCol = col + directions[directionIndex][1];
+            int nextRow = row + directions[directionIndex][0];
+            int nextCol = col + directions[directionIndex][1];
             if (nextRow < 0 || nextRow >= rows || nextCol < 0 || nextCol >= cols || visited[nextRow][nextCol]) {
                 directionIndex = (directionIndex + 1) % 4;
             }
