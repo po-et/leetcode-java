@@ -43,7 +43,7 @@ public class LC_1706_WhereWillTheBallFall {
      */
     public int[] findBall(int[][] grid) {
         int n = grid[0].length;
-        int[] ans = new int[n];
+        int[] res = new int[n];
 
         for (int j = 0; j < n; j++) {
             int col = j;  // 球的初始列
@@ -55,8 +55,8 @@ public class LC_1706_WhereWillTheBallFall {
                     break;
                 }
             }
-            ans[j] = col;  // col >= 0 为成功到达底部
+            res[j] = col;  // col >= 0 为成功到达底部
         }
-        return ans;
+        return res;
     }
 }
