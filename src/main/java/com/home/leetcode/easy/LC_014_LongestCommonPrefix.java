@@ -20,11 +20,14 @@ package com.home.leetcode.easy;
  * @author Poet
  * @date 2022/8/2
  */
-public class LC_14_LongestCommonPrefix {
+public class LC_014_LongestCommonPrefix {
 
     /**
      * 方法一：横向扫描
      *
+     * 用 LCP(S1…Sn) 表示字符串 S1…Sn 的最长公共前缀，可以得到以下结论：
+     * LCP(S1… Sn) = LCP(LCP(LCP(S1,S2),S3),…Sn)
+     *  
      * time:  O(mn) 其中 m 是字符串数组中的字符串的平均长度，n 是字符串的数量
      * space: O(1)
      */
@@ -49,6 +52,30 @@ public class LC_14_LongestCommonPrefix {
             index++;
         }
         return str1.substring(0, index);
+    }
+
+
+    /**
+     * 方法二：纵向扫描
+     *
+     * time:  O(mn) 其中 m 是字符串数组中的字符串的平均长度，n 是字符串的数量
+     * space: O(1)
+     */
+    public String longestCommonPrefix_2(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+        int length = strs[0].length();
+        int count = strs.length;
+        for (int i = 0; i < length; i++) {
+            char c = strs[0].charAt(i);
+            for (int j = 1; j < count; j++) {
+                if (i == strs[j].length() || strs[j].charAt(i) != c) {
+                    return strs[0].substring(0, i);
+                }
+            }
+        }
+        return strs[0];
     }
 
 }

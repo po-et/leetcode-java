@@ -19,7 +19,7 @@ package com.home.leetcode.medium;
  * @author Poet
  * @date 2022/8/2
  */
-public class LC_43_MultiplyStrings {
+public class LC_043_MultiplyStrings {
 
     /**
      * 方法一：做加法
@@ -81,5 +81,4 @@ public class LC_43_MultiplyStrings {
         }
         return builder.reverse().toString();
     }
-
 }

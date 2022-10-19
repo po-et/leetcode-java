@@ -41,7 +41,7 @@ public class LC_019_RemoveNthNodeFromEndOfList {
      * space: O(1)
      */
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        if(head == null){
+        if (head == null) {
             return null;
         }
 
