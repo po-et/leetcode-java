@@ -40,7 +40,9 @@ public class LC_148_SortList {
             return head;
         }
 
-        ListNode slow = head, fast = head, prev = null;
+        ListNode prev = null;
+        ListNode slow = head;
+        ListNode fast = head;
         //注意，这里不能写成while (fast.next != null && fast.next.next != null)，因为，在只有两个node的情况下fast和slow指针还是需要向下走，否则无法分解成一个node.
         while (fast != null && fast.next != null) {
             prev = slow;

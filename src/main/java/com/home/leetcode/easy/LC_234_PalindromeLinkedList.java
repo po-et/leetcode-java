@@ -5,8 +5,11 @@ package com.home.leetcode.easy;
  *
  * Given a singly linked list, determine if it is a palindrome.
  *
- * Example 2:
+ * Example 1:
+ * Input: head = [1,2,2,1]
+ * Output: true
  *
+ * Example 2:
  * Input: 1->2->2->1
  * Output: true
  *

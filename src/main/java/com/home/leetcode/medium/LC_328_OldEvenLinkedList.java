@@ -78,4 +78,5 @@ public class LC_328_OldEvenLinkedList {
     private boolean isOdd(int num) {
         return num % 2 != 0;
     }
+
 }
