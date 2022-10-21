@@ -96,6 +96,7 @@ public class LC_110_BalancedBinaryTree {
         if (root == null) {
             return 0;
         }
+
         int leftHeight = height(root.left);
         int rightHeight = height(root.right);
         if (leftHeight == -1 || rightHeight == -1 || Math.abs(leftHeight - rightHeight) > 1) {

@@ -46,7 +46,9 @@ public class LC_2131_LongestPalindromeByConcatenatingTwoLetterWords {
      */
     public int longestPalindrome(String[] words) {
         Map<String, Integer> map = new HashMap<>();
-        for (int i = 0; i < words.length; i++) {map.put(words[i], map.getOrDefault(words[i], 0) + 1);}
+        for (int i = 0; i < words.length; i++) {
+            map.put(words[i], map.getOrDefault(words[i], 0) + 1);
+        }
         int add = 0;
         int ans = 0;
         for (String s : map.keySet()) {
@@ -55,7 +57,9 @@ public class LC_2131_LongestPalindromeByConcatenatingTwoLetterWords {
                 if (((map.get(s) & 1) == 1)) {add = 2;}
             } else {
                 String t = pal(s);
-                if (map.containsKey(t)) {ans += Math.min(map.get(s), map.get(t)) * 2;}
+                if (map.containsKey(t)) {
+                    ans += Math.min(map.get(s), map.get(t)) * 2;
+                }
             }
         }
         return ans + add;
