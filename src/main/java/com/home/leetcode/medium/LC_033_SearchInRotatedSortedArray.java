@@ -23,6 +23,7 @@ package com.home.leetcode.medium;
  * Input: nums = [1], target = 0
  * Output: -1
  *
+ *
  * @see <a href="https://leetcode.cn/problems/search-in-rotated-sorted-array/" />
  * @author Poet
  * @date 2019/1/15
@@ -68,39 +69,6 @@ public class LC_033_SearchInRotatedSortedArray {
             }
         }
 
-        return -1;
-    }
-
-
-
-    /**
-     * 方法一：二分查找
-     *
-     * 考的是binary search，时间复杂度如果是O(n)这样循环遍历则没有意义
-     *
-     * time:  O(logn)
-     * space: O(1)
-     */
-    public int search_2(int[] nums, int target) {
-        if(nums == null || nums.length == 0) return -1;
-        int start = 0;
-        int end = nums.length - 1;
-
-        while (start + 1 < end) {            //start < end 会死循环
-            int mid = (end - start) / 2 + start;
-            if(nums[mid] == mid) return mid;
-            if (nums[start] < nums[mid]) {  //前面是升序
-                if (nums[start] <= target && target <= nums[mid]) {
-                    end = mid;
-                } else start = mid;
-            } else {                        //后面是升序
-                if (nums[mid] <= target && target <= nums[end]) {
-                    start = mid;
-                } else end = mid;
-            }
-        }
-        if(nums[start] == target) return start;
-        if(nums[end] == target) return end;
         return -1;
     }
 

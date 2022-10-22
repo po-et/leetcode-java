@@ -24,10 +24,9 @@ package com.home.leetcode.medium;
  * 3  -2   1
  *
  * Return 3. The paths that sum to 8 are:
- *
- * 1.  5 -> 3
- * 2.  5 -> 2 -> 1
- * 3. -3 -> 11
+ *      1.  5 -> 3
+ *      2.  5 -> 2 -> 1
+ *      3. -3 -> 11
  *
  * @see <a href="https://leetcode.cn/problems/path-sum-iii/" />
  * @author Poet
@@ -50,6 +49,7 @@ public class LC_437_PathSum_III {
 
     /**
      * 方法一：深度优先搜索
+     *
      * time:  O(n^2)
      * space: O(n)
      */
