@@ -39,7 +39,6 @@ public class LC_074_FindA2DMatrix {
 
         int rowLength = matrix.length;
         int colLength = matrix[0].length;
-
         int row = 0;                // 从第一行开始
         int col = colLength - 1;    // 从最后一列开始
 

@@ -25,7 +25,6 @@ package com.home.leetcode.easy;
  */
 public class LC_108_ConvertSortedArrayToBinarySearchTree {
 
-    // Definition for a binary tree node.
     public class TreeNode {
         int val;
         TreeNode left;
