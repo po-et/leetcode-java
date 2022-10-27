@@ -51,4 +51,20 @@ public class LC_1822_SignOfTheProductOfAnArray {
         return sign;
     }
 
+    /**
+     * 方法二：数学题 计算负数的个数
+     */
+    public int arraySign_2(int[] nums) {
+        int negativeCount = 0;
+        for (int num : nums) {
+            if (num == 0) {
+                return 0;
+            }
+            if (num < 0) {
+                negativeCount++;
+            }
+        }
+        return negativeCount % 2 == 0 ? 1 : -1;
+    }
+
 }

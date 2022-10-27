@@ -58,5 +58,4 @@ public class LC_206_ReverseLinkedList {
         head.next = null;
         return newHead;
     }
-
 }
