@@ -105,5 +105,4 @@ public class LC_110_BalancedBinaryTree {
             return Math.max(leftHeight, rightHeight) + 1;
         }
     }
-
 }

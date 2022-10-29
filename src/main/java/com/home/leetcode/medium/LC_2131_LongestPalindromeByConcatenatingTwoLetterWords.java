@@ -38,7 +38,8 @@ import java.util.Map;
  */
 public class LC_2131_LongestPalindromeByConcatenatingTwoLetterWords {
 
-    // 参考答案
+    // 直接参考答案
+
     /**
      * 方法一：贪心 + 哈希表
      *

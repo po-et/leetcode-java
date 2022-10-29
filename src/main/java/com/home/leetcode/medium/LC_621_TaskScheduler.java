@@ -42,7 +42,7 @@ import java.util.Arrays;
 public class LC_621_TaskScheduler {
 
     /**
-     * 分成不同的桶
+     * 贪心：分成不同的桶
      *
      * 题解：https://leetcode.cn/problems/task-scheduler/solution/tong-zi-by-popopop/
      */
