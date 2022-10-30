@@ -53,12 +53,12 @@ public class LC_543_DiameterOfBinaryTree {
     }
 
     private int depth(TreeNode node) {
-        if (node == null) {     // 访问到空节点了，返回0
+        if (node == null) {                                 // 访问到空节点了，返回0
             return 0;
         }
 
-        int leftDepth = depth(node.left);           // 左儿子为根的子树的深度
-        int rightDepth = depth(node.right);         // 右儿子为根的子树的深度
+        int leftDepth = depth(node.left);                   // 左儿子为根的子树的深度
+        int rightDepth = depth(node.right);                 // 右儿子为根的子树的深度
         res = Math.max(res, leftDepth + rightDepth + 1);    // 计算d_node 即 L+R+1 并更新res
         return Math.max(leftDepth, rightDepth) + 1;         // 返回该节点为根的子树的深度
     }

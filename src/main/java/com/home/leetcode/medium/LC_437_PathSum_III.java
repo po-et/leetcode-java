@@ -75,14 +75,11 @@ public class LC_437_PathSum_III {
         }
 
         int res = 0;
-
         if (root.val == sum) {
             res += 1;
         }
-
         res += findPath(root.left, sum - root.val);
         res += findPath(root.right, sum - root.val);
-
         return res;
     }
 
