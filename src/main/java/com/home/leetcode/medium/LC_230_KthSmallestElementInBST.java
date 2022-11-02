@@ -41,7 +41,7 @@ public class LC_230_KthSmallestElementInBST {
     }
 
     /**
-     * 方法一：中序遍历
+     * 方法一：中序遍历（找到立即结束）
      *
      * 思路：因为二叉搜索树和中序遍历的性质，所以二叉搜索树的中序遍历是按照键增加的顺序进行的。于是我们可以通过中序遍历找到第 k 个最小元素。
      */
@@ -86,6 +86,5 @@ public class LC_230_KthSmallestElementInBST {
         orderList.add(root.val);
         inOrder_2(root.right);
     }
-
 
 }

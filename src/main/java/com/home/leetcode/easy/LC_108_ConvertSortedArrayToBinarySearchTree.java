@@ -39,7 +39,7 @@ public class LC_108_ConvertSortedArrayToBinarySearchTree {
     }
 
     /**
-     * 方法一：中序遍历，总是选择中间位置左边的数字作为根节点
+     * 方法：中序遍历，总是选择中间位置左边的数字作为根节点
      *
      * solution: https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/solution/jiang-you-xu-shu-zu-zhuan-huan-wei-er-cha-sou-s-33/
      */
@@ -57,7 +57,7 @@ public class LC_108_ConvertSortedArrayToBinarySearchTree {
         }
 
         // 方法一：总是选择中间位置左边的数字作为根节点
-        int mid = (left + right ) /2;
+        int mid = (left + right) / 2;
         // 方法二：总是选择中间位置右边的数字作为根节点
 //        int mid = (left + right + 1) / 2;
         // 方法三：选择任意一个中间位置数字作为根节点

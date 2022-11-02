@@ -44,6 +44,8 @@ import java.util.List;
  */
 public class LC_173_BinarySearchTreeIterator {
 
+    /* --- 设计类问题 --- */
+
     public class TreeNode {
         int val;
         TreeNode left;
@@ -73,12 +75,12 @@ public class LC_173_BinarySearchTreeIterator {
             inOrderTraversal(root);
         }
 
-        public int next() {
-            return arr.get(index++);
-        }
-
         public boolean hasNext() {
             return index < arr.size();
+        }
+
+        public int next() {
+            return arr.get(index++);
         }
 
         private void inOrderTraversal(TreeNode root) {
@@ -110,6 +112,10 @@ public class LC_173_BinarySearchTreeIterator {
             stack = new LinkedList<>();
         }
 
+        public boolean hasNext() {
+            return cur != null || !stack.isEmpty();
+        }
+
         public int next() {
             while (cur != null) {
                 stack.push(cur);
@@ -117,13 +123,9 @@ public class LC_173_BinarySearchTreeIterator {
             }
 
             cur = stack.pop();
-            int ret = cur.val;
+            int res = cur.val;
             cur = cur.right;
-            return ret;
-        }
-
-        public boolean hasNext() {
-            return cur != null || !stack.isEmpty();
+            return res;
         }
     }
 
