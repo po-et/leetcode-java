@@ -1,9 +1,12 @@
 package com.home.leetcode.medium;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 /**
- * 199. Binary Tree Right Side View
+ * 199. Binary Tree Right Side View (二叉树的右视图)
  *
  * Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.
  *
@@ -20,7 +23,7 @@ import java.util.*;
  *   5     4       <---
  *
  *
- * @see <a href = "https://leetcode.cn/problems/binary-tree-right-side-view/" />
+ * @see <a href="https://leetcode.cn/problems/binary-tree-right-side-view/" />
  * @author Poet
  * @date 2020/5/3
  */
@@ -41,12 +44,14 @@ public class LC_199_BinaryTreeRightSideView {
     }
 
     /**
-     * 思路1： BFS
+     * 思路1：BFS
      */
     public List<Integer> rightSideView(TreeNode root) {
-        if (root == null) return Collections.emptyList();
+        if (root == null) {
+            return new ArrayList<>();
+        }
 
-        List<Integer> retList = new ArrayList<>();
+        List<Integer> res = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
 
@@ -55,7 +60,7 @@ public class LC_199_BinaryTreeRightSideView {
             for (int i = 0; i < size; i++) {
                 TreeNode treeNode = queue.poll();
                 if (i == size - 1) {
-                    retList.add(treeNode.val);
+                    res.add(treeNode.val);
                 }
 
                 if (treeNode.left != null) {
@@ -66,20 +71,22 @@ public class LC_199_BinaryTreeRightSideView {
                 }
             }
         }
-        return retList;
+        return res;
     }
 
     /**
      * 思路2: DFS， preorder改一下顺序
      */
-    public List<Integer> rightSideViewDFS(TreeNode root) {
-        List<Integer> retList = new ArrayList<>();
-        preOrder(root, 0, retList);
-        return retList;
+    public List<Integer> rightSideView_DFS(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        preOrder(root, 0, res);
+        return res;
     }
 
     public void preOrder(TreeNode node, int level, List<Integer> retList) {
-        if(node == null) return;
+        if(node == null) {
+            return;
+        }
 
         if (retList.size() == level) {
             retList.add(node.val);

@@ -3,7 +3,7 @@ package com.home.leetcode.easy;
 import java.util.Stack;
 
 /**
- * 101. Symmetric Tree
+ * 101. Symmetric Tree (对称二叉树)
  *
  * Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
  *
@@ -24,10 +24,9 @@ import java.util.Stack;
  *    \   \
  *    3    3
  *
- *
  * Follow up: Solve it both recursively and iteratively.
  *
- * @see <a href = "https://leetcode.cn/problems/symmetric-tree/" />
+ * @see <a href="https://leetcode.cn/problems/symmetric-tree/" />
  * @author Poet
  * @date 2020/5/4
  */
@@ -51,17 +50,20 @@ public class LC_101_SymmetricTree {
      * 递归写法：类似 {@link LC_100_SameTree}
      */
     public boolean isSymmetric(TreeNode root) {
-        if (root == null)
+        if (root == null) {
             return true;
+        }
 
         return isSymmetric(root.left, root.right);
     }
 
     private boolean isSymmetric(TreeNode p, TreeNode q) {
-        if (p == null && q == null)
+        if (p == null && q == null) {
             return true;
-        if (p == null || q == null)
+        }
+        if (p == null || q == null) {
             return false;
+        }
 
         if (p.val != q.val) {
             return false;
@@ -78,8 +80,9 @@ public class LC_101_SymmetricTree {
      * 迭代写法：使用Stack
      */
     public boolean isSymmetricIteratively(TreeNode root) {
-        if (root == null)
+        if (root == null) {
             return true;
+        }
 
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root.left);
@@ -89,12 +92,15 @@ public class LC_101_SymmetricTree {
             TreeNode p = stack.pop();
             TreeNode q = stack.pop();
 
-            if (p == null && q == null)
+            if (p == null && q == null) {
                 continue;
-            if (p == null || q == null)
+            }
+            if (p == null || q == null) {
                 return false;
-            if (p.val != q.val)
+            }
+            if (p.val != q.val) {
                 return false;
+            }
 
             stack.push(p.left);
             stack.push(q.right);
@@ -102,6 +108,7 @@ public class LC_101_SymmetricTree {
             stack.push(p.right);
             stack.push(q.left);
         }
+
         return true;
     }
 

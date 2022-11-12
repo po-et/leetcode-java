@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 46. Permutations
+ * 46. Permutations (全排列)
  *
  * Given a collection of distinct integers, return all possible permutations.
  *
@@ -26,6 +26,11 @@ import java.util.List;
  * @date 2020/6/3
  */
 public class LC_046_Permutations {
+
+    /* ---
+        回溯算法入门级详解 + 练习
+        https://leetcode.cn/problems/permutations/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liweiw/
+     --- */
 
     List<List<Integer>> res;
     boolean[] used;
@@ -65,6 +70,7 @@ public class LC_046_Permutations {
             }
         }
     }
+
 
     public static void main(String[] args) {
         LC_046_Permutations solution = new LC_046_Permutations();

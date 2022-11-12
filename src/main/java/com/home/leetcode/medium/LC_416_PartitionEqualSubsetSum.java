@@ -23,6 +23,8 @@ package com.home.leetcode.medium;
  */
 public class LC_416_PartitionEqualSubsetSum {
 
+    /* 本题是经典的「NP 完全问题」 */
+
     /**
      * 这道题可以换一种表述：给定一个只包含正整数的非空数组 nums[0]，判断是否可以从数组中选出一些数字，使得这些数字的和等于整个数组的元素和的一半。
      * 因此这个问题可以转换成「0-1 背包问题」
@@ -39,9 +41,8 @@ public class LC_416_PartitionEqualSubsetSum {
      *   是否存在一种选取方案使得被选取的正整数的和等于 j。
      *
      * 状态转移方程：
-     *
-     * dp[i][j] = dp[i−1][j] | dp[i−1][j−nums[i]],    j ≥ nums[i]
-     *            dp[i−1][j]                     ,    j < nums[i]
+     *      dp[i][j] = dp[i−1][j] | dp[i−1][j−nums[i]],    j ≥ nums[i]
+     *                 dp[i−1][j]                     ,    j < nums[i]
      *
      *
      * 官方题解：https://leetcode.cn/problems/partition-equal-subset-sum/solution/fen-ge-deng-he-zi-ji-by-leetcode-solution/

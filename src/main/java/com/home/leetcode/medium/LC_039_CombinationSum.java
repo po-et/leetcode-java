@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 39. Combination Sum
+ * 39. Combination Sum （组合总和）
  *
  Given a set of candidate numbers (C) (without duplicates) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
  The same repeated number may be chosen from C unlimited number of times.
@@ -26,7 +26,7 @@ public class LC_039_CombinationSum {
      * 使用backtracking的方法
      *  即"回溯法": https://zh.wikipedia.org/wiki/%E5%9B%9E%E6%BA%AF%E6%B3%95
      *
-     * time: O(2^n)
+     * time:  O(2^n)
      * space: O(n)
      */
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {

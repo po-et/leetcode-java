@@ -1,10 +1,9 @@
 package com.home.leetcode.medium;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 /**
- * 16. 最接近的三数之和
+ * 16. 3Sum Closest （最接近的三数之和）
  *
  * Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.
  *
@@ -13,21 +12,11 @@ import java.util.Objects;
  *
  * The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
  *
- * @see <a href = "https://leetcode.com/problems/3sum-closest/" />
+ * @see <a href="https://leetcode.com/problems/3sum-closest/" />
  * @author Poet
  * @date 2020/4/19
  */
 public class LC_016_ThreeSumClosest {
-
-    public static void main(String[] args) {
-        LC_016_ThreeSumClosest solution = new LC_016_ThreeSumClosest();
-
-        int[] nums = new int[]{-1, 2, 1, -4};
-        System.out.println(solution.threeSumClosest(nums, 1));
-
-        nums = new int[]{-1, 0, -2, 1, 2, -1, -4, 4, -2};
-        System.out.println(solution.threeSumClosest(nums, 8));
-    }
 
     /**
      * 参考 {@link LC_015_ThreeSum}, {@link LC_018_FourSum}
@@ -35,11 +24,12 @@ public class LC_016_ThreeSumClosest {
      * 注：这道题比3sum和4sum简单的地方就是不需要判断重复问题  "have exactly one solution"
      */
     public int threeSumClosest(int[] nums, int target) {
-        if (Objects.isNull(nums) || nums.length < 3)
+        if (nums == null || nums.length < 3) {
             throw new IllegalArgumentException("nums is illegal!");
+        }
 
         int closest = Integer.MAX_VALUE;
-        int ret = closest;
+        int res = closest;
 
         Arrays.sort(nums);
 
@@ -51,7 +41,7 @@ public class LC_016_ThreeSumClosest {
                 // 无论这个closest是在target左还是右，离target最近的就是最closest的
                 if (Math.abs(target - sum) < closest) {
                     closest = Math.abs(target - sum);
-                    ret = sum;
+                    res = sum;
                 }
 
                 if (sum == target) {
@@ -63,7 +53,18 @@ public class LC_016_ThreeSumClosest {
                 }
             }
         }
-        return ret;
+        return res;
     }
 
+
+
+    public static void main(String[] args) {
+        LC_016_ThreeSumClosest solution = new LC_016_ThreeSumClosest();
+
+        int[] nums = new int[]{-1, 2, 1, -4};
+        System.out.println(solution.threeSumClosest(nums, 1));
+
+        nums = new int[]{-1, 0, -2, 1, 2, -1, -4, 4, -2};
+        System.out.println(solution.threeSumClosest(nums, 8));
+    }
 }

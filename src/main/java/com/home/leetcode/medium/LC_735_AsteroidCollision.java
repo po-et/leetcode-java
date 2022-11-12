@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
- * 735. Asteroid Collision
+ * 735. Asteroid Collision (行星碰撞)
  *
  * We are given an array asteroids of integers representing asteroids in a row.
  *
