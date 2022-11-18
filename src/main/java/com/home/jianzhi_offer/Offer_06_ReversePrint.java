@@ -42,13 +42,13 @@ public class Offer_06_ReversePrint {
         }
 
         // print
-        int[] ret = new int[size];
+        int[] res = new int[size];
         int index = 0;
         while (pre != null) {
-            ret[index++] = pre.val;
+            res[index++] = pre.val;
             pre = pre.next;
         }
-        return ret;
+        return res;
     }
 
 }

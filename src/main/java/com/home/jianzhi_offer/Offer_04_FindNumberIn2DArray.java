@@ -53,7 +53,6 @@ public class Offer_04_FindNumberIn2DArray {
      * 方法二：递归
      */
     public boolean findNumberIn2DArray_2(int[][] matrix, int target) {
-        // valid
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return false;
         }
@@ -79,10 +78,8 @@ public class Offer_04_FindNumberIn2DArray {
 
         if (matrix[i][j] == target){
             return true;
-
         } else if (matrix[i][j] > target) {
             return false;
-
         } else {
             return findNumberRecursive(matrix, rowLength, colLength, i + 1, j, target)
                     || findNumberRecursive(matrix, rowLength, colLength, i, j + 1, target);
