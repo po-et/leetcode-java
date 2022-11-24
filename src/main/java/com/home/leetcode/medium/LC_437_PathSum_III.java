@@ -59,9 +59,9 @@ public class LC_437_PathSum_III {
             return 0;
         }
 
-        // 当前包含sum节点
+        // 当前包含root节点
         int res = findPath(root, sum);
-        // 当前不包含sum节点
+        // 当前不包含root节点
         res += pathSum(root.left, sum);
         res += pathSum(root.right, sum);
 
