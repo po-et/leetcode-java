@@ -48,7 +48,6 @@ public class LC_001_TwoSum {
      * time: O(n^2)
      */
     public int[] twoSum_2(int[] nums, int target) {
-
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
@@ -56,7 +55,6 @@ public class LC_001_TwoSum {
                 }
             }
         }
-
         throw new IllegalArgumentException("not exist solution.");
     }
 

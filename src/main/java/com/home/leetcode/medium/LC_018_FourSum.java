@@ -22,7 +22,7 @@ import java.util.List;
  *   [-2,  0, 0, 2]
  * ]
  *
- * @see <a href="https://leetcode.com/problems/4sum/" />
+ * @see <a href="https://leetcode.cn/problems/4sum/" />
  * @author Poet
  * @date 2020/4/19
  */
