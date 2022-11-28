@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 17. Letter Combinations of a Phone Number
+ * 17. Letter Combinations of a Phone Number（电话号码的字母组合）
  *
  * Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.
  *
@@ -84,7 +84,7 @@ public class LC_017_LetterCombinationsOfPhoneNumber {
         if (digits.length() == 0) {
             return combinations;
         }
-        Map<Character, String> phoneMap = new HashMap<Character, String>() {{
+        Map<Character, String> phoneMap = new HashMap<>() {{
             put('2', "abc");
             put('3', "def");
             put('4', "ghi");
