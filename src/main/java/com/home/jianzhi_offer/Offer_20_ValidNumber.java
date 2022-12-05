@@ -17,7 +17,7 @@ public class Offer_20_ValidNumber {
      * Solution: https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/solution/javaban-ben-ti-jie-luo-ji-qing-xi-by-yangshyu6/
      */
     public boolean isNumber(String s) {
-        if(s == null || s.trim().length() == 0) {
+        if (s == null || s.trim().length() == 0) {
             return false;
         }
 
@@ -59,4 +59,5 @@ public class Offer_20_ValidNumber {
         }
         return numSeen;
     }
+
 }

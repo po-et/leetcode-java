@@ -22,7 +22,7 @@ public class Offer_21_OddEvenNumSortInArray {
         }
 
         int l = 0, r = nums.length - 1;
-
+        
         while (l < r) {
             while (l < nums.length - 1 && !isEven(nums[l])) {
                 l++;
