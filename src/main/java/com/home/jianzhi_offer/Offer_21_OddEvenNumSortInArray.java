@@ -47,5 +47,4 @@ public class Offer_21_OddEvenNumSortInArray {
         arr[j] = arr[i];
         arr[i] = tmp;
     }
-
 }

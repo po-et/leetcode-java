@@ -59,7 +59,7 @@ public class Offer_22_LinkedListKthEndNode {
      * 方法：计算length后移动
      */
     public ListNode getKthFromEnd_(ListNode head, int k) {
-        if(head == null){
+        if (head == null) {
             return null;
         }
 
