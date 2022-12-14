@@ -32,7 +32,8 @@ public class Offer_10_II_ClimbingStairs {
     }
 
     /**
-     * 方法一的空间优化版，space: O(1)
+     * 方法一的空间优化版
+     * space: O(1)
      */
     public int numWays_space_o1(int n) {
         int a = 1, b = 1, sum;
@@ -43,6 +44,7 @@ public class Offer_10_II_ClimbingStairs {
         }
         return a;
     }
+
 
     public static void main(String[] args) {
         System.out.println(numWays(3));
