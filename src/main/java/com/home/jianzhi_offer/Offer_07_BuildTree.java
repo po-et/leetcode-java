@@ -54,7 +54,9 @@ public class Offer_07_BuildTree {
         }
 
         TreeNode recur(int root, int left, int right) {
-            if (left > right) return null;                                    // 递归终止
+            if (left > right) {                                               // 递归终止
+                return null;
+            }
 
             TreeNode node = new TreeNode(preorder[root]);                     // 建立根节点
             int i = dic.get(preorder[root]);                                  // 划分根节点、左子树、右子树
