@@ -32,7 +32,7 @@ import java.util.Queue;
  *
  * 题目同主站 {@link LC_295_FindMedianFromDataStream}
  *
- * @see <a href="https://leetcode-cn.com/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/" />
+ * @see <a href="https://leetcode.cn/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/" />
  * @author Poet
  * @date 2020/5/31
  */
@@ -48,7 +48,7 @@ public class Offer_41_FindMedianFromDataStream {
 
         /** initialize your data structure here. */
         public MedianFinder() {
-            A = new PriorityQueue<>();   // 小顶堆，保存较大的一半
+            A = new PriorityQueue<>();                      // 小顶堆，保存较大的一半
             B = new PriorityQueue<>((o1, o2) -> (o2 - o1)); // 大顶堆，保存较小的一半
         }
 
