@@ -31,7 +31,7 @@ import java.util.Set;
  * Output: 7
  *
  * @see <a href="https://leetcode.cn/problems/number-of-different-subsequences-gcds/" />
- * @author bin.yang
+ * @author Poet
  * @date 2023/1/14
  */
 public class LC_1819_NumberOfDifferentSubsequencesGCDs {
