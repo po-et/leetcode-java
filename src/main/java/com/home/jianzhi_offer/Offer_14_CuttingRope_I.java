@@ -21,7 +21,7 @@ import com.home.leetcode.medium.LC_343_IntegerBreak;
  * @author Poet
  * @date 2020/5/27
  */
-public class Offer_14_I_CuttingRope {
+public class Offer_14_CuttingRope_I {
 
     private int[] memo;
 

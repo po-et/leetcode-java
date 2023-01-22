@@ -27,7 +27,7 @@ import com.home.leetcode.medium.LC_343_IntegerBreak;
  * @author Poet
  * @date 2022/7/5
  */
-public class Offer_14_II_CuttingRope {
+public class Offer_14_CuttingRope_II {
 
     /**
      * 此题与 面试题14- I. 剪绳子 主体等价，唯一不同在于本题目涉及 “大数越界情况下的求余问题” 。

@@ -25,40 +25,47 @@ import com.home.leetcode.easy.LC_191_NumberOf1Bits;
  */
 public class Offer_15_NumberOf1Bits {
 
+    /**
+     * 方法一：先转换成二进制
+     */
     public int hammingWeight(int n) {
         String str = convertBinary(n);
-        int ret = 0;
+        int res = 0;
         for (char ch : str.toCharArray()) {
             if(ch == '1') {
-                ret++;
+                res++;
             }
         }
-        return ret;
+        return res;
     }
 
 
     // 转化为二进制
     public static String convertBinary(int n) {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder builder = new StringBuilder();
         while (n > 0) {
-            sb.append(n % 2);
+            builder.append(n % 2);
             n = n >> 1;
         }
-        return sb.reverse().toString();
+        return builder.reverse().toString();
     }
 
 
-    // 使用位于运算
+    /**
+     * 方法二：使用位于运算
+     */
     public int hammingWeight_2(int n) {
         int res = 0;
         while (n != 0) {
             res += n & 1;
             n = n >>> 1;  // 无符合右移
         }
-        return res ;
+        return res;
     }
 
-    // 位运算优化
+    /**
+     * 方法三：位运算优化
+     */
     public int hammingWeight_3(int n) {
         int res = 0;
         while (n != 0) {
@@ -74,4 +81,5 @@ public class Offer_15_NumberOf1Bits {
         System.out.println(convertBinary(8));
 //        System.out.println(convertBinary(4294967293L));
     }
+
 }
