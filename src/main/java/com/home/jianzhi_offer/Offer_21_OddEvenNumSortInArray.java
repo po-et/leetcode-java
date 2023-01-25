@@ -10,7 +10,7 @@ package com.home.jianzhi_offer;
  * 输出：[1,3,2,4]
  * 注：[3,1,2,4] 也是正确的答案之一。
  *
- * @see <a href="https://leetcode-cn.com/problems/diao-zheng-shu-zu-shun-xu-shi-qi-shu-wei-yu-ou-shu-qian-mian-lcof" />
+ * @see <a href="https://leetcode.cn/problems/diao-zheng-shu-zu-shun-xu-shi-qi-shu-wei-yu-ou-shu-qian-mian-lcof" />
  * @author Poet
  * @date 2020/5/28
  */
@@ -22,7 +22,6 @@ public class Offer_21_OddEvenNumSortInArray {
         }
 
         int l = 0, r = nums.length - 1;
-        
         while (l < r) {
             while (l < nums.length - 1 && !isEven(nums[l])) {
                 l++;
@@ -35,6 +34,7 @@ public class Offer_21_OddEvenNumSortInArray {
             }
             swap(nums, l, r);
         }
+
         return nums;
     }
 
