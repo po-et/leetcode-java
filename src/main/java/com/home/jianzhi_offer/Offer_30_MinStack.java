@@ -19,7 +19,7 @@ import java.util.Stack;
  * minStack.top();      --> 返回 0.
  * minStack.min();      --> 返回 -2.
  *
- * @see <a href="https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof" /> 剑指offer
+ * @see <a href="https://leetcode.cn/problems/bao-han-minhan-shu-de-zhan-lcof" /> 剑指offer
  * @see <a href="https://leetcode.cn/problems/min-stack/" /> 主站
  * @author Poet
  * @date 2020/5/30
@@ -76,16 +76,17 @@ public class Offer_30_MinStack {
     /**
      * 方法：辅助栈（官方）
      * 我们只需要设计一个数据结构，使得每个元素 a 与其相应的最小值 m 时刻保持一一对应。因此我们可以使用一个辅助栈，与元素栈同步插入与删除，用于存储与每个元素对应的最小值。
+     *
      * 官方答案：https://leetcode.cn/problems/bao-han-minhan-shu-de-zhan-lcof/solution/bao-han-minhan-shu-de-zhan-by-leetcode-s-i2fk/
      *
      * time:  O(1)
      * space: O(n)
      */
-    class MinStack_2_official {
+    class MinStack_official {
         Deque<Integer> xStack;
         Deque<Integer> minStack;
 
-        public MinStack_2_official() {
+        public MinStack_official() {
             xStack = new LinkedList<>();
             minStack = new LinkedList<>();
             minStack.push(Integer.MAX_VALUE);
@@ -126,12 +127,14 @@ public class Offer_30_MinStack {
         }
         public void push(int x) {
             A.add(x);
-            if(B.empty() || B.peek() >= x)
+            if(B.empty() || B.peek() >= x) {
                 B.add(x);
+            }
         }
         public void pop() {
-            if(A.pop().equals(B.peek()))
+            if(A.pop().equals(B.peek())) {
                 B.pop();
+            }
         }
         public int top() {
             return A.peek();
@@ -140,6 +143,7 @@ public class Offer_30_MinStack {
             return B.peek();
         }
     }
+
 
 
 
