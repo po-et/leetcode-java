@@ -18,6 +18,7 @@ package com.home.jianzhi_offer;
 public class Offer_46_TranslateNum {
 
     /**
+     * 【核心】：
      * 递归，不断压栈再不断出栈。是自上而下解决问题，等待下面返回上来的结果。
      * 动态规划是自下而上解决问题，从已知的 case 出发，存储前面的状态，迭代出最后的结果。
      * 动态规划就是想办法不用递归，利用递推关系用“填表格”的方式顺序计算。每个 dp 项的值其实等于一个递归子调用的结果（递归子问题的解）。
@@ -26,12 +27,10 @@ public class Offer_46_TranslateNum {
      */
 
 
-
-
     /**
      * 递归（记忆化搜索）
      */
-    int[] memo;
+    private int[] memo;
 
     public int translateNum(int num) {
         String str = String.valueOf(num);
