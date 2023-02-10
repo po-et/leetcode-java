@@ -102,9 +102,7 @@ public class Offer_25_MergeTwoSortedNodes {
             curr.next = node;
             curr = curr.next;
         }
-
         return dummy.next;
     }
-
 
 }
