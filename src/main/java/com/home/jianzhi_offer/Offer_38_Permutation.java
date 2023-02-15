@@ -39,10 +39,12 @@ public class Offer_38_Permutation {
         }
         HashSet<Character> set = new HashSet<>();
         for (int i = x; i < c.length; i++) {
-            if (set.contains(c[i])) continue; // 重复，因此剪枝
+            if (set.contains(c[i])) {       // 重复，因此剪枝
+                continue;
+            }
             set.add(c[i]);
             swap(i, x);                      // 交换，将 c[i] 固定在第 x 位
-            dfs(x + 1);                      // 开启固定第 x + 1 位字符
+            dfs(x + 1);                   // 开启固定第 x + 1 位字符
             swap(i, x);                      // 恢复交换
         }
     }

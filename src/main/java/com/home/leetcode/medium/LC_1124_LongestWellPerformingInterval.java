@@ -1,5 +1,8 @@
 package com.home.leetcode.medium;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 1124. Longest Well-Performing Interval
  *
