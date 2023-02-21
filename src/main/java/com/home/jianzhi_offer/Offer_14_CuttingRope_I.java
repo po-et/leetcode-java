@@ -59,5 +59,4 @@ public class Offer_14_CuttingRope_I {
     public int max3(int i, int j, int k) {
         return Math.max(i, Math.max(j, k));
     }
-
 }
