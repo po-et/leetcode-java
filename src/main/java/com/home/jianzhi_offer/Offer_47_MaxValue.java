@@ -23,7 +23,7 @@ package com.home.jianzhi_offer;
 public class Offer_47_MaxValue {
 
     /**
-     * 动态规划
+     * 【动态规划】
      *
      * 状态定义：
      *   设动态规划矩阵 dp ，dp(i,j) 代表从棋盘的左上角开始，到达单元格 (i,j) 时能拿到礼物的最大累计价值。
@@ -70,10 +70,15 @@ public class Offer_47_MaxValue {
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (i == 0 && j == 0) continue;
-                if (i == 0) grid[i][j] += grid[i][j - 1];
-                else if (j == 0) grid[i][j] += grid[i - 1][j];
-                else grid[i][j] += Math.max(grid[i][j - 1], grid[i - 1][j]);
+                if (i == 0 && j == 0) {
+                    continue;
+                } else if (i == 0) {
+                    grid[i][j] += grid[i][j - 1];
+                } else if (j == 0) {
+                    grid[i][j] += grid[i - 1][j];
+                } else {   // i!=0 && j!=0
+                    grid[i][j] += Math.max(grid[i][j - 1], grid[i - 1][j]);
+                }
             }
         }
 
@@ -87,16 +92,19 @@ public class Offer_47_MaxValue {
     public int maxValue_dp_space_o1_time_better(int[][] grid) {
         int m = grid.length, n = grid[0].length;
 
-        for (int j = 1; j < n; j++) // 初始化第一行
+        for (int j = 1; j < n; j++) { // 初始化第一行
             grid[0][j] += grid[0][j - 1];
-        for (int i = 1; i < m; i++) // 初始化第一列
+        }
+        for (int i = 1; i < m; i++) { // 初始化第一列
             grid[i][0] += grid[i - 1][0];
+        }
 
-        for (int i = 1; i < m; i++)
-            for (int j = 1; j < n; j++)
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
                 grid[i][j] += Math.max(grid[i][j - 1], grid[i - 1][j]);
+            }
+        }
 
         return grid[m - 1][n - 1];
     }
-
 }

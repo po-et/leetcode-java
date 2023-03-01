@@ -67,7 +67,6 @@ public class LC_343_IntegerBreak {
         return res;
     }
 
-
     /**
      * 方法二：动态规划
      */

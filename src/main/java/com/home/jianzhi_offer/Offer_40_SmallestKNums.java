@@ -23,7 +23,7 @@ public class Offer_40_SmallestKNums {
      * 时间复杂度：O(n)，空间复杂度：O(logn)，递归调用的期望深度为O(logn)，每层需要的空间为O(1)，只有常数个变量。
      */
     public int[] getLeastNumbers(int[] arr, int k) {
-        if(arr == null || arr.length == 0 || k == 0) {
+        if (arr == null || arr.length == 0 || k == 0) {
             return new int[0];
         }
 
