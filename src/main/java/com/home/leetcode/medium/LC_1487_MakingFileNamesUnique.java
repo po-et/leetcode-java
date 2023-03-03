@@ -48,6 +48,7 @@ public class LC_1487_MakingFileNamesUnique {
         Map<String, Integer> map = new HashMap<>();
         int n = names.length;
         String[] res = new String[n];
+
         for (int i = 0; i < n; i++) {
             String name = names[i];
             if (!map.containsKey(name)) {
@@ -55,7 +56,7 @@ public class LC_1487_MakingFileNamesUnique {
                 map.put(name, 1);
             } else {
                 int k = map.get(name);
-                while (!map.containsKey(addSuffix(name, k))) {
+                while (map.containsKey(addSuffix(name, k))) {
                     k++;
                 }
                 res[i] = addSuffix(name, k);
