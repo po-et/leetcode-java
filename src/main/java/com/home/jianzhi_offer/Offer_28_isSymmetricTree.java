@@ -59,6 +59,5 @@ public class Offer_28_isSymmetricTree {
 
         return isSymmetricRecursive(left.left, right.right) && isSymmetricRecursive(left.right, right.left);
     }
-
 }
 
