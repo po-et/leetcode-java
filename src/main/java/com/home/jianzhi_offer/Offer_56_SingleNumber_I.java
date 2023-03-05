@@ -17,7 +17,7 @@ package com.home.jianzhi_offer;
  * @author Poet
  * @date 2022/7/5
  */
-public class Offer_56_I_SingleNumber {
+public class Offer_56_SingleNumber_I {
 
     public int[] singleNumbers(int[] nums) {
         int ret = 0;
@@ -41,5 +41,4 @@ public class Offer_56_I_SingleNumber {
         }
         return new int[]{a, b};
     }
-
 }

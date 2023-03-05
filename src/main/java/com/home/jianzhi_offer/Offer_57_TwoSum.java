@@ -36,5 +36,4 @@ public class Offer_57_TwoSum {
 
         throw new IllegalArgumentException("no solution.");
     }
-
 }

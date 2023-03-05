@@ -17,7 +17,7 @@ package com.home.jianzhi_offer;
  * @author Poet
  * @date 2022/7/5
  */
-public class Offer_56_II_SingleNumber {
+public class Offer_56_SingleNumber_II {
 
     /**
      * 位运算 + 有限状态自动机
