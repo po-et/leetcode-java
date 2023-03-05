@@ -55,6 +55,7 @@ public class Offer_54_BST_KthLargest {
         if (root == null) {
             return;
         }
+
         dfs(root.left);
         bstList.add(root.val);
         dfs(root.right);
@@ -69,20 +70,23 @@ public class Offer_54_BST_KthLargest {
      * space: O(n) 当树退化为链表时（全部为右子节点），系统使用 O(N) 大小的栈空间。
      */
     int res, k;
+
     public int kthLargest_2(TreeNode root, int k) {
         this.k = k;
         dfs(root);
         return res;
     }
+
     void dfs_2(TreeNode root) {
-        if(root == null) {
+        if (root == null) {
             return;
         }
+
         dfs(root.right);
-        if(k == 0) {
+        if (k == 0) {
             return;
         }
-        if(--k == 0) {
+        if (--k == 0) {
             res = root.val;
         }
         dfs(root.left);
