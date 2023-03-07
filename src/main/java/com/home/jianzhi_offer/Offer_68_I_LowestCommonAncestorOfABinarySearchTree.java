@@ -53,5 +53,4 @@ public class Offer_68_I_LowestCommonAncestorOfABinarySearchTree {
         // 同时包含三种情况：1)p q分布在root的左右, 2)p就是root, 3)q就是root
         return root;
     }
-
 }
