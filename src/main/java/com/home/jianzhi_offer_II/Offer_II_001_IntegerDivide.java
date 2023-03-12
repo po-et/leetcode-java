@@ -27,6 +27,9 @@ package com.home.jianzhi_offer_II;
  * 输入：a = 1, b = 1
  * 输出：1
  *
+ * @link 注意：本题与主站 29 题相同：https://leetcode-cn.com/problems/divide-two-integers/
+ *
+ * @see <a href="https://leetcode.cn/problems/xoh6Oh/" />
  * @author Poet
  * @date 2023/3/12
  */
