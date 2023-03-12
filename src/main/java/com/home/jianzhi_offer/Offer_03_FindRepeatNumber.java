@@ -1,5 +1,8 @@
 package com.home.jianzhi_offer;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 面试题03. 数组中重复的数字
  *
@@ -37,6 +40,22 @@ public class Offer_03_FindRepeatNumber {
         throw new IllegalArgumentException("no solution.");
     }
 
+    /**
+     * 方法一：哈希表 / Set
+     *
+     * time:  O(n)
+     * space: O(n)
+     */
+    public static int findRepeatNumber_hashSet(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            if (set.contains(num)) {
+                return num;
+            }
+            set.add(num);
+        }
+        return -1;
+    }
 
 
     public static void main(String[] args) {
