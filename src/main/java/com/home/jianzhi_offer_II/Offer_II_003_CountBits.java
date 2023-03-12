@@ -46,7 +46,7 @@ public class Offer_II_003_CountBits {
     public int[] countBits(int n) {
         int[] res = new int[n + 1];
         for (int i = 0; i <= n; i++) {
-            res[i] = countOnes(n);
+            res[i] = countOnes(i);
         }
         return res;
     }

@@ -36,7 +36,7 @@ public class LC_338_CountingBits {
      * 算法的原理：对于任意整数 x，令 x=x&(x−1)，该运算将 x 的二进制表示的最后一个 1 变成 0。
      *           因此，对 x 重复该操作，直到 x 变成 0，则操作次数即为 x 的「一比特数」。
      *
-     * time:  O(nlogn) 需要对从 0 到 n 的每个整数使用计算「一比特数」，对于每个整数计算「一比特数」的时间都不会超过 O(logn)。
+     * time:  O(nlogn) 需要对从 0 到 n 的每个整数使用计算「一比特数」，对于每个整数计算「一比特数」的时间都不会超过 O(logn)
      * space: O(1)
      */
     public int[] countBits(int n) {
@@ -58,7 +58,7 @@ public class LC_338_CountingBits {
 
 
     /**
-     * 转换成二进制后遍历
+     * 方法二：转换成二进制后遍历
      */
     public int[] countBits_2(int n) {
         int[] res = new int[n + 1];
