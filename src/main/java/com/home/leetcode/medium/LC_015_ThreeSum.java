@@ -81,5 +81,4 @@ public class LC_015_ThreeSum {
         int[] nums1 = new int[]{-1, 0, -2, 1, 2, -1, -4, 4, -2};
         System.out.println(solution.threeSum(nums1));
     }
-
 }

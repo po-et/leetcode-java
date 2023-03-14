@@ -70,4 +70,5 @@ public class LC_016_ThreeSumClosest {
         nums = new int[]{-1, 0, -2, 1, 2, -1, -4, 4, -2};
         System.out.println(solution.threeSumClosest(nums, 8));
     }
+
 }
