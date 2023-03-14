@@ -38,15 +38,17 @@ public class Offer_II_009_NumSubarrayProductLessThanK {
         int n = nums.length;
         int res = 0;
         int product = 1;
-        int i = 0;
-        for (int j = 0; j < n; j++) {
-            product *= nums[j];
-            while (i <= j && product >= k) {
-                product /= nums[i];
-                i++;
+        int start = 0, end = 0;
+        while (end < n) {
+            product *= nums[end];
+            while (start <= end && product >= k) {
+                product /= nums[start];
+                start++;
             }
-            res += j - i + 1;
+            res += end - start + 1;
+            end++;
         }
         return res;
     }
+
 }
