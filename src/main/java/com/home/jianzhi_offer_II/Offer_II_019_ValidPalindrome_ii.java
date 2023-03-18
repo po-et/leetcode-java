@@ -1,51 +1,54 @@
 package com.home.jianzhi_offer_II;
 
 /**
- * 剑指 Offer II 018. 有效的回文
+ * 剑指 Offer II 019. 最多删除一个字符得到回文
  *
- * 给定一个字符串 s ，验证 s 是否是 回文串 ，只考虑字母和数字字符，可以忽略字母的大小写。
- *
- * 本题中，将空字符串定义为有效的 回文串 。
+ * 给定一个非空字符串 s，请判断如果 最多 从字符串中删除一个字符能否得到一个回文字符串。
  *
  * 示例 1:
- * 输入: s = "A man, a plan, a canal: Panama"
+ * 输入: s = "aba"
  * 输出: true
- * 解释："amanaplanacanalpanama" 是回文串
  *
  * 示例 2:
- * 输入: s = "race a car"
+ * 输入: s = "abca"
+ * 输出: true
+ * 解释: 可以删除 "c" 字符 或者 "b" 字符
+ *
+ * 示例 3:
+ * 输入: s = "abc"
  * 输出: false
- * 解释："raceacar" 不是回文串
  *
+ * 注意：本题与主站 680 题相同： https://leetcode-cn.com/problems/valid-palindrome-ii/
  *
- * 注意：本题与主站 125 题相同： https://leetcode-cn.com/problems/valid-palindrome/
- *
- * @see <a href="https://leetcode.cn/problems/RQku0D" />
+ * @see <a href="https://leetcode.cn/problems/XltzEq" />
  * @author Poet
  * @date 2023/3/17
  */
 public class Offer_II_019_ValidPalindrome_ii {
 
     /**
-     * 方法一：双指针
+     * 方法一：贪心
      *
      * time:  O(n)
      * space: O(1)
      */
-    public boolean isPalindrome(String s) {
-        int n = s.length();
-        int l = 0, r = n - 1;
-        while (l <= r) {
-            while (l < r && !Character.isLetterOrDigit(s.charAt(l))) {
+    public boolean validPalindrome(String s) {
+        int l = 0, r = s.length() - 1;
+        while (l < r) {
+            if (s.charAt(l) == s.charAt(r)) {
                 l++;
-            }
-            while (l < r && !Character.isLetterOrDigit(s.charAt(r))) {
                 r--;
+            } else {
+                return isPalindrome(s, l + 1, r) || isPalindrome(s, l, r - 1);
             }
-            if (l > r) {
-                break;
-            }
-            if (Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(r))) {
+
+        }
+        return true;
+    }
+
+    private boolean isPalindrome(String s, int l, int r) {
+        while (l < r) {
+            if (s.charAt(l) != s.charAt(r)) {
                 return false;
             }
             l++;
