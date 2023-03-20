@@ -40,6 +40,8 @@ public class Offer_II_026_ReorderList {
 
     /**
      * 方法一：线性表
+     *
+     * 将链表，转换成线性的数组，时间复杂度降为O(1)
      */
 
     /**
