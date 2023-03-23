@@ -44,6 +44,9 @@ import java.util.Map;
  */
 public class Offer_II_031_LRU_Cache {
 
+    /**
+     * 方法一：哈希表 + 双向链表
+     */
     class LRUCache {
         private class Node {
             int key, value;
