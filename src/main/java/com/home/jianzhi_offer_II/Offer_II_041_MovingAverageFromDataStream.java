@@ -25,6 +25,8 @@ import java.util.Queue;
  * movingAverage.next(3); // 返回 4.66667 = (1 + 10 + 3) / 3
  * movingAverage.next(5); // 返回 6.0 = (10 + 3 + 5) / 3
  *
+ * 注意：本题与主站 346 题相同：https://leetcode-cn.com/problems/moving-average-from-data-stream/
+ *
  * @see <a href="https://leetcode.cn/problems/qIsx9U/" />
  * @author Poet
  * @date 2022/7/16
@@ -67,5 +69,4 @@ public class Offer_II_041_MovingAverageFromDataStream {
  * MovingAverage obj = new MovingAverage(size);
  * double param_1 = obj.next(val);
  */
-
 }
