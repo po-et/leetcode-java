@@ -96,15 +96,15 @@ public class Offer_II_063_ReplaceWords {
         StringBuffer root = new StringBuffer();
         Trie cur = trie;
         for (int i = 0; i < word.length(); i++) {
-            char c = word.charAt(i);
+            char ch = word.charAt(i);
             if (cur.children.containsKey('#')) {
                 return root.toString();
             }
-            if (!cur.children.containsKey(c)) {
+            if (!cur.children.containsKey(ch)) {
                 return word;
             }
-            root.append(c);
-            cur = cur.children.get(c);
+            root.append(ch);
+            cur = cur.children.get(ch);
         }
         return root.toString();
     }
