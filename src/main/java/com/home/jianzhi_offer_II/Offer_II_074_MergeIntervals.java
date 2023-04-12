@@ -31,8 +31,8 @@ public class Offer_II_074_MergeIntervals {
     /**
      * 方法一：排序
      *
-     * time:  O(nlogn)
-     * space: O(logn)
+     * time:  O(NlogN)
+     * space: O(logN)
      */
     public int[][] merge(int[][] intervals) {
         Arrays.sort(intervals, new Comparator<int[]>() {
@@ -55,5 +55,4 @@ public class Offer_II_074_MergeIntervals {
 
         return merged.toArray(new int[merged.size()][]);
     }
-
 }
