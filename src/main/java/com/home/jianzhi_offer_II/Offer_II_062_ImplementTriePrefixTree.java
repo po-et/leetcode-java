@@ -37,7 +37,6 @@ package com.home.jianzhi_offer_II;
 public class Offer_II_062_ImplementTriePrefixTree {
 
     class Trie {
-
         private Trie[] children;
         private boolean isEnd;
 
