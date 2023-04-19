@@ -48,5 +48,4 @@ public class Offer_II_072_SqrtX {
         }
         return res;
     }
-
 }
