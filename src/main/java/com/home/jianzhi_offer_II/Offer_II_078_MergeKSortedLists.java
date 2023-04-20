@@ -1,5 +1,8 @@
 package com.home.jianzhi_offer_II;
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 /**
  * 剑指 Offer II 078. 合并排序链表
  *
@@ -43,7 +46,66 @@ public class Offer_II_078_MergeKSortedLists {
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 
+    /**
+     * 方法一：顺序合并
+     */
     public ListNode mergeKLists(ListNode[] lists) {
+        ListNode res = null;
+        for (ListNode node : lists) {
+            res = mergeTwoLists(res, node);
+        }
+        return res;
+    }
 
+    private ListNode mergeTwoLists(ListNode node1, ListNode node2) {
+        if (node1 == null || node2 == null) {
+            return node1 == null ? node2 : node1;
+        }
+
+        ListNode dummyHead = new ListNode(0);
+        ListNode cur = dummyHead;
+        ListNode a = node1, b = node2;
+        while (a != null && b != null) {
+            if (a.val < b.val) {
+                cur.next = a;
+                a = a.next;
+            } else {
+                cur.next = b;
+                b = b.next;
+            }
+            cur = cur.next;
+        }
+        cur.next = (a == null ? b : a);
+        return dummyHead.next;
+    }
+
+    /**
+     * 方法三：使用优先队列合并
+     */
+    public ListNode mergeKLists_PQ(ListNode[] lists) {
+        PriorityQueue<ListNode> queue = new PriorityQueue<>(new Comparator<ListNode>() {
+            @Override
+            public int compare(ListNode o1, ListNode o2) {
+                return o1.val - o2.val;
+            }
+        });
+
+        for (ListNode list : lists) {
+            if (list != null) {
+                queue.offer(list);
+            }
+        }
+
+        ListNode dummyHead = new ListNode(0);
+        ListNode cur = dummyHead;
+        while (!queue.isEmpty()) {
+            ListNode node = queue.poll();
+            cur.next = node;
+            cur = cur.next;
+            if (node.next != null) {
+                queue.offer(node.next);
+            }
+        }
+        return dummyHead.next;
     }
 }
