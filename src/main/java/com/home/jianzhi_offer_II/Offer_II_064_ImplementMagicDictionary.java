@@ -137,7 +137,6 @@ public class Offer_II_064_ImplementMagicDictionary {
         }
     }
 
-
 /**
  * Your MagicDictionary object will be instantiated and called as such:
  * MagicDictionary obj = new MagicDictionary();
