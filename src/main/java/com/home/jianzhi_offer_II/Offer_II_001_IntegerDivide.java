@@ -50,10 +50,12 @@ public class Offer_II_001_IntegerDivide {
                 return Integer.MAX_VALUE;
             }
         }
+
         // 考虑除数为最小值的情况
         if (b == Integer.MIN_VALUE) {
             return a == Integer.MIN_VALUE ? 1 : 0;
         }
+
         // 考虑被除数为 0 的情况
         if (a == 0) {
             return 0;

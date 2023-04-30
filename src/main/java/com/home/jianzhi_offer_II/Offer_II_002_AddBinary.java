@@ -63,5 +63,4 @@ public class Offer_II_002_AddBinary {
 
         return builder.reverse().toString();
     }
-
 }
