@@ -70,7 +70,7 @@ public class Offer_II_005_MaxProduct {
         for (int i = 0; i < n; i++) {
             Set<Character> set = new HashSet<>();
             for (int k = 0; k < words[i].length(); k++) {
-                set.add(words[i].charAt(i));
+                set.add(words[i].charAt(k));
             }
 
             for (int j = i + 1; j < n; j++) {

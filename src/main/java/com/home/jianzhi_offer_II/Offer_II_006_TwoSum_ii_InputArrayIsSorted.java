@@ -50,7 +50,7 @@ public class Offer_II_006_TwoSum_ii_InputArrayIsSorted {
                 r--;
             }
         }
-        return new int[]{-1,-1};
+        return new int[]{-1, -1};
     }
 
 

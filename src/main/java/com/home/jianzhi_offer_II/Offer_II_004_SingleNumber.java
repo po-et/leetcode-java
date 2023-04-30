@@ -66,5 +66,4 @@ public class Offer_II_004_SingleNumber {
         }
         return ans;
     }
-
 }
