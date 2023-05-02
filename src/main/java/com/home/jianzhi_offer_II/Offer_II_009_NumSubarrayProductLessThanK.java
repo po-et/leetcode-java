@@ -39,6 +39,7 @@ public class Offer_II_009_NumSubarrayProductLessThanK {
         int res = 0;
         int product = 1;
         int start = 0, end = 0;
+
         while (end < n) {
             product *= nums[end];
             while (start <= end && product >= k) {
@@ -48,6 +49,7 @@ public class Offer_II_009_NumSubarrayProductLessThanK {
             res += end - start + 1;
             end++;
         }
+
         return res;
     }
 

@@ -41,6 +41,7 @@ public class Offer_II_008_MinSubArrayLen {
         int start = 0, end = 0;
         int sum = 0;
         int res = Integer.MAX_VALUE;
+
         while (end < n) {
             sum += nums[end];
             while (sum >= target) {
@@ -50,6 +51,7 @@ public class Offer_II_008_MinSubArrayLen {
             }
             end++;
         }
+
         return res == Integer.MAX_VALUE ? 0 : res;
     }
 
