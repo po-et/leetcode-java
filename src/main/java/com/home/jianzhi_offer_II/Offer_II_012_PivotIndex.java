@@ -60,5 +60,4 @@ public class Offer_II_012_PivotIndex {
         }
         return -1;
     }
-
 }

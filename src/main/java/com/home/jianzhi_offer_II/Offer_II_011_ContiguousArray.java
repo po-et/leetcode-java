@@ -54,4 +54,5 @@ public class Offer_II_011_ContiguousArray {
         }
         return res;
     }
+
 }

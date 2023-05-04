@@ -69,10 +69,9 @@ public class Offer_II_013_RangeSumQuery2dImmutable {
 
 
 
-
-    /**
-     * Your NumMatrix object will be instantiated and called as such:
-     * NumMatrix obj = new NumMatrix(matrix);
-     * int param_1 = obj.sumRegion(row1,col1,row2,col2);
-     */
+/*
+ * Your NumMatrix object will be instantiated and called as such:
+ * NumMatrix obj = new NumMatrix(matrix);
+ * int param_1 = obj.sumRegion(row1,col1,row2,col2);
+ */
 }
