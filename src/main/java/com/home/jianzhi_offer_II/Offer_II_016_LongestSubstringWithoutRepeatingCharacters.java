@@ -49,6 +49,7 @@ public class Offer_II_016_LongestSubstringWithoutRepeatingCharacters {
         int res = 0;
         // 右指针，初始值为 -1，相当于我们在字符串的左边界的左侧，还没有开始移动
         int r = -1;
+
         for (int l = 0; l < n; l++) {
             if (l != 0) {
                 // 左指针向右移动一格，移除一个字符
@@ -61,6 +62,7 @@ public class Offer_II_016_LongestSubstringWithoutRepeatingCharacters {
             }
             res = Math.max(res, r - l + 1);
         }
+
         return res;
     }
 }

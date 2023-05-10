@@ -61,7 +61,7 @@ public class Offer_II_015_FindAllAnagramsIInAString {
             ++cnt1[s.charAt(i) - 'a'];
             --cnt1[s.charAt(i - m) - 'a'];
             if (Arrays.equals(cnt1, cnt2)) {
-                res.add(i - m);
+                res.add(i - m + 1);
             }
         }
         return res;
