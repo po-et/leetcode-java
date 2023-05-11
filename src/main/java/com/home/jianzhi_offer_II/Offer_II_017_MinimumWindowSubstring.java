@@ -30,7 +30,6 @@ import java.util.Map;
  *
  * 注意：本题与主站 76 题相似（本题答案不唯一）：https://leetcode-cn.com/problems/minimum-window-substring/
  *
- *
  * @see <a href="https://leetcode.cn/problems/M1oyTv" />
  * @author Poet
  * @date 2023/3/18
@@ -44,13 +43,13 @@ public class Offer_II_017_MinimumWindowSubstring {
     Map<Character, Integer> tMap = new HashMap<>();
 
     public String minWindow(String s, String t) {
-        int tLen = t.length();
         int sLen = s.length();
+        int tLen = t.length();
         int l = 0, r = -1;
         int resL = -1, resR = -1;
         int resLen = Integer.MAX_VALUE;
 
-        // 初始化字符串t对应的map
+        // 初始化 字符串t 对应的map
         for (int i = 0; i < tLen; i++) {
             char ch = t.charAt(i);
             tMap.put(ch, tMap.getOrDefault(ch, 0) + 1);
@@ -84,5 +83,6 @@ public class Offer_II_017_MinimumWindowSubstring {
         }
         return true;
     }
+
 }
 
