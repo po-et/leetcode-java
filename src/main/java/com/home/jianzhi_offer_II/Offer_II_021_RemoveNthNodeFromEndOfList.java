@@ -27,7 +27,6 @@ package com.home.jianzhi_offer_II;
  */
 public class Offer_II_021_RemoveNthNodeFromEndOfList {
 
-
    public class ListNode {
        int val;
        ListNode next;
