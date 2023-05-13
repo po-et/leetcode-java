@@ -63,5 +63,4 @@ public class Offer_II_024_ReverseLinkedList {
         head.next = null;
         return newHead;
     }
-
 }

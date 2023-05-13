@@ -44,7 +44,7 @@ public class Offer_II_025_AddTwoNumbers_ii {
     }
 
     /**
-     * 方法一：先翻转链表，再加和
+     * 方法一：先翻转链表，再加和，最后再翻转
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         l1 = reverse(l1);
@@ -107,6 +107,7 @@ public class Offer_II_025_AddTwoNumbers_ii {
             stack2.push(l2.val);
             l2 = l2.next;
         }
+
         int carry = 0;
         ListNode pre = null;
         while (!stack1.isEmpty() || !stack2.isEmpty() || carry > 0) {
@@ -123,6 +124,5 @@ public class Offer_II_025_AddTwoNumbers_ii {
 
         return pre;
     }
-
 
 }
