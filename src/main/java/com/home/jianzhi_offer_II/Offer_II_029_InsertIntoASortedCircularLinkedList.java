@@ -87,5 +87,4 @@ public class Offer_II_029_InsertIntoASortedCircularLinkedList {
 
         return head;
     }
-
 }

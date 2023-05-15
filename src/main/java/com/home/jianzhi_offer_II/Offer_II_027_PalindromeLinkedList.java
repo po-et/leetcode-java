@@ -33,11 +33,13 @@ public class Offer_II_027_PalindromeLinkedList {
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 
+    /* 方法一：将值复制到数组中后用双指针法 */
+
     /**
-     * 方法一：将值复制到数组中后用双指针法
+     * 方法三：快慢指针
      *
      * time:  O(n)
-     * space: O(n)
+     * space: O(1)
      */
     public boolean isPalindrome(ListNode head) {
         if (head == null || head.next == null) {
