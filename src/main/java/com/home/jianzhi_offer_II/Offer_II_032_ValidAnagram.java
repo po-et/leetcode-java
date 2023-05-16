@@ -36,17 +36,19 @@ public class Offer_II_032_ValidAnagram {
     /**
      * 方法一：排序
      *
-     * time:  O(nlogn)
-     * space: O(nlogn)
+     * time:  O(NlogN)
+     * space: O(NlogN)
      */
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length() || s.equals(t)) {
             return false;
         }
+
         char[] str1 = s.toCharArray();
         char[] str2 = t.toCharArray();
         Arrays.sort(str1);
         Arrays.sort(str2);
+
         return Arrays.equals(str1, str2);
     }
 
