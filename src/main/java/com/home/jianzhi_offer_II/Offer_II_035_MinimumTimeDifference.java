@@ -27,11 +27,12 @@ public class Offer_II_035_MinimumTimeDifference {
     /**
      * 方法一：排序
      *
-     * time:  O(nlogn)
-     * space: O(n) 或 O(logn) 为排序需要的空间，取决于具体语言的实现
+     * time:  O(NlogN)
+     * space: O(n) 或 O(logN) 为排序需要的空间，取决于具体语言的实现
      */
     public int findMinDifference(List<String> timePoints) {
         Collections.sort(timePoints);
+
         int res = Integer.MAX_VALUE;
         for (int i = 1; i < timePoints.size(); i++) {
             int pre = transfer(timePoints.get(i - 1));

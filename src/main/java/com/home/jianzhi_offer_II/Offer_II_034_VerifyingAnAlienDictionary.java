@@ -66,5 +66,4 @@ public class Offer_II_034_VerifyingAnAlienDictionary {
         }
         return true;
     }
-
 }

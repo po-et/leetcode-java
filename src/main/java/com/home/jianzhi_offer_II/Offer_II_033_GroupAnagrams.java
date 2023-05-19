@@ -32,8 +32,8 @@ public class Offer_II_033_GroupAnagrams {
     /**
      * 方法一：排序
      *
-     * time:  O(nklogk)
-     * space: O(nk)
+     * time:  O(NKlogK)
+     * space: O(NK)
      */
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
