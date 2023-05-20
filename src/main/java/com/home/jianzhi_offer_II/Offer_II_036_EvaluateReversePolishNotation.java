@@ -2,8 +2,6 @@ package com.home.jianzhi_offer_II;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * 剑指 Offer II 036. 后缀表达式
@@ -66,7 +64,6 @@ public class Offer_II_036_EvaluateReversePolishNotation {
      */
     public int evalRPN(String[] tokens) {
         Deque<Integer> stack = new ArrayDeque<>();
-        Set<String> operators = new HashSet<>();
         for (String token : tokens) {
             if (token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/")) {
                 int second = stack.pop();
@@ -89,7 +86,5 @@ public class Offer_II_036_EvaluateReversePolishNotation {
         }
         return stack.isEmpty() ? -1 : stack.pop();
     }
-
-
 
 }
