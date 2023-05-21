@@ -62,7 +62,7 @@ public class Offer_II_040_MaximalRectangle {
         }
 
         int res = 0;
-        for (int j = 0; j < n; j++) { // 对于每一列，使用基于柱状图的方法
+        for (int j = 0; j < n; j++) {   // 对于每一列，使用基于柱状图的方法
             int[] up = new int[m];
             int[] down = new int[m];
 
@@ -92,4 +92,5 @@ public class Offer_II_040_MaximalRectangle {
         }
         return res;
     }
+
 }
