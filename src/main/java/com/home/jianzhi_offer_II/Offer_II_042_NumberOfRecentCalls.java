@@ -20,7 +20,6 @@ import java.util.Queue;
  * inputs = [[], [1], [100], [3001], [3002]]
  * 输出：
  * [null, 1, 2, 3, 3]
- *
  * 解释：
  * RecentCounter recentCounter = new RecentCounter();
  * recentCounter.ping(1);     // requests = [1]，范围是 [-2999,1]，返回 1
