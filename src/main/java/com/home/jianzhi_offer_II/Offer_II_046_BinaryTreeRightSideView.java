@@ -54,6 +54,7 @@ public class Offer_II_046_BinaryTreeRightSideView {
         List<Integer> res = new ArrayList<>();
         Queue<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
+
         while (!queue.isEmpty()) {
             int size = queue.size();
             TreeNode node = null;

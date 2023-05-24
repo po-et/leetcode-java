@@ -76,6 +76,7 @@ public class Offer_II_044_FindLargestValueInEachTreeRow {
         Queue<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
         List<Integer> res = new ArrayList<>();
+
         while (!queue.isEmpty()) {
             int size = queue.size();
             int max = Integer.MIN_VALUE;
@@ -97,5 +98,29 @@ public class Offer_II_044_FindLargestValueInEachTreeRow {
     /**
      * 方法二：深度优先搜索
      */
+    public List<Integer> largestValues_dfs(TreeNode root) {
+        if (root == null) {
+            return Collections.emptyList();
+        }
+
+        List<Integer> res = new ArrayList<>();
+        dfs(root, res, 0);
+        return res;
+    }
+
+    private void dfs(TreeNode root, List<Integer> res, int curHeight) {
+        if (curHeight == res.size()) {
+            res.add(root.val);
+        } else {
+            res.set(curHeight, Math.max(res.get(curHeight), root.val));
+        }
+
+        if (root.left != null) {
+            dfs(root.left, res, curHeight + 1);
+        }
+        if (root.right != null) {
+            dfs(root.right, res, curHeight + 1);
+        }
+    }
 
 }

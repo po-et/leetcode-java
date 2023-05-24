@@ -49,6 +49,7 @@ public class Offer_II_045_FindBottomLeftTreeValue {
         Queue<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
         int res = -1;
+
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
             if (node.right != null) {
@@ -64,5 +65,28 @@ public class Offer_II_045_FindBottomLeftTreeValue {
 
     /**
      * 方法二：深度优先搜索
+     *
+     * time:  O(n)
+     * space: O(n)
      */
+    int targetVal = 0;
+    int targetHeight = 0;
+
+    public int findBottomLeftValue_dfs(TreeNode root) {
+        dfs(root, 0);
+        return targetVal;
+    }
+
+    private void dfs(TreeNode root, int curHeight) {
+        if (root == null) {
+            return;
+        }
+        curHeight++;
+        dfs(root.left, curHeight);
+        dfs(root.right, curHeight);
+        if (curHeight > targetHeight) {
+            targetHeight = curHeight;
+            targetVal = root.val;
+        }
+    }
 }
