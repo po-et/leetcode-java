@@ -84,11 +84,13 @@ public class Offer_II_049_SumRootToLeafNumbers {
         if (root == null) {
             return 0;
         }
+
         int sum = 0;
         Queue<TreeNode> nodeQueue = new LinkedList<>();
         Queue<Integer> numQueue = new LinkedList<>();
         nodeQueue.offer(root);
         numQueue.offer(root.val);
+
         while (!nodeQueue.isEmpty()) {
             TreeNode node = nodeQueue.poll();
             int num = numQueue.poll();
