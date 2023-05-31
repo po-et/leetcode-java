@@ -53,7 +53,8 @@ public class Offer_II_077_SortList {
             head.next = null;
             return head;
         }
-        ListNode slow = head, fast = head;
+
+        ListNode fast = head, slow = head;
         while (fast != tail) {
             slow = slow.next;
             fast = fast.next;
@@ -90,4 +91,5 @@ public class Offer_II_077_SortList {
         }
         return dummyHead.next;
     }
+
 }
