@@ -9,20 +9,20 @@ package com.home.jianzhi_offer_II;
  * 输入: n = 2
  * 输出: [0,1,1]
  * 解释:
- * 0 --> 0
- * 1 --> 1
- * 2 --> 10
+ *  0 --> 0
+ *  1 --> 1
+ *  2 --> 10
  *
  * 示例 2:
  * 输入: n = 5
  * 输出: [0,1,1,2,1,2]
  * 解释:
- * 0 --> 0
- * 1 --> 1
- * 2 --> 10
- * 3 --> 11
- * 4 --> 100
- * 5 --> 101
+ *  0 --> 0
+ *  1 --> 1
+ *  2 --> 10
+ *  3 --> 11
+ *  4 --> 100
+ *  5 --> 101
  *
  * 进阶:
  * 给出时间复杂度为 O(n*sizeof(integer)) 的解答非常容易。但你可以在线性时间 O(n) 内用一趟扫描做到吗？
@@ -40,7 +40,7 @@ public class Offer_II_003_CountBits {
     /**
      * 方法一：Brian Kernighan 算法
      *
-     * time:  O(nlogn)
+     * time:  O(NlogN)
      * space: O(1)
      */
     public int[] countBits(int n) {

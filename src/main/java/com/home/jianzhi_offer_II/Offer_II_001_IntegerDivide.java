@@ -73,13 +73,13 @@ public class Offer_II_001_IntegerDivide {
             rev = !rev;
         }
 
-        int left = 1, right = Integer.MAX_VALUE, ans = 0;
+        int left = 1, right = Integer.MAX_VALUE, res = 0;
         while (left <= right) {
             // 注意溢出，并且不能使用除法
             int mid = left + ((right - left) >> 1);
             boolean check = quickAdd(b, mid, a);
             if (check) {
-                ans = mid;
+                res = mid;
                 // 注意溢出
                 if (mid == Integer.MAX_VALUE) {
                     break;
@@ -90,7 +90,7 @@ public class Offer_II_001_IntegerDivide {
             }
         }
 
-        return rev ? -ans : ans;
+        return rev ? -res : res;
     }
 
     // 快速乘
