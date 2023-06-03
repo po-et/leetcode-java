@@ -46,7 +46,6 @@ public class Offer_II_004_SingleNumber {
         return -1;
     }
 
-
     /**
      * 方法二：依次确定每一个二进制位
      *
@@ -66,4 +65,5 @@ public class Offer_II_004_SingleNumber {
         }
         return ans;
     }
+
 }

@@ -50,6 +50,7 @@ public class Offer_II_006_TwoSum_ii_InputArrayIsSorted {
                 r--;
             }
         }
+
         return new int[]{-1, -1};
     }
 
@@ -57,12 +58,13 @@ public class Offer_II_006_TwoSum_ii_InputArrayIsSorted {
     /**
      * 方法一：二分查找
      *
-     * time:  O(nlogn)
+     * time:  O(NlogN)
      * space: O(1)
      */
     public int[] twoSum_1(int[] numbers, int target) {
         for (int i = 0; i < numbers.length; ++i) {
             int low = i + 1, high = numbers.length - 1;
+
             while (low <= high) {
                 int mid = (high - low) / 2 + low;
                 if (numbers[mid] == target - numbers[i]) {
@@ -74,6 +76,7 @@ public class Offer_II_006_TwoSum_ii_InputArrayIsSorted {
                 }
             }
         }
+
         return new int[]{-1, -1};
     }
 

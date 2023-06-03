@@ -48,6 +48,7 @@ public class Offer_II_005_MaxProduct {
                 masks[i] |= 1 << (word.charAt(j) - 'a');
             }
         }
+
         int maxProd = 0;
         for (int i = 0; i < length; i++) {
             for (int j = i + 1; j < length; j++) {
