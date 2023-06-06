@@ -77,5 +77,4 @@ public class Offer_II_008_MinSubArrayLen {
         }
         return res == Integer.MAX_VALUE ? 0 : res;
     }
-
 }
