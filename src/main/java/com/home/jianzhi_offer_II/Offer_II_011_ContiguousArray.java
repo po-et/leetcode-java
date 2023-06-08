@@ -52,6 +52,7 @@ public class Offer_II_011_ContiguousArray {
                 map.put(t, i);
             }
         }
+
         return res;
     }
 

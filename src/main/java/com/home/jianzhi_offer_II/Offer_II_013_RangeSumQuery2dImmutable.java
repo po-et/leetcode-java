@@ -68,7 +68,6 @@ public class Offer_II_013_RangeSumQuery2dImmutable {
      */
 
 
-
 /*
  * Your NumMatrix object will be instantiated and called as such:
  * NumMatrix obj = new NumMatrix(matrix);
