@@ -66,4 +66,5 @@ public class Offer_II_015_FindAllAnagramsIInAString {
         }
         return res;
     }
+
 }
