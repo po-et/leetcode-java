@@ -62,7 +62,6 @@ public class Offer_II_016_LongestSubstringWithoutRepeatingCharacters {
             }
             res = Math.max(res, r - l + 1);
         }
-
         return res;
     }
 
