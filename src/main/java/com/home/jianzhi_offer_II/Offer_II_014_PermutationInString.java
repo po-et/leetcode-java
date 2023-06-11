@@ -58,9 +58,9 @@ public class Offer_II_014_PermutationInString {
         return false;
     }
 
+
     /**
      * 方法二：双指针
      */
-
 
 }
