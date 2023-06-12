@@ -43,8 +43,7 @@ public class Offer_II_017_MinimumWindowSubstring {
     Map<Character, Integer> tMap = new HashMap<>();
 
     public String minWindow(String s, String t) {
-        int sLen = s.length();
-        int tLen = t.length();
+        int sLen = s.length(), tLen = t.length();
         int l = 0, r = -1;
         int resL = -1, resR = -1;
         int resLen = Integer.MAX_VALUE;

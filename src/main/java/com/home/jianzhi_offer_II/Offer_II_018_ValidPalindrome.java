@@ -34,6 +34,7 @@ public class Offer_II_018_ValidPalindrome {
     public boolean isPalindrome(String s) {
         int n = s.length();
         int l = 0, r = n - 1;
+
         while (l <= r) {
             while (l < r && !Character.isLetterOrDigit(s.charAt(l))) {
                 l++;
@@ -50,6 +51,8 @@ public class Offer_II_018_ValidPalindrome {
             l++;
             r--;
         }
+
         return true;
     }
+
 }

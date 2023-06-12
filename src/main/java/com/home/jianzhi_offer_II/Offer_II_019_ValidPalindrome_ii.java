@@ -34,6 +34,7 @@ public class Offer_II_019_ValidPalindrome_ii {
      */
     public boolean validPalindrome(String s) {
         int l = 0, r = s.length() - 1;
+
         while (l < r) {
             if (s.charAt(l) == s.charAt(r)) {
                 l++;
@@ -42,6 +43,7 @@ public class Offer_II_019_ValidPalindrome_ii {
                 return isPalindrome(s, l + 1, r) || isPalindrome(s, l, r - 1);
             }
         }
+
         return true;
     }
 
