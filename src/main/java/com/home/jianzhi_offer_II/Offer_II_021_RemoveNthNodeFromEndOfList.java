@@ -60,4 +60,5 @@ public class Offer_II_021_RemoveNthNodeFromEndOfList {
 
         return dummyHead.next;
     }
+
 }

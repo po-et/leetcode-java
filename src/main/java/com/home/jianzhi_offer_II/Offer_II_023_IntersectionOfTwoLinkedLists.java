@@ -53,6 +53,7 @@ public class Offer_II_023_IntersectionOfTwoLinkedLists {
             curA = curA == null ? headB : curA.next;
             curB = curB == null ? headA : curB.next;
         }
+
         return curA;
     }
 
