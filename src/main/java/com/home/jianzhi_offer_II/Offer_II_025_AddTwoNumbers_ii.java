@@ -121,7 +121,6 @@ public class Offer_II_025_AddTwoNumbers_ii {
             cur.next = pre;
             pre = cur;
         }
-
         return pre;
     }
 
