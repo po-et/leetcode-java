@@ -68,7 +68,7 @@ public class Offer_II_029_InsertIntoASortedCircularLinkedList {
 
         Node cur = head;
         Node next = cur.next;
-        while (head != next) {
+        while (next != head) {
             if (insertVal >= cur.val && insertVal <= next.val) {
                 break;
             }
@@ -87,4 +87,5 @@ public class Offer_II_029_InsertIntoASortedCircularLinkedList {
 
         return head;
     }
+
 }
