@@ -59,10 +59,7 @@ public class Offer_II_032_ValidAnagram {
      * space: O(S)，其中 S 为字符集大小，此处 S=26
      */
     public boolean isAnagram_2(String s, String t) {
-        if (s.length() != t.length()) {
-            return false;
-        }
-        if (s.equals(t)) {
+        if (s.length() != t.length() || s.equals(t)) {
             return false;
         }
 
