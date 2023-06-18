@@ -1,7 +1,7 @@
 package com.home.leetcode.medium;
 
 /**
- * 200. Number of Islands
+ * 200. Number of Islands（岛屿数量）
  *
  * Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water
  * and is formed by connecting adjacent lands horizontally or vertically.
@@ -9,21 +9,19 @@ package com.home.leetcode.medium;
  * You may assume all four edges of the grid are all surrounded by water.
  *
  * Example 1:
- *
  * Input:
- *  11110
- *  11010
- *  11000
- *  00000
+ *    11110
+ *    11010
+ *    11000
+ *    00000
  * Output: 1
  *
  * Example 2:
- *
  * Input:
- *  11000
- *  11000
- *  00100
- *  00011
+ *    11000
+ *    11000
+ *    00100
+ *    00011
  * Output: 3
  *
  * @see <a href="https://leetcode.cn/problems/number-of-islands/" />
@@ -36,7 +34,8 @@ public class LC_200_NumberOfIslands {
     // 访问标记矩阵
     private boolean[][] visited;
     // 位移坐标
-    private int[][] directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+    private final int[][] directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+
     /**
      * Flood fill算法（liuyubo讲解）
      *
