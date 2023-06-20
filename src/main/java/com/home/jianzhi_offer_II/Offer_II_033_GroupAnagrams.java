@@ -47,7 +47,7 @@ public class Offer_II_033_GroupAnagrams {
             map.put(sortStr, list);
         }
 
-        return new ArrayList<List<String>>(map.values());
+        return new ArrayList<>(map.values());
     }
 
     /**

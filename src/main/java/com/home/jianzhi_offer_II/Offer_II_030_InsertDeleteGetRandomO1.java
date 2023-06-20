@@ -38,7 +38,7 @@ import java.util.*;
  * @author Poet
  * @date 2023/3/21
  */
-public class Offer_II_030_InsertDeleteGetRandom_O1 {
+public class Offer_II_030_InsertDeleteGetRandomO1 {
 
     /**
      * 方法一：变长数组 + 哈希表
@@ -99,4 +99,5 @@ public class Offer_II_030_InsertDeleteGetRandom_O1 {
  * boolean param_2 = obj.remove(val);
  * int param_3 = obj.getRandom();
  */
+
 }
