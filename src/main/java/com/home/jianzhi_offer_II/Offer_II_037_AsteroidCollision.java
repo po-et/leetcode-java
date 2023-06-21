@@ -48,6 +48,7 @@ public class Offer_II_037_AsteroidCollision {
      */
     public int[] asteroidCollision(int[] asteroids) {
         Deque<Integer> stack = new ArrayDeque<>();
+
         for (int asteroid : asteroids) {
             boolean isAlive = true;
             while (isAlive && asteroid < 0 && !stack.isEmpty() && stack.peek() > 0) {

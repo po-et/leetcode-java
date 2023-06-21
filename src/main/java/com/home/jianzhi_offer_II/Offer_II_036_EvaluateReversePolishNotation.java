@@ -64,6 +64,7 @@ public class Offer_II_036_EvaluateReversePolishNotation {
      */
     public int evalRPN(String[] tokens) {
         Deque<Integer> stack = new ArrayDeque<>();
+
         for (String token : tokens) {
             if (token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/")) {
                 int second = stack.pop();
@@ -75,7 +76,7 @@ public class Offer_II_036_EvaluateReversePolishNotation {
                     result = first - second;
                 } else if (token.equals("*")) {
                     result = first * second;
-                } else {    // token.equals("/")
+                } else {   // token.equals("/")
                     result = first / second;
                 }
                 stack.push(result);
@@ -84,6 +85,7 @@ public class Offer_II_036_EvaluateReversePolishNotation {
                 stack.push(Integer.valueOf(token));
             }
         }
+
         return stack.isEmpty() ? -1 : stack.pop();
     }
 

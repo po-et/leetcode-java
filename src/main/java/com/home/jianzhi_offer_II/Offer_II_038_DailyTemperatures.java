@@ -52,6 +52,7 @@ public class Offer_II_038_DailyTemperatures {
         Deque<Integer> stack = new ArrayDeque<>();
         int n = temperatures.length;
         int[] res = new int[n];
+
         for (int i = 0; i < n; i++) {
             while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
                 int preIndex = stack.pop();
@@ -59,6 +60,7 @@ public class Offer_II_038_DailyTemperatures {
             }
             stack.push(i);
         }
+
         return res;
     }
 
