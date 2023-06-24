@@ -90,6 +90,7 @@ public class Offer_II_040_MaximalRectangle {
                 res = Math.max(res, area);
             }
         }
+
         return res;
     }
 
