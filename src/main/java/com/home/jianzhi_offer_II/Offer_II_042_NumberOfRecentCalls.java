@@ -36,7 +36,7 @@ import java.util.Queue;
 public class Offer_II_042_NumberOfRecentCalls {
 
     /**
-     * 队列
+     * 方法一：队列
      *
      * time:  均摊 O(1)，每个元素至多入队出队各一次
      * space: O(L)，其中 L 为队列的最大元素个数

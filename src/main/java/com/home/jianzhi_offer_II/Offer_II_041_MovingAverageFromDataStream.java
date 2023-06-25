@@ -48,9 +48,9 @@ public class Offer_II_041_MovingAverageFromDataStream {
          * Initialize your data structure here.
          */
         public MovingAverage(int size) {
-            queue = new ArrayDeque<>(size);
+            this.queue = new ArrayDeque<>(size);
             this.size = size;
-            sum = 0;
+            this.sum = 0;
         }
 
         public double next(int val) {
