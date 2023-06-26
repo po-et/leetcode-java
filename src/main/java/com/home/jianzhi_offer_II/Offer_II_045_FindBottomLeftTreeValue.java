@@ -81,6 +81,7 @@ public class Offer_II_045_FindBottomLeftTreeValue {
         if (root == null) {
             return;
         }
+
         curHeight++;
         dfs(root.left, curHeight);
         dfs(root.right, curHeight);

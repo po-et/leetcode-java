@@ -74,5 +74,29 @@ public class Offer_II_046_BinaryTreeRightSideView {
 
     /**
      * 方法二：深度优先搜索
+     *
+     * time:  O(n)
+     * space: O(n)
      */
+    int targetHeight = 0;
+
+    public List<Integer> rightSideView_DFS(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        dfs(root, res, 0);
+        return res;
+    }
+
+    private void dfs(TreeNode root, List<Integer> res, int curHeight) {
+        if (root == null) {
+            return;
+        }
+
+        if (curHeight == targetHeight) {
+            targetHeight++;
+            res.add(root.val);
+        }
+        dfs(root.right, res, curHeight + 1);
+        dfs(root.left, res, curHeight + 1);
+    }
+
 }
