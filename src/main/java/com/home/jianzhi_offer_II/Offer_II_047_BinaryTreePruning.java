@@ -43,7 +43,7 @@ public class Offer_II_047_BinaryTreePruning {
     /**
      * 方法一：递归
      *
-     * time:  O(N) 其中 n 是二叉树节点的个数，每个节点都需要遍历一次
+     * time:  O(N) 其中 n 是二叉树节点的个数，每个节点都要遍历一次
      * space: O(N)
      */
     public TreeNode pruneTree(TreeNode root) {

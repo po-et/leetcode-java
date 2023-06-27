@@ -87,7 +87,6 @@ public class Offer_II_048_SerializeAndDeserializeBinaryTree {
         }
     }
 
-
 // Your Codec object will be instantiated and called as such:
 // Codec ser = new Codec();
 // Codec deser = new Codec();
