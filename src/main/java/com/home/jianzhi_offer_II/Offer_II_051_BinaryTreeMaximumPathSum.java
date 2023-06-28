@@ -61,10 +61,10 @@ public class Offer_II_051_BinaryTreeMaximumPathSum {
         int rightGain = Math.max(maxGain(node.right), 0);
 
         // 节点的最大路径和取决于该节点的值与该节点的左右子节点的最大贡献值
-        int priceNewpath = node.val + leftGain + rightGain;
+        int priceNewPath = node.val + leftGain + rightGain;
 
         // 更新答案
-        maxSum = Math.max(maxSum, priceNewpath);
+        maxSum = Math.max(maxSum, priceNewPath);
 
         // 返回节点的最大贡献值
         return node.val + Math.max(leftGain, rightGain);

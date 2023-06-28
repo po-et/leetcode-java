@@ -10,7 +10,6 @@ package com.home.jianzhi_offer_II;
  * 示例 1：
  * 输入：root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8
  * 输出：3
- * 解释：和等于 8 的路径有 3 条，如图所示。
  *
  * 示例 2：
  * 输入：root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
@@ -37,6 +36,9 @@ public class Offer_II_050_PathSum {
         }
     }
 
+    /**
+     * 方法一，深度优先搜索
+     */
     public int pathSum(TreeNode root, int targetSum) {
         if (root == null) {
             return 0;

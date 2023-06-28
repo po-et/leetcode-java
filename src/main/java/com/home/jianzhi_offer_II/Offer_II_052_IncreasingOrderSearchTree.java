@@ -66,6 +66,7 @@ public class Offer_II_052_IncreasingOrderSearchTree {
         inOrder(root.right, inOrderList);
     }
 
+
     /**
      * 方法二：在中序遍历的过程中改变节点指向
      *
