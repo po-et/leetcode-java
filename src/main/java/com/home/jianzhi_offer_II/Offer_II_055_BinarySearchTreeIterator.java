@@ -93,6 +93,7 @@ public class Offer_II_055_BinarySearchTreeIterator {
         }
     }
 
+
     /**
      * 方法二：迭代
      */
@@ -121,7 +122,6 @@ public class Offer_II_055_BinarySearchTreeIterator {
             return cur != null || !stack.isEmpty();
         }
     }
-
 
 /**
  * Your BSTIterator object will be instantiated and called as such:
