@@ -44,7 +44,7 @@ public class Offer_II_057_ContainsDuplicate_iii {
         long w = (long) t + 1;
 
         //因为一个桶有两个元素就会返回true，因此一个桶只有一个元素，可以用哈希表的一条key-value表示桶
-        Map<Long, Long> map = new HashMap<Long, Long>();
+        Map<Long, Long> map = new HashMap<>();
 
         for (int i = 0; i < n; i++) {
             long id = getID(nums[i], w);

@@ -43,7 +43,8 @@ public class Offer_II_058_MyCalendar_i {
      * space: O(N)
      */
     class MyCalendar {
-        List<int[] > data;
+        List<int[]> data;
+
         public MyCalendar() {
             data = new ArrayList<>();
         }
