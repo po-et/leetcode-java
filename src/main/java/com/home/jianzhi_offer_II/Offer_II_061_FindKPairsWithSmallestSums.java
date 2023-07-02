@@ -49,6 +49,7 @@ public class Offer_II_061_FindKPairsWithSmallestSums {
         PriorityQueue<int[]> pq = new PriorityQueue<>(k, (a, b) -> {
             return nums1[a[0]] + nums2[a[1]] - nums1[b[0]] - nums2[b[1]];
         });
+        /* --- lambda翻译前 --- */
         // PriorityQueue<int[]> pq = new PriorityQueue<>(k, new Comparator<>() {
         //     public int compare(int[] a, int[] b) {
         //         return nums1[a[0]] + nums2[a[1]] - nums1[b[0]] - nums2[b[1]];
@@ -60,6 +61,7 @@ public class Offer_II_061_FindKPairsWithSmallestSums {
         for (int i = 0; i < Math.min(m, k); ++i) {
             pq.offer(new int[]{i, 0});
         }
+
         while (k-- > 0 && !pq.isEmpty()) {
             int[] idx = pq.poll();
             res.add(new ArrayList<>(Arrays.asList(nums1[idx[0]], nums2[idx[1]])));
@@ -69,4 +71,5 @@ public class Offer_II_061_FindKPairsWithSmallestSums {
         }
         return res;
     }
+
 }

@@ -41,13 +41,14 @@ public class Offer_II_060_TopKFrequentElements {
             freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
         }
 
-        PriorityQueue<Node> queue = new PriorityQueue<>(new Comparator<Node>() {
+        PriorityQueue<Node> queue = new PriorityQueue<>(new Comparator<>() {
             @Override
             public int compare(Node o1, Node o2) {
                 return o1.freq - o2.freq;
             }
         });
 
+        // 填充PriorityQueue
         freqMap.forEach((key, val) -> {
             if (queue.size() < k) {
                 queue.offer(new Node(key, val));
@@ -81,4 +82,5 @@ public class Offer_II_060_TopKFrequentElements {
     /**
      * 方法二：基于快速排序
      */
+
 }

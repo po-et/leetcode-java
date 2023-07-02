@@ -49,6 +49,7 @@ public class Offer_II_059_KthLargestElementInAStream {
             // 最小堆
             pq = new PriorityQueue<>(k);
             int n = nums.length;
+
             for (int i = 0; i < n; i++) {
                 if (i < k) {
                     pq.offer(nums[i]);
