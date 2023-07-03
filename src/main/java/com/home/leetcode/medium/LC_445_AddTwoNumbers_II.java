@@ -1,10 +1,11 @@
 package com.home.leetcode.medium;
 
-
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 /**
- * 445. Add Two Numbers II
+ * 445. Add Two Numbers II （两数相加 II）
  *
  * You are given two non-empty linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
  *
@@ -13,10 +14,17 @@ import java.util.Stack;
  * Follow up:
  * What if you cannot modify the input lists? In other words, reversing the lists is not allowed.
  *
- * Example:
+ * Example 1:
+ * Input: l1 = [7,2,4,3], l2 = [5,6,4]
+ * Output: [7,8,0,7]
  *
- * Input: (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
- * Output: 7 -> 8 -> 0 -> 7
+ * Example 2:
+ * Input: l1 = [2,4,3], l2 = [5,6,4]
+ * Output: [8,0,7]
+ *
+ * Example 3:
+ * Input: l1 = [0], l2 = [0]
+ * Output: [0]
  *
  * @see <a href="https://leetcode.cn/problems/add-two-numbers-ii/" />
  * @author Poet
@@ -31,10 +39,41 @@ public class LC_445_AddTwoNumbers_II {
     }
 
     /**
-     * 方法一
-     * @see <a href='https://blog.csdn.net/mine_song/article/details/70548158'/>
+     * 方法一：栈 （官方题解，语义最清晰）
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        Deque<Integer> stack1 = new ArrayDeque<Integer>();
+        Deque<Integer> stack2 = new ArrayDeque<Integer>();
+        while (l1 != null) {
+            stack1.push(l1.val);
+            l1 = l1.next;
+        }
+        while (l2 != null) {
+            stack2.push(l2.val);
+            l2 = l2.next;
+        }
+
+        int carry = 0;
+        ListNode res = null;
+        while (!stack1.isEmpty() || !stack2.isEmpty() || carry != 0) {
+            int a = stack1.isEmpty() ? 0 : stack1.pop();
+            int b = stack2.isEmpty() ? 0 : stack2.pop();
+            int cur = a + b + carry;
+            carry = cur / 10;
+            cur %= 10;
+            ListNode curnode = new ListNode(cur);
+            curnode.next = res;
+            res = curnode;
+        }
+        return res;
+    }
+
+    /**
+     * 方法一：栈
+     *
+     * @see <a href='https://blog.csdn.net/mine_song/article/details/70548158'/>
+     */
+    public ListNode addTwoNumbers_1(ListNode l1, ListNode l2) {
         if(l1 == null) return l2;
         if(l2 == null) return l1;
 
@@ -80,7 +119,7 @@ public class LC_445_AddTwoNumbers_II {
      * 方法二 （更好理解！）
      * 使用类似 {@link LC_002_AddTwoNumbers} 的方法
      */
-    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
+    public ListNode addTwoNumbers_2(ListNode l1, ListNode l2) {
         if(l1 == null) return l2;
         if(l2 == null) return l1;
 
@@ -124,4 +163,9 @@ public class LC_445_AddTwoNumbers_II {
 
         return tenth == 0 ? curr.next : curr;
     }
+
+    /**
+     * 方法：反转链表+两数相加
+     */
+
 }
