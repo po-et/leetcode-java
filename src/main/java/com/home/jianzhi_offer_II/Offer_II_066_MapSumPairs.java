@@ -13,7 +13,6 @@ import java.util.Map;
  * int sum(string prefix) 返回所有以该前缀 prefix 开头的键 key 的值的总和。
  *
  * 示例：
- *
  * 输入：
  * inputs = ["MapSum", "insert", "sum", "insert", "sum"]
  * inputs = [[], ["apple", 3], ["ap"], ["app", 2], ["ap"]]
@@ -118,7 +117,6 @@ public class Offer_II_066_MapSumPairs {
             value = 0;
         }
     }
-
 
 /**
  * Your MapSum object will be instantiated and called as such:

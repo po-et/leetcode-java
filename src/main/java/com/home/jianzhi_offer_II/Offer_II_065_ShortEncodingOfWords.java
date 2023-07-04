@@ -52,6 +52,7 @@ public class Offer_II_065_ShortEncodingOfWords {
         return res;
     }
 
+
     /**
      * 方法二：前缀树
      */
@@ -74,7 +75,6 @@ public class Offer_II_065_ShortEncodingOfWords {
 
     public int minimumLengthEncoding_trie(String[] words) {
         Trie trie = new Trie();
-
         Map<Trie, Integer> map = new HashMap<>();
         for (int i = 0; i < words.length; i++) {
             String word = words[i];

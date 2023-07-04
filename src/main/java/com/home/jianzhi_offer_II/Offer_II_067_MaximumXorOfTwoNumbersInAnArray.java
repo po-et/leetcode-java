@@ -22,7 +22,7 @@ package com.home.jianzhi_offer_II;
  */
 public class Offer_II_067_MaximumXorOfTwoNumbersInAnArray {
 
-    // 参考答案
+    // 直接参考答案
 
     class Solution {
         // 字典树的根节点
@@ -96,4 +96,5 @@ public class Offer_II_067_MaximumXorOfTwoNumbersInAnArray {
         // 右子树指向表示 1 的子节点
         Trie right = null;
     }
+
 }
