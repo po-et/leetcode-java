@@ -77,9 +77,9 @@ public class Offer_II_063_ReplaceWords {
         for (String word : dictionary) {
             Trie cur = trie;
             for (int i = 0; i < word.length(); i++) {
-                char c = word.charAt(i);
-                cur.children.putIfAbsent(c, new Trie());
-                cur = cur.children.get(c);
+                char ch = word.charAt(i);
+                cur.children.putIfAbsent(ch, new Trie());
+                cur = cur.children.get(ch);
             }
             cur.children.put('#', new Trie());
         }
@@ -92,7 +92,7 @@ public class Offer_II_063_ReplaceWords {
     }
 
     public String findRoot(String word, Trie trie) {
-        StringBuffer root = new StringBuffer();
+        StringBuilder root = new StringBuilder();
         Trie cur = trie;
         for (int i = 0; i < word.length(); i++) {
             char ch = word.charAt(i);
