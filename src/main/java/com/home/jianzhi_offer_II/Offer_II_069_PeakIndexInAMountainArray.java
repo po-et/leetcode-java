@@ -51,6 +51,7 @@ public class Offer_II_069_PeakIndexInAMountainArray {
         int n = arr.length;
         int l = 0, r = n - 1;
         int res = 0;
+
         while (l <= r) {
             int mid = l + (r - l) / 2;
             if (arr[mid] > arr[mid + 1]) {
@@ -62,4 +63,5 @@ public class Offer_II_069_PeakIndexInAMountainArray {
         }
         return res;
     }
+
 }

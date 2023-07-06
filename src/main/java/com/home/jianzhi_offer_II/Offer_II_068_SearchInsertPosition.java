@@ -45,8 +45,9 @@ public class Offer_II_068_SearchInsertPosition {
      */
     public int searchInsert(int[] nums, int target) {
         int n = nums.length;
-        int res = n;
         int l = 0, r = n - 1;
+        int res = n;
+
         while (l <= r) {
             int mid = l + (r - l) / 2;
             if (target <= nums[mid]) {
@@ -58,4 +59,5 @@ public class Offer_II_068_SearchInsertPosition {
         }
         return res;
     }
+
 }
