@@ -24,6 +24,10 @@ import java.util.Arrays;
 public class Offer_II_075_RelativeSortArray {
 
     /**
+     * 方法一：自定义排序（arr2顺序记录到hashMap）
+     */
+
+    /**
      * 方法二：计数排序
      */
     public int[] relativeSortArray(int[] arr1, int[] arr2) {

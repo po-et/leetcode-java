@@ -55,4 +55,5 @@ public class Offer_II_074_MergeIntervals {
 
         return merged.toArray(new int[merged.size()][]);
     }
+
 }
