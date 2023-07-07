@@ -29,7 +29,7 @@ public class Offer_II_072_SqrtX {
     /**
      * 二分查找
      *
-     * 思路：由于 x 平方根的整数部分是满足 k^2 ≤x 的最大 k 值，因此我们可以对 k 进行二分查找，从而得到答案
+     * 思路：由于 x 平方根的整数部分是满足 k^2 ≤ x 的最大 k 值，因此我们可以对 k 进行二分查找，从而得到答案
      *
      * time:  O(logX) 即为二分查找需要的次数
      * space: O(1)
@@ -37,6 +37,7 @@ public class Offer_II_072_SqrtX {
     public int mySqrt(int x) {
         int l = 0, r = x;
         int res = -1;
+
         while (l <= r) {
             int mid = l + (r - l) / 2;
             if ((long) mid * (long) mid <= x) {
@@ -48,4 +49,5 @@ public class Offer_II_072_SqrtX {
         }
         return res;
     }
+
 }
