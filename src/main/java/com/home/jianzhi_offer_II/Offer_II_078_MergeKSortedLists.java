@@ -82,7 +82,7 @@ public class Offer_II_078_MergeKSortedLists {
     /**
      * 方法三：使用优先队列合并
      */
-    public ListNode mergeKLists_PQ(ListNode[] lists) {
+    public ListNode mergeKLists_PriorityQueue(ListNode[] lists) {
         PriorityQueue<ListNode> queue = new PriorityQueue<>(new Comparator<ListNode>() {
             @Override
             public int compare(ListNode o1, ListNode o2) {
@@ -91,7 +91,7 @@ public class Offer_II_078_MergeKSortedLists {
         });
 
         for (ListNode list : lists) {
-            if (list != null) {
+            if (list != null) {     // 测试用例中包含 [[]]
                 queue.offer(list);
             }
         }
@@ -108,4 +108,5 @@ public class Offer_II_078_MergeKSortedLists {
         }
         return dummyHead.next;
     }
+
 }

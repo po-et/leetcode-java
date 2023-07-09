@@ -56,12 +56,13 @@ public class Offer_II_077_SortList {
 
         ListNode fast = head, slow = head;
         while (fast != tail) {
-            slow = slow.next;
             fast = fast.next;
+            slow = slow.next;
             if (fast != tail) {
                 fast = fast.next;
             }
         }
+
         ListNode mid = slow;
         ListNode list1 = sortList(head, mid);
         ListNode list2 = sortList(mid, tail);
@@ -73,6 +74,7 @@ public class Offer_II_077_SortList {
         ListNode dummyHead = new ListNode(0);
         ListNode cur = dummyHead;
         ListNode list1 = listNode1, list2 = listNode2;
+
         while (list1 != null && list2 != null) {
             if (list1.val < list2.val) {
                 cur.next = list1;
