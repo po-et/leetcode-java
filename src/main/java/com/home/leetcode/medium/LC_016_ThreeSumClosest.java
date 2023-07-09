@@ -22,6 +22,8 @@ import java.util.Arrays;
 public class LC_016_ThreeSumClosest {
 
     /**
+     * 方法：排序 + 双指针
+     *
      * 参考 {@link LC_015_ThreeSum}, {@link LC_018_FourSum}
      *
      * 注：这道题比3sum和4sum简单的地方就是不需要判断重复问题  "have exactly one solution"

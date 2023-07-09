@@ -29,7 +29,7 @@ import java.util.List;
 public class LC_015_ThreeSum {
 
     /**
-     * 方法一：排序 + 双指针
+     * 方法：排序 + 双指针
      *
      * time:  O(N^2) 数组排序O(NlogN)，遍历数组O(n)，双指针遍历O(n)，总体O(NlogN)+O(n)∗O(n)，所以是O(n^2)
      * space: O(1)
