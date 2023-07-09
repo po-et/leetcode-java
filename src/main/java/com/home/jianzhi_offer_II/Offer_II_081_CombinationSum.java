@@ -32,9 +32,9 @@ import java.util.List;
  * 输入: candidates = [1], target = 2
  * 输出: [[1,1]]
  *
- *
  * 注意：本题与主站 39 题相同： https://leetcode-cn.com/problems/combination-sum/
  *
+ * @see <a href="https://leetcode.cn/problems/Ygoe9J/" />
  * @author Poet
  * @date 2023/7/9
  */
