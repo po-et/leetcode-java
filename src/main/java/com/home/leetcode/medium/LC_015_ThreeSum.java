@@ -31,7 +31,7 @@ public class LC_015_ThreeSum {
     /**
      * 方法一：排序 + 双指针
      *
-     * time:  O(n^2) 数组排序O(NlogN)，遍历数组O(n)，双指针遍历O(n)，总体O(NlogN)+O(n)∗O(n)，所以是O(n^2)
+     * time:  O(N^2) 数组排序O(NlogN)，遍历数组O(n)，双指针遍历O(n)，总体O(NlogN)+O(n)∗O(n)，所以是O(n^2)
      * space: O(1)
      */
     public List<List<Integer>> threeSum(int[] nums) {
@@ -40,7 +40,7 @@ public class LC_015_ThreeSum {
             return res;
         }
 
-        // 先排序 O(nlogn)
+        // 先排序 O(NlogN)
         Arrays.sort(nums);
 
         // nums.length-2 是因为左右都有指针，而且3元素相加
@@ -69,7 +69,6 @@ public class LC_015_ThreeSum {
         }
         return res;
     }
-
 
 
     public static void main(String[] args) {
