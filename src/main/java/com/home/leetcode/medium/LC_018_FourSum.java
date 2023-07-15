@@ -7,7 +7,9 @@ import java.util.List;
 /**
  * 18. 4Sum (四数之和)
  *
- * Given an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.
+ * Given an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d = target?
+ *
+ * Find all unique quadruplets in the array which gives the sum of target.
  *
  * Note:
  * The solution set must not contain duplicate quadruplets.
@@ -38,7 +40,7 @@ public class LC_018_FourSum {
             return res;
         }
 
-        // 先排序 O(nlogn)
+        // 先排序 O(NlogN)
         Arrays.sort(nums);
 
         for (int i = 0; i < nums.length - 3; i++) {
