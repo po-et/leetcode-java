@@ -52,7 +52,7 @@ public class LC_018_FourSum {
 
                 int left = j + 1, right = nums.length - 1;
                 while (left < right) {
-                    int sum = nums[i] + nums[j] + nums[left] + nums[right];
+                    long sum = (long) nums[i] + nums[j] + nums[left] + nums[right];
                     if (sum == target) {
                         res.add(Arrays.asList(nums[i], nums[j], nums[left], nums[right]));
 
