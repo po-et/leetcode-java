@@ -1,14 +1,13 @@
 package com.home.leetcode.medium;
 
 /**
- * 122. 买卖股票的最佳时机 II
+ * 122. Best Time to Buy and Sell Stock II （买卖股票的最佳时机 II）
  *
  * 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
  *
  * 设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。
  *
  * 注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
- *
  *
  * 示例 1:
  * 输入: [7,1,5,3,6,4]
@@ -60,46 +59,35 @@ public class LC_122_BestTimeToBuyAndSellStock_II {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     /*--------- 下面已废弃 -----------*/
 
 
     // 滑动窗口
     public static int maxProfit(int[] prices) {
-        if(prices == null || prices.length == 0)
+        if (prices == null || prices.length == 0) {
             return 0;
+        }
 
-        int l = 0, r = l+1;
-        int ret = 0;
+        int l = 0, r = l + 1;
+        int res = 0;
 
         while (r < prices.length) {
-            if (prices[r-1] <= prices[r]) {
-                ret += prices[r] - prices[r - 1];
+            if (prices[r - 1] <= prices[r]) {
+                res += prices[r] - prices[r - 1];
                 r++;
-            } else { // prices[r-1] > prices[r]
+            } else {   // prices[r-1] > prices[r]
                 l = r;
                 r++;
             }
         }
-        return ret;
+        return res;
     }
-
 
 
     /**
      * 贪心算法：只要第二天的价格比今天高，就第一天买，第二天卖
      */
-    public int maxProfix2(int[] prices) {
+    public int maxProfit__2(int[] prices) {
         if (prices == null || prices.length == 0 || prices.length == 1) {
             return 0;
         }
