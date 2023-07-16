@@ -36,16 +36,16 @@ public class LC_415_AddStrings {
     public String addStrings(String num1, String num2) {
         int i = num1.length() - 1;  // i 指向 num1 的结尾
         int j = num2.length() - 1;  // j 指向 num2 的结尾
-        int add = 0;                // 进位
+        int carry = 0;              // 进位
 
         StringBuilder builder = new StringBuilder();
-        while (i >= 0 || j >= 0 || add != 0) {
+        while (i >= 0 || j >= 0 || carry != 0) {
             int n1 = i >= 0 ? num1.charAt(i) - '0' : 0;
             int n2 = j >= 0 ? num2.charAt(j) - '0' : 0;
 
-            int sum = n1 + n2 + add;
+            int sum = n1 + n2 + carry;
             builder.append(sum % 10);
-            add = sum / 10;
+            carry = sum / 10;
 
             i--;
             j--;
@@ -53,4 +53,5 @@ public class LC_415_AddStrings {
 
         return builder.reverse().toString();
     }
+
 }
