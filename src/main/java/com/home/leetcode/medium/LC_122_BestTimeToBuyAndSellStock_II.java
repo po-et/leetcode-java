@@ -59,8 +59,7 @@ public class LC_122_BestTimeToBuyAndSellStock_II {
 
 
 
-    /*--------- 下面已废弃 -----------*/
-
+    /*------------------ 下面已废弃 --------------------*/
 
     // 滑动窗口
     public static int maxProfit(int[] prices) {
