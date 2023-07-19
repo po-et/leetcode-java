@@ -1,7 +1,7 @@
 package com.home.leetcode.medium;
 
 /**
- * 198. House Robber （打家劫舍）
+ * 198. House Robber（打家劫舍）
  *
  * You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed,
  * the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected
@@ -31,7 +31,6 @@ public class LC_198_HouseRobber {
      *    状态转移方程：
      *    f(0) = max{ v(0)+f(2), v(1)+f(3), v(2)+f(4), .... v(n-3)+f(n-1), v(n-2), v(n-1) }
      */
-
 
     // memo[i]表示考虑抢劫 nums[i...n) 所能获得的最大收益
     private int[] memo;
