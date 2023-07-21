@@ -46,13 +46,14 @@ public class Offer_32_BinaryTreeLevelOrder_I {
             return new int[0];
         }
 
-        List<Integer> retList = new ArrayList<>();
+        List<Integer> res = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
 
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
-            retList.add(node.val);
+            res.add(node.val);
+
             if (node.left != null) {
                 queue.offer(node.left);
             }
@@ -62,9 +63,9 @@ public class Offer_32_BinaryTreeLevelOrder_I {
         }
 
         // convert List to Array
-        int[] arr = new int[retList.size()];
-        for (int i = 0; i < retList.size(); i++) {
-            arr[i] = retList.get(i);
+        int[] arr = new int[res.size()];
+        for (int i = 0; i < res.size(); i++) {
+            arr[i] = res.get(i);
         }
         return arr;
     }
