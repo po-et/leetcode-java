@@ -14,8 +14,9 @@ package com.home.leetcode.hard;
  * Input: height = [4,2,0,3,2,5]
  * Output: 9
  *
- * @see <a href="https://leetcode.com/problems/trapping-rain-water/" />
- * Created by Poet on 2019-01-19.
+ * @see <a href="https://leetcode.cn/problems/trapping-rain-water/" />
+ * @author Poet
+ * @date 2019/1/19
  */
 public class LC_042_TrappingRainWater {
 
@@ -34,6 +35,13 @@ public class LC_042_TrappingRainWater {
      * 方法一：动态规划
      *
      * 官方题解：https://leetcode.cn/problems/trapping-rain-water/solution/jie-yu-shui-by-leetcode-solution-tuvc/
+     *
+     * 思路：正向遍历数组 height 得到数组 leftMax 的每个元素值，反向遍历数组 height 得到数组 rightMax 的每个元素值
+     *
+     * 作者：LeetCode-Solution
+     * 链接：https://leetcode.cn/problems/trapping-rain-water/solution/jie-yu-shui-by-leetcode-solution-tuvc/
+     * 来源：力扣（LeetCode）
+     * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
      *
      * time:  O(n) 其中 n 是数组 height 的长度。计算数组 leftMax 和 rightMax 的元素值各需要遍历数组 height 一次，计算能接的雨水总量还需要遍历一次
      * space: O(n) 需要创建两个长度为 n 的数组 leftMax 和 rightMax
@@ -62,8 +70,6 @@ public class LC_042_TrappingRainWater {
         }
         return res;
     }
-
-
 
 
 
