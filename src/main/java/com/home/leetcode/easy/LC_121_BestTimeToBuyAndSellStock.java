@@ -23,7 +23,7 @@ public class LC_121_BestTimeToBuyAndSellStock {
 
     // 同 {@link Offer_63_BestTimeToBuyAndSellStock}
     /**
-     * 方法二：动态规划
+     * 方法：动态规划
      *
      * 状态定义：
      *   设动态规划列表 dp ，dp[i] 代表以 prices[i] 为结尾的子数组的最大利润（以下简称为 前 i 日的最大利润 ）。
