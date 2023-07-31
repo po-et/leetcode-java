@@ -5,7 +5,7 @@ import java.util.Queue;
 import java.util.Stack;
 
 /**
- * 143. Reorder List
+ * 143. Reorder List（重排链表）
  *
  * Given a singly linked list L: L0→L1→…→Ln-1→Ln,
  * reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
@@ -32,7 +32,9 @@ public class LC_143_ReorderList {
      * 方法一：使用双指针得到中间结点，倒转链表，拼接
      */
     public void reorderList(ListNode head) {
-        if (head == null || head.next == null) return;
+        if (head == null || head.next == null) {
+            return;
+        }
 
         ListNode fast = head;
         ListNode slow = head;
@@ -76,11 +78,14 @@ public class LC_143_ReorderList {
         return prev;
     }
 
+
     /**
      * 方法二：使用双指针来得到中间结点，然后使用栈和队列来做
      */
     public void reorderList2(ListNode head) {
-        if(head == null || head.next == null) return;
+        if(head == null || head.next == null) {
+            return;
+        }
 
         ListNode dummy = new ListNode(0);
         ListNode curr = dummy;
