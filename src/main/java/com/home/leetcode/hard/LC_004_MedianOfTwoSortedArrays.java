@@ -1,7 +1,7 @@
 package com.home.leetcode.hard;
 
 /**
- * 4. Median of Two Sorted Arrays （寻找两个有序数组的中位数）
+ * 4. Median of Two Sorted Arrays（寻找两个有序数组的中位数）
  *
  * Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
  *
@@ -32,6 +32,7 @@ public class LC_004_MedianOfTwoSortedArrays {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int[] mergeArray = merge(nums1, nums2);
         int n = mergeArray.length;
+
         if ((n & 1) == 1) {   // odd
             return mergeArray[n / 2];
         } else {
@@ -60,4 +61,5 @@ public class LC_004_MedianOfTwoSortedArrays {
         }
         return res;
     }
+
 }
