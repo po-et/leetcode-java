@@ -56,8 +56,9 @@ public class LC_021_MergeTwoSortedLists {
 
     /**
      * 递归
-     * time:  O(n+m)，其中 n 和 m 分别为两个链表的长度
-     * space: O(n+m)，其中 n 和 m 分别为两个链表的长度。递归调用 mergeTwoLists 函数时需要消耗栈空间，栈空间的大小取决于递归调用的深度。
+     *
+     * time:  O(n+m) 其中 n 和 m 分别为两个链表的长度
+     * space: O(n+m) 其中 n 和 m 分别为两个链表的长度。递归调用 mergeTwoLists 函数时需要消耗栈空间，栈空间的大小取决于递归调用的深度。
      *                结束递归调用时 mergeTwoLists 函数最多调用 n+m 次，因此空间复杂度为 O(n+m)
      */
     public ListNode mergeTwoLists_recursive(ListNode l1, ListNode l2) {
