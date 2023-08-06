@@ -1,7 +1,7 @@
 package com.home.leetcode.medium;
 
 /**
- * 24. Swap Nodes in Pairs
+ * 24. Swap Nodes in Pairs（两两交换链表中的节点）
  *
  * Given a linked list, swap every two adjacent nodes and return its head.
  *
@@ -35,7 +35,7 @@ public class LC_024_SwapNodesInPairs {
      * prev -> node2 -> node1 -> next
      *                    /\
      *                  prev移动
-     * time: O(n)
+     * time:  O(n)
      * space: O(1)
      */
     public ListNode swapPairs(ListNode head) {
