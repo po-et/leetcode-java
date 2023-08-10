@@ -45,9 +45,9 @@ public class Offer_II_059_KthLargestElementInAStream {
         int capacity;
 
         public KthLargest(int k, int[] nums) {
-            capacity = k;
             // 最小堆
             pq = new PriorityQueue<>(k);
+            capacity = k;
             int n = nums.length;
 
             for (int i = 0; i < n; i++) {
@@ -87,6 +87,7 @@ public class Offer_II_059_KthLargestElementInAStream {
         public KthLargest_official(int k, int[] nums) {
             this.k = k;
             pq = new PriorityQueue<>();
+
             for (int x : nums) {
                 // 调用内部add方法
                 add(x);
