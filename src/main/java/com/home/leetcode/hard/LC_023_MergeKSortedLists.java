@@ -3,7 +3,7 @@ package com.home.leetcode.hard;
 import java.util.PriorityQueue;
 
 /**
- * 23. Merge k Sorted Lists
+ * 23. Merge k Sorted Lists（合并 K 个升序链表）
  *
  * Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
  *
@@ -16,13 +16,12 @@ import java.util.PriorityQueue;
  * ]
  * Output: 1->1->2->3->4->4->5->6
  *
- * @see <a href = "https://leetcode.cn/problems/merge-k-sorted-lists/" />
+ * @see <a href="https://leetcode.cn/problems/merge-k-sorted-lists/" />
  * @author Poet
  * @date 2020/5/3
  */
 public class LC_023_MergeKSortedLists {
 
-    // Definition for singly-linked list.
     public class ListNode {
         int val;
         ListNode next;
@@ -32,7 +31,7 @@ public class LC_023_MergeKSortedLists {
     }
 
     /**
-     * 优先队列
+     * 方法：优先队列
      */
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) {
@@ -40,7 +39,7 @@ public class LC_023_MergeKSortedLists {
         }
 
         ListNode dummy = new ListNode(0);
-        ListNode curr = dummy;
+        ListNode cur = dummy;
 
 //        PriorityQueue<ListNode> queue = new PriorityQueue<>(lists.length, Comparator.comparingInt(l -> l.val));
         PriorityQueue<ListNode> queue = new PriorityQueue<>(lists.length, (l1, l2) -> l1.val - l2.val);
@@ -57,8 +56,8 @@ public class LC_023_MergeKSortedLists {
                 queue.offer(node.next);
             }
 
-            curr.next = node;
-            curr = curr.next;
+            cur.next = node;
+            cur = cur.next;
         }
 
         return dummy.next;
