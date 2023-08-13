@@ -94,8 +94,9 @@ public class LC_088_MergeSortedArray {
      */
     public static void merge_2(int[] nums1, int m, int[] nums2, int n) {
         int[] arr = new int[m];
-        for (int i = 0; i < m; i++)
+        for (int i = 0; i < m; i++) {
             arr[i] = nums1[i];
+        }
 
         int i = 0, j = 0;
         int index = 0;
