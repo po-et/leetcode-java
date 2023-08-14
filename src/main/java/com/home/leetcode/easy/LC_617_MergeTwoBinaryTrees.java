@@ -1,7 +1,7 @@
 package com.home.leetcode.easy;
 
 /**
- * 617. Merge Two Binary Trees
+ * 617. Merge Two Binary Trees (合并二叉树)
  *
  * You are given two binary trees root1 and root2.
  *
@@ -50,10 +50,10 @@ public class LC_617_MergeTwoBinaryTrees {
             return root1;
         }
 
-        TreeNode merged = new TreeNode(root1.val + root2.val);
-        merged.left = mergeTrees(root1.left, root2.left);
-        merged.right = mergeTrees(root1.right, root2.right);
-        return merged;
+        TreeNode mergeNode = new TreeNode(root1.val + root2.val);
+        mergeNode.left = mergeTrees(root1.left, root2.left);
+        mergeNode.right = mergeTrees(root1.right, root2.right);
+        return mergeNode;
     }
 
 }
