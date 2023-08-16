@@ -1,7 +1,7 @@
 package com.home.leetcode.easy;
 
 /**
- * 617. Merge Two Binary Trees (合并二叉树)
+ * 617. Merge Two Binary Trees（合并二叉树）
  *
  * You are given two binary trees root1 and root2.
  *
