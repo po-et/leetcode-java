@@ -23,7 +23,8 @@ public class LC_1037_ValidBoomerang {
 
     /**
      * 方法一：向量叉乘
-     * 此题是经典的三点共线问题，若三点共线，则任意组成的两个向量叉乘为0；
+     *
+     * 此题是经典的三点共线问题，若三点共线，则任意组成的两个向量叉乘为0
      *
      * 官方题解：https://leetcode.cn/problems/valid-boomerang/solution/you-xiao-de-hui-xuan-biao-by-leetcode-so-yqby/
      *
