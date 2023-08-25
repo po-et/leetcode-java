@@ -51,7 +51,6 @@ public class Offer_II_018_ValidPalindrome {
             l++;
             r--;
         }
-
         return true;
     }
 

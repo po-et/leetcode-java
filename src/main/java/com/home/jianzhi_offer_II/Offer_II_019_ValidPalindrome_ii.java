@@ -43,7 +43,6 @@ public class Offer_II_019_ValidPalindrome_ii {
                 return isPalindrome(s, l + 1, r) || isPalindrome(s, l, r - 1);
             }
         }
-
         return true;
     }
 
