@@ -40,7 +40,6 @@ public class Offer_II_059_KthLargestElementInAStream {
      * 方法一：优先队列
      */
     class KthLargest {
-
         PriorityQueue<Integer> pq;
         int capacity;
 
@@ -86,7 +85,7 @@ public class Offer_II_059_KthLargestElementInAStream {
 
         public KthLargest_official(int k, int[] nums) {
             this.k = k;
-            pq = new PriorityQueue<>();
+            this.pq = new PriorityQueue<>();
 
             for (int x : nums) {
                 // 调用内部add方法
