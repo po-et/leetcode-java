@@ -38,8 +38,8 @@ public class Offer_32_BinaryTreeLevelOrder_I {
     /**
      * BFS
      *
-     * time:  O(N) N 为二叉树的节点数量，即 BFS 需循环 N 次。
-     * space: O(N) 最差情况下，即当树为平衡二叉树时，最多有 N/2 个树节点同时在 queue 中，使用 O(N) 大小的额外空间。
+     * time:  O(N) N 为二叉树的节点数量，即 BFS 需循环 N 次
+     * space: O(N) 最差情况下，即当树为平衡二叉树时，最多有 N/2 个树节点同时在 queue 中，使用 O(N) 大小的额外空间
      */
     public int[] levelOrder(TreeNode root) {
         if (root == null) {

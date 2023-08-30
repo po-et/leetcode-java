@@ -44,24 +44,28 @@ public class Offer_32_BinaryTreeLevelOrder_II {
             return new ArrayList<>();
         }
 
-        List<List<Integer>> ret = new ArrayList<>();
+        List<List<Integer>> res = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
 
         while (!queue.isEmpty()) {
             List<Integer> levelList = new ArrayList<>();
-            ret.add(levelList);
+            res.add(levelList);
 
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
                 levelList.add(node.val);
 
-                if (node.left != null) queue.offer(node.left);
-                if (node.right != null) queue.offer(node.right);
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
             }
         }
-        return ret;
+        return res;
     }
 
 }
