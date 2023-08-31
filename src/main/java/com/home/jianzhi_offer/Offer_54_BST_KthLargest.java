@@ -64,6 +64,7 @@ public class Offer_54_BST_KthLargest {
 
     /**
      * 方法二：中序遍历 + 提前返回
+     *
      * 官方题解：https://leetcode.cn/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/solution/mian-shi-ti-54-er-cha-sou-suo-shu-de-di-k-da-jie-d/
      *
      * time:  O(n) 当树退化为链表时（全部为右子节点），无论 k 的值大小，递归深度都为 N ，占用 O(N) 时间。
