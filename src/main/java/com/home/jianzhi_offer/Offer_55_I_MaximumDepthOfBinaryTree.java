@@ -32,9 +32,6 @@ public class Offer_55_I_MaximumDepthOfBinaryTree {
 
     /**
      * 方法一：深度优先搜索
-     *
-     * @param root
-     * @return
      */
     public int maxDepth(TreeNode root) {
         if (root == null) {
