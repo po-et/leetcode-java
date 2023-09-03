@@ -74,6 +74,7 @@ public class Offer_II_032_ValidAnagram {
             }
             freq.put(ch, freq.get(ch) - 1);
         }
+
         return true;
     }
 
