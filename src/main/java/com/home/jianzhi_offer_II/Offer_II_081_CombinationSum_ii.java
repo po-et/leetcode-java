@@ -46,6 +46,7 @@ public class Offer_II_081_CombinationSum_ii {
 
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         Arrays.sort(candidates);
+
         for (int num : candidates) {
             int size = freq.size();
             if (freq.isEmpty() || num != freq.get(size - 1)[0]) {
@@ -54,6 +55,7 @@ public class Offer_II_081_CombinationSum_ii {
                 ++freq.get(size - 1)[1];
             }
         }
+
         dfs(0, target);
         return ans;
     }
