@@ -1,7 +1,10 @@
 package com.home.leetcode.medium;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * 210. Course Schedule II
+ * 210. Course Schedule II（课程表 II）
  *
  * There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.
  *
@@ -34,11 +37,68 @@ public class LC_210_CourseSchedule_II {
      *
      * 「拓扑排序」是专门应用于有向图的算法
      */
-
     // solution: https://leetcode.cn/problems/course-schedule-ii/solution/tuo-bu-pai-xu-shen-du-you-xian-bian-li-python-dai-/
+
+    /* ------ 看答案 ------ */
+
+    // 存储有向图
+    List<List<Integer>> edges;
+    // 标记每个节点的状态：0=未搜索，1=搜索中，2=已完成
+    int[] visited;
+    // 用数组来模拟栈，下标 n-1 为栈底，0 为栈顶
+    int[] result;
+    // 判断有向图中是否有环
+    boolean valid = true;
+    // 栈下标
+    int index;
+
     public int[] findOrder(int numCourses, int[][] prerequisites) {
-
-
-        return null;
+        edges = new ArrayList<>();
+        for (int i = 0; i < numCourses; ++i) {
+            edges.add(new ArrayList<>());
+        }
+        visited = new int[numCourses];
+        result = new int[numCourses];
+        index = numCourses - 1;
+        for (int[] info : prerequisites) {
+            edges.get(info[1]).add(info[0]);
+        }
+        // 每次挑选一个「未搜索」的节点，开始进行深度优先搜索
+        for (int i = 0; i < numCourses && valid; ++i) {
+            if (visited[i] == 0) {
+                dfs(i);
+            }
+        }
+        if (!valid) {
+            return new int[0];
+        }
+        // 如果没有环，那么就有拓扑排序
+        return result;
     }
+
+    public void dfs(int u) {
+        // 将节点标记为「搜索中」
+        visited[u] = 1;
+        // 搜索其相邻节点
+        // 只要发现有环，立刻停止搜索
+        for (int v : edges.get(u)) {
+            // 如果「未搜索」那么搜索相邻节点
+            if (visited[v] == 0) {
+                dfs(v);
+                if (!valid) {
+                    return;
+                }
+            }
+            // 如果「搜索中」说明找到了环
+            else if (visited[v] == 1) {
+                valid = false;
+                return;
+            }
+        }
+        // 将节点标记为「已完成」
+        visited[u] = 2;
+        // 将节点入栈
+        result[index--] = u;
+    }
+
 }
