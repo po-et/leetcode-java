@@ -86,5 +86,4 @@ public class LC_230_KthSmallestElementInBST {
         orderList.add(root.val);
         inOrder_2(root.right);
     }
-
 }
