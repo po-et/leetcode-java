@@ -46,11 +46,12 @@ public class Offer_II_080_Combinations {
     }
 
     private void dfs(int i) {
-        int d = k - path.size(); // 还要选 d 个数
+        int d = k - path.size();   // 还要选 d 个数
         if (d == 0) {
             res.add(new ArrayList<>(path));
             return;
         }
+
         // 不选 i
         if (i > d) dfs(i - 1);
         // 选 i
