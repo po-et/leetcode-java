@@ -14,20 +14,20 @@ import java.util.List;
  * 示例 1:
  * 输入: candidates = [10,1,2,7,6,1,5], target = 8,
  * 输出:
- * [
- * [1,1,6],
- * [1,2,5],
- * [1,7],
- * [2,6]
- * ]
+ *     [
+ *       [1,1,6],
+ *       [1,2,5],
+ *       [1,7],
+ *       [2,6]
+ *     ]
  *
  * 示例 2:
  * 输入: candidates = [2,5,2,1,2], target = 5,
  * 输出:
- * [
- * [1,2,2],
- * [5]
- * ]
+ *     [
+ *       [1,2,2],
+ *       [5]
+ *     ]
  *
  * 注意：本题与主站 40 题相同： https://leetcode-cn.com/problems/combination-sum-ii/
  *
@@ -41,7 +41,7 @@ public class Offer_II_081_CombinationSum_ii {
      * 方法：递归 + 回溯
      */
     List<int[]> freq = new ArrayList<>();
-    List<List<Integer>> ans = new ArrayList<>();
+    List<List<Integer>> res = new ArrayList<>();
     List<Integer> sequence = new ArrayList<>();
 
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
@@ -57,12 +57,12 @@ public class Offer_II_081_CombinationSum_ii {
         }
 
         dfs(0, target);
-        return ans;
+        return res;
     }
 
     public void dfs(int pos, int rest) {
         if (rest == 0) {
-            ans.add(new ArrayList<>(sequence));
+            res.add(new ArrayList<>(sequence));
             return;
         }
         if (pos == freq.size() || rest < freq.get(pos)[0]) {
