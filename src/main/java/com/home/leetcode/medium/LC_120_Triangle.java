@@ -5,12 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 120. Triangle
+ * 120. Triangle（三角形最小路径和）
  *
  * Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
  *
  * For example, given the following triangle
- *
  * [
  *      [2],
  *     [3,4],
@@ -20,7 +19,6 @@ import java.util.List;
  * The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
  *
  * Note:
- *
  * Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows in the triangle.
  *
  * @see <a href="https://leetcode.cn/problems/triangle/" />
@@ -125,4 +123,5 @@ public class LC_120_Triangle {
         int min = solution.minimumTotal(triangle);
         System.out.println(min);
     }
+
 }
