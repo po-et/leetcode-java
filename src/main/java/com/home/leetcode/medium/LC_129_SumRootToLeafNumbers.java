@@ -43,7 +43,6 @@ package com.home.leetcode.medium;
  */
 public class LC_129_SumRootToLeafNumbers {
 
-    // Definition for a binary tree node.
     public class TreeNode {
         int val;
         TreeNode left;
