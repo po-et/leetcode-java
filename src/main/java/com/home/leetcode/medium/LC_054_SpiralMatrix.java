@@ -53,7 +53,6 @@ public class LC_054_SpiralMatrix {
             row += directions[directionIndex][0];
             col += directions[directionIndex][1];
         }
-
         return res;
     }
 
