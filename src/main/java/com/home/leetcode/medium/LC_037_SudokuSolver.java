@@ -15,7 +15,10 @@ public class LC_037_SudokuSolver {
      * space: 不知道
      */
     public void solveSudoku(char[][] board) {
-        if (board == null || board.length == 0) return;
+        if (board == null || board.length == 0) {
+            return;
+        }
+
         solve(board);
     }
 
@@ -26,7 +29,9 @@ public class LC_037_SudokuSolver {
                     for (char c = '1'; c <= '9'; c++) {
                         if (isValid(board, i, j, c)) {
                             board[i][j] = c;
-                            if (solve(board)) return true;
+                            if (solve(board)) {
+                                return true;
+                            }
                             else board[i][j] = '.';
                         }
                     }
