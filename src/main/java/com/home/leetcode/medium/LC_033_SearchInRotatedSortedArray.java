@@ -68,7 +68,6 @@ public class LC_033_SearchInRotatedSortedArray {
                 }
             }
         }
-
         return -1;
     }
 
