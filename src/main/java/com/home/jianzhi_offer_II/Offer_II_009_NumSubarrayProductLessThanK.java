@@ -48,7 +48,6 @@ public class Offer_II_009_NumSubarrayProductLessThanK {
             res += end - start + 1;
             end++;
         }
-
         return res;
     }
 
