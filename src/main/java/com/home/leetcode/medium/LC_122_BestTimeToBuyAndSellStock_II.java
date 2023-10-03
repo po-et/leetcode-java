@@ -92,7 +92,7 @@ public class LC_122_BestTimeToBuyAndSellStock_II {
         }
         int max = 0;
         for (int i = 0; i < prices.length - 1; i++) {
-            if(prices[i+1] - prices[i] > 0){
+            if (prices[i + 1] - prices[i] > 0) {
                 max += prices[i + 1] - prices[i];
             }
         }
@@ -104,7 +104,8 @@ public class LC_122_BestTimeToBuyAndSellStock_II {
         int[] arr = {7, 1, 5, 3, 6, 4};
         System.out.println(maxProfit(arr));
 
-        int[] arr1 = {1,2,3,4,5};
+        int[] arr1 = {1, 2, 3, 4, 5};
         System.out.println(maxProfit(arr1));
     }
+
 }
