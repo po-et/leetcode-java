@@ -82,7 +82,6 @@ public class LC_122_BestTimeToBuyAndSellStock_II {
         return res;
     }
 
-
     /**
      * 贪心算法：只要第二天的价格比今天高，就第一天买，第二天卖
      */
@@ -98,6 +97,7 @@ public class LC_122_BestTimeToBuyAndSellStock_II {
         }
         return max;
     }
+
 
 
     public static void main(String[] args) {
