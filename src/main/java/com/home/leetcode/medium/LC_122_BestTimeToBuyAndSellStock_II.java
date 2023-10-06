@@ -41,6 +41,7 @@ public class LC_122_BestTimeToBuyAndSellStock_II {
             dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i]);
             dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] - prices[i]);
         }
+
         return dp[n - 1][0];
     }
 
