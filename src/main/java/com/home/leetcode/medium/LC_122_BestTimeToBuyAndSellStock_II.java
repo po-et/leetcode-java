@@ -41,6 +41,7 @@ public class LC_122_BestTimeToBuyAndSellStock_II {
             dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i]);
             dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] - prices[i]);
         }
+
         return dp[n - 1][0];
     }
 
@@ -55,6 +56,7 @@ public class LC_122_BestTimeToBuyAndSellStock_II {
         }
         return dp0;
     }
+
 
 
 
@@ -81,7 +83,6 @@ public class LC_122_BestTimeToBuyAndSellStock_II {
         return res;
     }
 
-
     /**
      * 贪心算法：只要第二天的价格比今天高，就第一天买，第二天卖
      */
@@ -91,7 +92,7 @@ public class LC_122_BestTimeToBuyAndSellStock_II {
         }
         int max = 0;
         for (int i = 0; i < prices.length - 1; i++) {
-            if(prices[i+1] - prices[i] > 0){
+            if (prices[i + 1] - prices[i] > 0) {
                 max += prices[i + 1] - prices[i];
             }
         }
@@ -99,11 +100,13 @@ public class LC_122_BestTimeToBuyAndSellStock_II {
     }
 
 
+
     public static void main(String[] args) {
         int[] arr = {7, 1, 5, 3, 6, 4};
         System.out.println(maxProfit(arr));
 
-        int[] arr1 = {1,2,3,4,5};
+        int[] arr1 = {1, 2, 3, 4, 5};
         System.out.println(maxProfit(arr1));
     }
+
 }

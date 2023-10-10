@@ -50,8 +50,8 @@ public class Offer_II_012_PivotIndex {
      * space: O(1)
      */
     public int pivotIndex(int[] nums) {
-        int total = Arrays.stream(nums).sum();
         int sum = 0;
+        int total = Arrays.stream(nums).sum();
 
         for (int i = 0; i < nums.length; i++) {
             if (sum * 2 + nums[i] == total) {

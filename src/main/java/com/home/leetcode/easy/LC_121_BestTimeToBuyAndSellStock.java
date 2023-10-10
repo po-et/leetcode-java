@@ -37,7 +37,7 @@ public class LC_121_BestTimeToBuyAndSellStock {
      *   dp[0] = 0, 即首日利润为 0
      *
      * 返回值：
-     *   dp[n−1] ，其中 n 为 dp 列表长度。
+     *   dp[n−1] ，其中 n 为 dp 列表长度
      *
      * 效率优化：
      *   - 时间复杂度降低：

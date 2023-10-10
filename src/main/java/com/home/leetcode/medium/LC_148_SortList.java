@@ -32,8 +32,8 @@ public class LC_148_SortList {
      *
      * 题目对时间复杂度有要求，在链表中选择不需要数组随机访问的归并排序
      *
-     * time:  O(nlogn)
-     * space: O(logn) 其中 n 是链表的长度。空间复杂度主要取决于递归调用的栈空间
+     * time:  O(NlogN)
+     * space: O(logN)  其中 n 是链表的长度。空间复杂度主要取决于递归调用的栈空间
      */
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null) {
@@ -63,6 +63,7 @@ public class LC_148_SortList {
     private ListNode merge(ListNode l1, ListNode l2) {
         if (l1 == null) return l2;
         if (l2 == null) return l1;
+
         if (l1.val < l2.val) {
             l1.next = merge(l1.next, l2);
             return l1;

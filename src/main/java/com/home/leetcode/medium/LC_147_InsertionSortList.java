@@ -6,11 +6,11 @@ package com.home.leetcode.medium;
  * Sort a linked list using insertion sort.
  *
  * Example 1:
- * Input: 4->2->1->3
+ * Input:  4->2->1->3
  * Output: 1->2->3->4
  *
  * Example 2:
- * Input: -1->5->3->4->0
+ * Input:  -1->5->3->4->0
  * Output: -1->0->3->4->5
  *
  * @see <a href="https://leetcode.cn/problems/insertion-sort-list/" />
@@ -32,11 +32,11 @@ public class LC_147_InsertionSortList {
 
     /**
      * 对原链表排序
-     * time: O(n^2)
+     *
+     * time:  O(n^2)
      * space: O(1)
      */
     public ListNode insertionSortList(ListNode head) {
-
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         ListNode curr = dummy;
@@ -73,7 +73,8 @@ public class LC_147_InsertionSortList {
 
     /**
      * 可以构建一个临时的链表，然后将待排序的链表的每一个节点插入到临时链表中
-     * time: O(n^2)
+     *
+     * time:  O(n^2)
      * space: O(n)
      */
     public ListNode insertionSortList2(ListNode head) {
@@ -94,18 +95,6 @@ public class LC_147_InsertionSortList {
             curr = currNext;
         }
         return dummy.next;
-    }
-
-
-
-
-
-
-
-
-    public ListNode insertionSortListTemp(ListNode head) {
-
-        return null;
     }
 
 }

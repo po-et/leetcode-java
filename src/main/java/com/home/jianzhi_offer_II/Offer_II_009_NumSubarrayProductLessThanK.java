@@ -3,7 +3,7 @@ package com.home.jianzhi_offer_II;
 /**
  * 剑指 Offer II 009. 乘积小于 K 的子数组
  *
- * 给定一个正整数数组 nums和整数 k ，请找出该数组内乘积小于 k 的连续的子数组的个数。
+ * 给定一个正整数数组 nums 和整数 k ，请找出该数组内乘积小于 k 的连续的子数组的个数。
  *
  * 示例 1:
  * 输入: nums = [10,5,2,6], k = 100
@@ -48,7 +48,6 @@ public class Offer_II_009_NumSubarrayProductLessThanK {
             res += end - start + 1;
             end++;
         }
-
         return res;
     }
 
