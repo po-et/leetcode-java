@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 136. Single Number
+ * 136. Single Number (只出现一次的数字)
  * 
  * Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
  *
@@ -52,8 +52,6 @@ public class LC_136_SingleNumber {
 
     /**
      * 方法二：哈希表
-     * @param nums
-     * @return
      */
     public int singleNumber_hashtable(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
