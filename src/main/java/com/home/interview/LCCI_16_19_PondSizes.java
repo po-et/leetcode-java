@@ -71,5 +71,4 @@ public class LCCI_16_19_PondSizes {
         }
         return res;
     }
-
 }
