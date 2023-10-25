@@ -12,7 +12,7 @@ package com.home.jianzhi_offer;
  * @author Poet
  * @date 2020/5/26
  */
-public class Offer_10_1_Fibonacci {
+public class Offer_10_I_Fibonacci {
 
     /**
      * 方法一：动态规划
@@ -59,7 +59,7 @@ public class Offer_10_1_Fibonacci {
 
 
     public static void main(String[] args) {
-        Offer_10_1_Fibonacci solution = new Offer_10_1_Fibonacci();
+        Offer_10_I_Fibonacci solution = new Offer_10_I_Fibonacci();
         System.out.println(solution.fib(100));
         System.out.println(solution.fib(1000));
         System.out.println(solution.fib(10000));
