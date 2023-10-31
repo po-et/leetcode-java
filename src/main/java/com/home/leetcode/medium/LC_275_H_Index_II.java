@@ -1,7 +1,7 @@
 package com.home.leetcode.medium;
 
 /**
- * 275. H-Index II
+ * 275. H-Index II（H 指数）
  *
  * Given an array of integers citations where citations[i] is the number of citations a researcher received for their ith paper and citations is sorted in ascending order, return the researcher's h-index.
  *
@@ -27,11 +27,15 @@ public class LC_275_H_Index_II {
 
     /**
      * 方法一：二分查找
+     *
+     * time:  O(logN)
+     * space: O(1)
      */
     public int hIndex(int[] citations) {
         int n = citations.length;
         int l = 0;
         int r = n - 1;
+
         while (l <= r) {
             int mid = l + (r - l) / 2;
             if (citations[mid] >= n - mid) {

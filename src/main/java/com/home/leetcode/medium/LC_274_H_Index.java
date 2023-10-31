@@ -3,7 +3,7 @@ package com.home.leetcode.medium;
 import java.util.Arrays;
 
 /**
- * 274. H-Index
+ * 274. H-Index（H 指数）
  *
  * Given an array of integers citations where citations[i] is the number of citations a researcher received for their ith paper, return the researcher's h-index.
  *
@@ -19,7 +19,7 @@ import java.util.Arrays;
  * Input: citations = [1,3,1]
  * Output: 1
  *
- * @see <a href="https://leetcode.cn/problems/h-index/description/?envType=daily-question&envId=2023-10-29" />
+ * @see <a href="https://leetcode.cn/problems/h-index/description/" />
  * @author Poet
  * @date 2023/10/29
  */
