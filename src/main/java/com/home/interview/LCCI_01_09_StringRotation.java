@@ -39,7 +39,7 @@ public class LCCI_01_09_StringRotation {
         for (int i = 0; i < n; i++) {
             boolean flag = true;
             for (int j = 0; j < n; j++) {
-                if (s1.charAt((i + j) %  n) != s2.charAt(j)) {
+                if (s1.charAt((i + j) % n) != s2.charAt(j)) {
                     flag = false;
                     break;
                 }
