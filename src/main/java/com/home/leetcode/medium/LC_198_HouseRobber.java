@@ -74,7 +74,6 @@ public class LC_198_HouseRobber {
                 memo[i] = Math.max(memo[i], nums[j] + (j + 2 < n ? memo[j + 2] : 0));
             }
         }
-
         return memo[0];
     }
 
