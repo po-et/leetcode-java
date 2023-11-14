@@ -53,6 +53,7 @@ public class Offer_II_056_TwoSumIvInputIsBST {
             return true;
         }
         set.add(root.val);
+
         return findTarget(root.left, k) || findTarget(root.right, k);
     }
 
