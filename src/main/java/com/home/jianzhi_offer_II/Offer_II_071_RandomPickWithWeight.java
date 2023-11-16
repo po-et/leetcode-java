@@ -93,5 +93,4 @@ public class Offer_II_071_RandomPickWithWeight {
  * Solution obj = new Solution(w);
  * int param_1 = obj.pickIndex();
  */
-
 }
