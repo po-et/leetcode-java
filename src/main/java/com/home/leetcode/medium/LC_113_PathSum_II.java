@@ -54,10 +54,10 @@ public class LC_113_PathSum_II {
      */
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<List<Integer>> retList = new LinkedList<>();
-
         if (root == null) {
             return retList;
         }
+
         if (root.left == null && root.right == null) {
             if (root.val == sum) {
                 List<Integer> innerList = new ArrayList<>();
