@@ -68,4 +68,5 @@ public class LC_079_WordSearch {
     private boolean inArea(int x, int y) {
         return x >= 0 && x < m && y >= 0 && y < n;
     }
+
 }
