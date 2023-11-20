@@ -42,7 +42,7 @@ public class Offer_II_007_ThreeSum {
     /**
      * 方法一：排序 + 双指针
      *
-     * time:  O(n^2)
+     * time:  O(N^2)
      * space: O(NlogN)
      */
     public List<List<Integer>> threeSum(int[] nums) {
