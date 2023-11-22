@@ -3,7 +3,8 @@ package com.home.leetcode.medium;
 /**
  * 55. Jump Game (跳跃游戏)
  *
- * You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position.
+ * You are given an integer array nums. You are initially positioned at the array's first index,
+ * and each element in the array represents your maximum jump length at that position.
  *
  * Return true if you can reach the last index, or false otherwise.
  *
@@ -32,6 +33,7 @@ public class LC_055_JumpGame {
     public boolean canJump(int[] nums) {
         int n = nums.length;
         int rightMost = 0;  // 最远可以到达的位置
+
         for (int i = 0; i < n; i++) {
             if (i <= rightMost) {
                 rightMost = Math.max(rightMost, i + nums[i]);
