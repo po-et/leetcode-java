@@ -20,7 +20,7 @@ import java.util.List;
  * @author Poet
  * @date 2022/8/28
  */
-public class LC_22_GenerateParentheses {
+public class LC_022_GenerateParentheses {
 
     /**
      * 方法一：暴力法
@@ -63,7 +63,7 @@ public class LC_22_GenerateParentheses {
     /**
      * 方法二：回溯法
      *
-     * sulution: https://leetcode.cn/problems/generate-parentheses/solution/gua-hao-sheng-cheng-by-leetcode-solution/
+     * solution: https://leetcode.cn/problems/generate-parentheses/solution/gua-hao-sheng-cheng-by-leetcode-solution/
      */
     public List<String> generateParenthesis_2(int n) {
         List<String> res = new ArrayList<>();
