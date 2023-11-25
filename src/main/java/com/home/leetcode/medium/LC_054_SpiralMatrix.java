@@ -90,7 +90,6 @@ public class LC_054_SpiralMatrix {
 //
 //            direction = direction % 4;
 //        }
-//
 //        return res;
 //    }
 
