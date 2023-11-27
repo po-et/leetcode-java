@@ -24,15 +24,16 @@ import java.util.List;
  1. All numbers (including target) will be positive integers.
  2. The solution set must not contain duplicate combinations.
 
- * <a href = "https://leetcode.cn/problems/combination-sum-ii/" />
- * Created by Poet on 2019-01-17.
+ * @see <a href="https://leetcode.cn/problems/combination-sum-ii/" />
+ * @author Poet
+ * @date 2019/1/17
  */
 public class LC_040_CombinationSum_II {
 
     /**
      * backtracking
      *
-     * time: O(2^n)
+     * time:  O(2^n)
      * space: O(n)
      */
     public static List<List<Integer>> combinationSum2(int[] candidates, int target) {
