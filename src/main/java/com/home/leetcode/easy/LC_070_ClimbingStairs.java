@@ -1,7 +1,7 @@
 package com.home.leetcode.easy;
 
 /**
- * 70. Climbing Stairs
+ * 70. Climbing Stairs（爬楼梯）
  *
  * You are climbing a staircase. It takes n steps to reach to the top.
  *
@@ -51,15 +51,15 @@ public class LC_070_ClimbingStairs {
      * 动态规划
      */
     public int climbStairs_DP(int n) {
-        memo = new int[n + 1];
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        dp[1] = 1;
 
-        memo[0] = 1;
-        memo[1] = 1;
         for (int i = 2; i <= n; i++) {
-            memo[i] = memo[i - 1] + memo[i - 2];
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
 
-        return memo[n];
+        return dp[n];
     }
 
 }
