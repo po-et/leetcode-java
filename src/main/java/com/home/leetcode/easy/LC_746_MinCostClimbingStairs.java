@@ -12,9 +12,7 @@ package com.home.leetcode.easy;
  * Example 1:
  * Input: cost = [10,15,20]
  * Output: 15
- * Explanation: You will start at index 1.
- * - Pay 15 and climb two steps to reach the top.
- * The total cost is 15.
+ * Explanation: You will start at index 1. Pay 15 and climb two steps to reach the top. The total cost is 15.
  *
  * Example 2:
  * Input: cost = [1,100,1,1,1,100,1,1,100,1]
@@ -35,7 +33,7 @@ package com.home.leetcode.easy;
 public class LC_746_MinCostClimbingStairs {
 
     /**
-     * 方法一：动态规划
+     * 方法：动态规划
      *
      * 状态定义：
      *      dp[i] 表示达到下标 i 的最小花费
@@ -78,4 +76,5 @@ public class LC_746_MinCostClimbingStairs {
         }
         return curr;
     }
+
 }
